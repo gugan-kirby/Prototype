@@ -1,4 +1,5 @@
 // Generates data/db.json. Run with: node scripts/build-seed.mjs
+import { createHash } from 'node:crypto';
 import { writeFileSync } from 'node:fs';
 
 const PASSWORD = 'Demo@123';
@@ -176,5 +177,8 @@ const db = {
   messages,
   notifications,
 };
+
+// A browser's saved copy is replaced whenever the seed content changes.
+db.meta.seedVersion = createHash('sha256').update(JSON.stringify(db)).digest('hex').slice(0, 12);
 
 writeFileSync(new URL('../data/db.json', import.meta.url), `${JSON.stringify(db, null, 2)}\n`);

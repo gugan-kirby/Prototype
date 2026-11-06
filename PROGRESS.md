@@ -11,18 +11,18 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** A-04 Record views, branch `feature/record-views`.
+- **Last feature merged:** F-01 Refresh saved data when the seed changes, branch `fix/stale-saved-data`.
+- **Built:** all 16 reference images, the vendor portal and the admin and staff console.
 - **In progress:** nothing.
-- **Blocked:** nothing.
-- **Next action:** start F-01 Refresh saved data on `fix/stale-saved-data`.
+- **Blocked:** F-02, because a walkthrough counts as testing, which the user stopped.
+- **Next action:** waiting on the user. Answer the pending decisions in `PROJECT_PLAN.md`, starting with decision 1, which unblocks F-02.
 
 ## Known issues
 
 | Issue | Effect | Resolved by |
 |---|---|---|
-| Saved data can go stale | A browser that saved data before a seed change keeps the old copy, and can fail with "Unknown collection". Clearing site data fixes it. | F-01 |
 | Automated tests out of date | Last full run was 75 passed, at T-08. They were not run for T-09 onwards, and may no longer pass. | Decision 1 in `PROJECT_PLAN.md` |
-| Later behaviour unconfirmed | Interactions added from T-10 onwards have not been exercised, including chat, PDF download, Pay Now and vendor filter. Only their reference views were rendered. | F-02 |
+| Later behaviour unconfirmed | Interactions added from T-10 onwards have not been exercised, including chat, PDF download, Pay Now, quote submission, status updates and all admin actions. Only their pages were rendered. | F-02 |
 | T-09 fix not rechecked | The final test run for T-09 found the Enquiry Details tab did not hide the quotes list. It was fixed in CSS, but the fix was not rerun. | F-02 |
 
 ## Tasks
@@ -60,14 +60,14 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | A-01 | Admin shell and login | COMPLETED | Medium | `feature/admin-shell` | `4feb74f` | [#25](https://github.com/gugan-kirby/Prototype/pull/25) | Not tested. Render reviewed by eye |
 | A-02 | Vendor verification | COMPLETED | Medium | `feature/vendor-verification` | `d44a51f` | [#26](https://github.com/gugan-kirby/Prototype/pull/26) | Not tested. Render reviewed by eye |
 | A-03 | User management | COMPLETED | Medium | `feature/user-management` | `2c6a16e` | [#27](https://github.com/gugan-kirby/Prototype/pull/27) | Not tested. Render reviewed by eye |
-| A-04 | Record views | COMPLETED | Medium | `feature/record-views` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| A-04 | Record views | COMPLETED | Medium | `feature/record-views` | `f405aaa` | [#28](https://github.com/gugan-kirby/Prototype/pull/28) | Not tested. Render reviewed by eye |
+| F-01 | Refresh saved data when the seed changes | COMPLETED | High | `fix/stale-saved-data` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
-### Not started
+### Not finished
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| F-01 | Refresh saved data when the seed changes | NOT STARTED | High |
-| F-02 | Walk through both workflows end to end | NOT STARTED | Medium |
+| F-02 | Walk through both workflows end to end | BLOCKED | Medium |
 
 ## Implementation details
 
@@ -186,6 +186,10 @@ Lists all users without their passwords. Admins can suspend or reactivate accoun
 ### A-04 Record views
 
 Read-only tables for enquiries, orders, invoices and payments, with search.
+
+### F-01 Refresh saved data when the seed changes
+
+The seed now carries a version worked out from its content. When it changes, a browser's saved copy is replaced with the new seed. Changes saved in that browser are lost at that point, which is acceptable for a prototype.
 
 ## Change history
 

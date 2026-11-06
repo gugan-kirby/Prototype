@@ -8,7 +8,11 @@ export function createStore({ storage, seed }) {
   function load() {
     const saved = storage.getItem(KEY);
     if (saved) {
-      try { return JSON.parse(saved); } catch { storage.removeItem(KEY); }
+      try {
+        const parsed = JSON.parse(saved);
+        if (parsed.meta?.seedVersion === seed.meta?.seedVersion) return parsed;
+      } catch { /* Corrupt data falls through to the seed. */ }
+      storage.removeItem(KEY);
     }
     return structuredClone(seed);
   }
