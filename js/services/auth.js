@@ -31,6 +31,28 @@ export const login = (identifier, password) => request(() => {
   return startSession({ userId: user.id, role: user.role });
 });
 
+export const register = ({ role, name, mobile, email, password }) => request(() => {
+  const normalisedEmail = email.trim().toLowerCase();
+  const normalisedMobile = digits(mobile);
+  if (store.where('users', (user) => user.email === normalisedEmail).length) throw new ApiError('An account with this email already exists.');
+  if (store.where('users', (user) => user.mobile === normalisedMobile).length) throw new ApiError('An account with this mobile number already exists.');
+  const user = store.insert('users', {
+    id: `u-${store.nextNumber('user')}`,
+    role,
+    name: name.trim(),
+    email: normalisedEmail,
+    mobile: normalisedMobile,
+    password,
+    status: 'active',
+  });
+  if (role === 'vendor') {
+    store.insert('vendors', {
+      id: `v-${user.id}`, userId: user.id, name: user.name, city: '', state: '', stateCode: '', rating: 0, reviews: 0, verified: false, tint: 'blue',
+    });
+  }
+  return startSession({ userId: user.id, role });
+});
+
 export const requestPasswordReset = (identifier) => request(() => {
   if (!findAccount(identifier)) throw new ApiError('No account uses that email or mobile number.');
 });

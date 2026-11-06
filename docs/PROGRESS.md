@@ -7,7 +7,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 |---|---|---|---|---|---|
 | 01 | Splash | Done | Done | Done | 4.9% |
 | 02 | Welcome / Login | Done | Done | Done | 2.7% |
-| 03 | Registration | Pending | Pending | Pending | |
+| 03 | Registration | Done | Done | Done | 2.6% |
 | 04 | Customer Home | Pending | Pending | Pending | |
 | 05 | New Enquiry – Details | Pending | Pending | Pending | |
 | 06 | New Enquiry – Requirements | Pending | Pending | Pending | |
@@ -41,3 +41,12 @@ comes from blur around text in the references, which sharp text cannot reproduce
 - **Tests:** content, links, guest, validation, wrong password, retry after failure,
   password reset, and escaping of input.
 - **Remaining:** Login has no reference image, so it follows the Register design.
+
+### 03 Registration
+
+- **Components:** Customer / Vendor switch, five icon fields, terms checkbox and sheet,
+  Register button, Login link.
+- **Interactions:** field validation, duplicate email and mobile checks, account
+  creation, and role-based redirect. New vendors start unverified.
+- **Tests:** required fields, invalid values, duplicates, both roles, logging in again.
+- **Remaining:** none.
