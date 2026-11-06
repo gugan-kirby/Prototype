@@ -28,7 +28,10 @@ export default {
             return html`<li class="${done ? 'done' : ''}"><span>${done ? icon('check') : ''}</span><strong>${stage}</strong><time>${entry && done ? formatDate(entry.date) : 'Pending'}</time></li>`;
           })}
         </ol>
-        ${order.status === 'In Progress' && html`<div class="invoice-actions"><button class="btn btn-primary" id="advance">Mark as ${STAGES[order.stage + 1]}</button></div>`}
+        <div class="invoice-actions">
+          <a class="btn btn-outline" href="#/v/chat/${order.customerId}">Message Customer</a>
+          ${order.status === 'In Progress' && html`<button class="btn btn-primary" id="advance">Mark as ${STAGES[order.stage + 1]}</button>`}
+        </div>
       </section>`;
   },
   mount(root, order, ctx) {

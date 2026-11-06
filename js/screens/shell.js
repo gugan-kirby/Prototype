@@ -64,7 +64,7 @@ export function requireMember(path) {
 }
 
 const VENDOR_MENU = [
-  ['Dashboard', '/v/home'], ['Enquiries', '/v/enquiries'], ['Quotes', '/v/quotes'], ['Orders', '/v/orders'], ['Profile', '/profile'],
+  ['Dashboard', '/v/home'], ['Enquiries', '/v/enquiries'], ['Quotes', '/v/quotes'], ['Orders', '/v/orders'], ['Messages', '/v/messages'], ['Profile', '/profile'],
 ];
 
 const CUSTOMER_MENU = [
