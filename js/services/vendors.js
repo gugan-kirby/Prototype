@@ -72,3 +72,8 @@ export const submitQuote = (enquiryId, values) => request(() => {
   notify(enquiry.customerId, 'New quote received', `${vendor.name} quoted for ${enquiry.partName}.`, `/enquiries/${enquiryId}`);
   return quote;
 });
+
+export const vendorQuotes = () => request(() => {
+  const vendor = currentVendor();
+  return store.where('quotes', (quote) => quote.vendorId === vendor.id).map((quote) => ({ ...quote, enquiry: store.find('enquiries', quote.enquiryId) }));
+});

@@ -11,10 +11,10 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** V-02 Submit quote, branch `feature/submit-quote`.
+- **Last feature merged:** V-03 Manage quotes, branch `feature/manage-quotes`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start V-03 Manage quotes on `feature/manage-quotes`.
+- **Next action:** start V-04 Vendor orders on `feature/vendor-orders`.
 
 ## Known issues
 
@@ -55,13 +55,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | T-15 | Vendor Dashboard | COMPLETED | High | `feature/vendor-dashboard` | `58ab4cc` | [#17](https://github.com/gugan-kirby/Prototype/pull/17) | Not tested. Differs 6.1% |
 | T-16 | Profile | COMPLETED | High | `feature/profile` | `34c3985` | [#18](https://github.com/gugan-kirby/Prototype/pull/18) | Not tested. Differs 7.5% |
 | V-01 | Vendor enquiries | COMPLETED | High | `feature/vendor-enquiries` | `a3ecf15` | [#19](https://github.com/gugan-kirby/Prototype/pull/19) | Not tested. Render reviewed by eye |
-| V-02 | Submit quote | COMPLETED | High | `feature/submit-quote` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| V-02 | Submit quote | COMPLETED | High | `feature/submit-quote` | `e5196e5` | [#20](https://github.com/gugan-kirby/Prototype/pull/20) | Not tested. Render reviewed by eye |
+| V-03 | Manage quotes | COMPLETED | Medium | `feature/manage-quotes` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| V-03 | Manage quotes | NOT STARTED | Medium |
 | V-04 | Vendor orders | NOT STARTED | High |
 | V-05 | Update production status | NOT STARTED | High |
 | V-06 | Vendor messages | NOT STARTED | Medium |
@@ -157,6 +157,10 @@ Lists open enquiries and those already quoted, with search and tabs. The detail 
 ### V-02 Submit quote
 
 Quote form with validation. Only verified vendors can quote, and each vendor can quote once per enquiry. Submitting moves the enquiry to Quoted and notifies the customer. GST is fixed at 18%.
+
+### V-03 Manage quotes
+
+Lists the vendor's quotes with search and status tabs. Each card opens the enquiry.
 
 ## Change history
 

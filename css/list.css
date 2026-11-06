@@ -130,3 +130,7 @@
 .phone[data-screen="payments"] .inv-main { min-height: 79px; padding-right: 41px; }
 .phone[data-screen="payments"] .inv-main .card-go { right: 7px; }
 .phone[data-screen="payments"] .inv-due { margin-top: 3px; margin-bottom: 8px; }
+
+.badge-submitted { background: var(--warn-bg); color: var(--warn); }
+.badge-accepted { background: var(--ok-bg); color: var(--ok); }
+.badge-declined { background: var(--idle-bg); color: var(--idle); }
