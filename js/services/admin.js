@@ -38,3 +38,14 @@ export const setVendorVerified = (id, verified) => request(() => {
     notify(vendor.userId, verified ? 'Account verified' : 'Verification removed', verified ? 'You can now quote for enquiries.' : 'Contact JobWork to restore your verification.', '/v/home');
   }
 });
+
+export const listUsers = () => request(() => {
+  staffOnly();
+  return store.all('users').map(({ password, ...user }) => user);
+});
+
+export const setUserStatus = (id, status) => request(() => {
+  adminOnly();
+  if (id === session().userId) throw new ApiError('You cannot suspend your own account.');
+  store.update('users', id, { status });
+});
