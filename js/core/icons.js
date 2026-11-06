@@ -22,6 +22,7 @@ const ICONS = {
   profile: stroke('<circle cx="12" cy="7.500" r="4.200"/><path d="M4 21v-1.500A4.500 4.500 0 0 1 8.500 15h7a4.500 4.500 0 0 1 4.500 4.500V21z"/>'),
   profileFill: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7.500" r="4.800"/><path d="M3.500 21.500V19a5 5 0 0 1 5-5h7a5 5 0 0 1 5 5v2.500z"/></svg>',
   logout: stroke('<path d="M10 3.500H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h4"/><path d="M15.500 8l4 4-4 4M19 12H9.500"/>'),
+  chevronDown: stroke('<path d="M5 9l7 7 7-7"/>'),
   chevron: stroke('<path d="M9 5l7 7-7 7"/>'),
   shieldLock: stroke('<path d="M12 2.500l8 3v6.500c0 4.700-3.300 8-8 9.500-4.700-1.500-8-4.800-8-9.500V5.500z"/><path d="M9.800 11.500V9.500a2.200 2.200 0 0 1 4.400 0v2"/><rect x="9" y="11.500" width="6" height="4.500" rx=".8" fill="currentColor" stroke-width="1"/>'),
   shieldCheck: stroke('<path d="M12 2.500l8 3v6.500c0 4.700-3.300 8-8 9.500-4.700-1.500-8-4.800-8-9.500V5.500z"/><path d="M8.300 12l2.700 2.700 4.700-5"/>'),

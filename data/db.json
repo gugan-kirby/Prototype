@@ -3,7 +3,40 @@
     "today": "2025-03-15",
     "counters": {
       "user": 100,
-      "notification": 100
+      "notification": 100,
+      "address": 10
+    },
+    "options": {
+      "materials": [
+        "Aluminium",
+        "Aluminium (6061)",
+        "Mild Steel",
+        "SS304",
+        "SS316",
+        "Brass",
+        "Copper",
+        "Cast Iron"
+      ],
+      "units": [
+        "Nos",
+        "Kg",
+        "Sets",
+        "Meters"
+      ],
+      "finishes": [
+        "As Machined",
+        "Anodized",
+        "Powder Coated",
+        "Zinc Plated",
+        "Polished"
+      ],
+      "tolerances": [
+        "±0.5mm",
+        "±0.2mm",
+        "±0.1mm",
+        "±0.05mm",
+        "±0.01mm"
+      ]
     }
   },
   "users": [
@@ -139,6 +172,35 @@
         "CO2 Laser",
         "Tube Laser"
       ]
+    }
+  ],
+  "addresses": [
+    {
+      "id": "a-1",
+      "userId": "u-gugan",
+      "label": "Factory",
+      "line": "Plot 12, Ambattur Industrial Estate",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "isDefault": true
+    },
+    {
+      "id": "a-2",
+      "userId": "u-gugan",
+      "label": "Warehouse",
+      "line": "SIDCO Industrial Park",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "isDefault": false
+    },
+    {
+      "id": "a-3",
+      "userId": "u-gugan",
+      "label": "Plant 2",
+      "line": "SIPCOT Phase 1",
+      "city": "Hosur",
+      "state": "Tamil Nadu",
+      "isDefault": false
     }
   ],
   "notifications": [
