@@ -1,0 +1,146 @@
+# Progress
+
+Actual status only. Scope and order are in `PROJECT_PLAN.md`.
+
+**Statuses:** `NOT STARTED`, `IN PROGRESS`, `BLOCKED`, `IN REVIEW`, `COMPLETED`.
+
+`COMPLETED` means merged into `main`. It does not mean tested, so read the Validation column.
+
+## Latest checkpoint
+
+**Updated:** 2026-11-06
+
+- **Branch:** `main`, with a clean working tree and no feature branches open.
+- **Last feature merged:** T-12 Order Tracking, commit `d025398`, PR #13.
+- **In progress:** nothing.
+- **Blocked:** nothing.
+- **Next action:** start T-13 Invoices on `feature/invoices`. Analyse `Image /JobWork Invoice Management Dashboard.png` first.
+
+## Known issues
+
+| Issue | Effect | Resolved by |
+|---|---|---|
+| Unbuilt pages | Profile tab, Invoices and Payments show "That page does not exist". | T-13, T-14, T-16 |
+| Vendor area not built | Vendor login and registration land on a missing page. | T-15 |
+| Admin not built | Admin and staff login opens `admin.html`, which does not exist. | A-01 |
+| Vendor notification links | Links to `/v/...` lead to a missing page. | V-01 to V-06 |
+| Saved data can go stale | A browser that saved data before a seed change keeps the old copy, and can fail with "Unknown collection". Clearing site data fixes it. | F-01 |
+| Automated tests out of date | Last full run was 75 passed, at T-08. They were not run for T-09 onwards, and may no longer pass. | Decision 1 in `PROJECT_PLAN.md` |
+| Later behaviour unconfirmed | Interactions added in T-10 to T-12 have not been exercised, including chat, PDF download and vendor filter. Only their reference views were rendered. | F-02 |
+| T-09 fix not rechecked | The final test run for T-09 found the Enquiry Details tab did not hide the quotes list. It was fixed in CSS, but the fix was not rerun. | F-02 |
+
+## Tasks
+
+"Differs" is the share of pixels that visibly differ from the reference, measured on 2026-11-06. Much of it comes from blur around text in the references. All rows were last updated on 2026-11-06.
+
+### Completed
+
+| ID | Task | Status | Priority | Branch | Commit | PR | Validation |
+|---|---|---|---|---|---|---|---|
+| T-00 | App foundation | COMPLETED | High | `feature/app-foundation` | `c1efbc6` | [#1](https://github.com/gugan-kirby/Prototype/pull/1) | Tests passed |
+| T-01 | Splash | COMPLETED | High | `feature/splash` | `7a612aa` | [#2](https://github.com/gugan-kirby/Prototype/pull/2) | Tests passed. Differs 4.9% |
+| T-02 | Welcome / Login | COMPLETED | High | `feature/welcome-login` | `6ba70c9` | [#3](https://github.com/gugan-kirby/Prototype/pull/3) | Tests passed. Differs 2.8% |
+| T-03 | Registration | COMPLETED | High | `feature/registration` | `b36c6fa` | [#4](https://github.com/gugan-kirby/Prototype/pull/4) | Tests passed. Differs 2.6% |
+| T-04 | Customer Home | COMPLETED | High | `feature/customer-home` | `e57e077` | [#5](https://github.com/gugan-kirby/Prototype/pull/5) | Tests passed. Differs 5.6% |
+| T-05 | New Enquiry: Details | COMPLETED | High | `feature/enquiry-details` | `7a96183` | [#6](https://github.com/gugan-kirby/Prototype/pull/6) | Tests passed. Differs 3.3% |
+| T-06 | New Enquiry: Requirements | COMPLETED | High | `feature/enquiry-requirements` | `f890cf3` | [#7](https://github.com/gugan-kirby/Prototype/pull/7) | Tests passed. Differs 4.0% |
+| T-07 | Review Enquiry | COMPLETED | High | `feature/enquiry-review` | `15f8a23` | [#8](https://github.com/gugan-kirby/Prototype/pull/8) | Tests passed. Differs 4.4% |
+| T-08 | My Enquiries | COMPLETED | High | `feature/my-enquiries` | `c28319f` | [#9](https://github.com/gugan-kirby/Prototype/pull/9) | Tests passed. Differs 4.6% |
+| T-09 | Quotes Received | COMPLETED | High | `feature/quotes-received` | `ba75983` | [#10](https://github.com/gugan-kirby/Prototype/pull/10) | Partly tested, see below. Differs 7.3% |
+| T-10 | Quote Details | COMPLETED | High | `feature/quote-details` | `20e5e0f` | [#11](https://github.com/gugan-kirby/Prototype/pull/11) | Not tested. Differs 7.2% |
+| T-11 | My Orders | COMPLETED | High | `feature/my-orders` | `07d3344` | [#12](https://github.com/gugan-kirby/Prototype/pull/12) | Not tested. Differs 6.2% |
+| T-12 | Order Tracking | COMPLETED | High | `feature/order-tracking` | `d025398` | [#13](https://github.com/gugan-kirby/Prototype/pull/13) | Not tested. Differs 7.0% |
+| D-01 | Project documentation | COMPLETED | High | `docs/project-continuity` | Merged by PR #14 | [#14](https://github.com/gugan-kirby/Prototype/pull/14) | Checked against the repository and Git history |
+
+### Not started
+
+| ID | Task | Status | Priority |
+|---|---|---|---|
+| T-13 | Invoices | NOT STARTED | High |
+| T-14 | Payments | NOT STARTED | High |
+| T-15 | Vendor Dashboard | NOT STARTED | High |
+| T-16 | Profile | NOT STARTED | High |
+| V-01 | Vendor enquiries | NOT STARTED | High |
+| V-02 | Submit quote | NOT STARTED | High |
+| V-03 | Manage quotes | NOT STARTED | Medium |
+| V-04 | Vendor orders | NOT STARTED | High |
+| V-05 | Update production status | NOT STARTED | High |
+| V-06 | Vendor messages | NOT STARTED | Medium |
+| A-01 | Admin shell and login | NOT STARTED | Medium |
+| A-02 | Vendor verification | NOT STARTED | Medium |
+| A-03 | User management | NOT STARTED | Medium |
+| A-04 | Record views | NOT STARTED | Medium |
+| F-01 | Refresh saved data when the seed changes | NOT STARTED | High |
+| F-02 | Walk through both workflows end to end | NOT STARTED | Medium |
+
+## Implementation details
+
+### T-00 App foundation
+
+App shell, `localStorage` store, hash router, escaping HTML helper, request wrapper, tokens, bundled Figtree font, and test tools.
+
+### T-01 Splash
+
+Vector logo, background recovered from the reference, Get Started and Login / Register links.
+
+### T-02 Welcome / Login
+
+Welcome page, login by email or mobile, role-based redirect, guest session, password reset sheet and demo account shortcuts. Adds shared icons, buttons, fields, toasts and sheets. Login has no reference, so it follows the Register design.
+
+### T-03 Registration
+
+Customer and vendor accounts, field validation and duplicate checks. New vendors start unverified.
+
+### T-04 Customer Home
+
+Banner, quick actions, categories, tab bar, side menu and notifications. Guests get a login prompt, and failed loads offer a retry. "CNC Maching Machining" in the reference is corrected to "CNC Machining".
+
+### T-05 New Enquiry: Details
+
+Validation, sub categories that follow the category, category preselected from Home, and a draft kept between steps.
+
+### T-06 New Enquiry: Requirements
+
+Real uploads stored in IndexedDB, with type and size limits, replace and remove. A drawing or specifications text is required, so jobs without a drawing can still be raised.
+
+### T-07 Review Enquiry
+
+Submit creates the enquiry and notifies verified vendors. A failed submit keeps the draft. Tolerance is added to the specifications line so it can be checked before submitting.
+
+### T-08 My Enquiries
+
+Reusable list layout with search, status tabs, category filter and sort. Shows 4 cards as in the reference, and loads more on scroll. Tabs follow the image, not the brief.
+
+### T-09 Quotes Received
+
+Quotes sorted cheapest first, Enquiry Details tab, and the RFQ / Quotes list. Accepting asks for confirmation, then creates the order and invoice, closes the enquiry, declines other quotes and notifies vendors.
+
+**Validation:** in the final test run, 8 of 11 tests passed, including accepting a quote and blocked access. Of the 3 failures, 1 was the tab bug listed under known issues, and 2 were a test helper reading saved data before any existed. Testing then stopped at the user's request.
+
+### T-10 Quote Details
+
+Vendor panel, call and chat, PDF download, attachment download and accept. Unit Price, GST, Total, Payment Terms, Validity and Notes sit below the reference height. Adds the message thread.
+
+### T-11 My Orders
+
+Search, status tabs, vendor filter, sort and progress bars.
+
+### T-12 Order Tracking
+
+The tracker keeps the reference's four steps. The brief's six stages are stored on each order, drive the tracker and appear on Order Details.
+
+### D-01 Project documentation
+
+Adds `PROJECT_PLAN.md`, moves progress tracking to `PROGRESS.md`, and expands `CLAUDE.md`. Brings in the workflow rules from the unmerged `docs/git-workflow-rules` branch.
+
+## Change history
+
+| Date | Change | Reason |
+|---|---|---|
+| 2026-11-06 | Direct marketplace chosen over the JobWork middleman model | User decision |
+| 2026-11-06 | Browser-only data chosen over a Node server | User decision |
+| 2026-11-06 | Reference images made the primary source of truth | User decision |
+| 2026-11-06 | Full branch, PR, merge and cleanup workflow automated | User decision |
+| 2026-11-06 | Word "screen" removed from unpushed commits and branches | User decision |
+| 2026-11-06 | Rebase merges used instead of squash | Squash changes the author name, from PR #2 onwards |
+| 2026-11-06 | Automated test writing and running stopped, from T-09 onwards | User decision |
