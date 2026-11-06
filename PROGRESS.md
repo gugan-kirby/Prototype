@@ -8,19 +8,18 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 
 ## Latest checkpoint
 
-**Updated:** 2026-11-06
+**Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** T-15 Vendor Dashboard, branch `feature/vendor-dashboard`.
+- **Last feature merged:** T-16 Profile, branch `feature/profile`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start T-16 Profile on `feature/profile`. Analyse `Image /JobWork Profile Settings Screen.png` first.
+- **Next action:** start V-01 Vendor enquiries on `feature/vendor-enquiries`.
 
 ## Known issues
 
 | Issue | Effect | Resolved by |
 |---|---|---|
-| Unbuilt pages | Profile tab shows "That page does not exist". | T-16 |
 | Vendor pages not built | Dashboard links to vendor enquiries, quotes and orders lead to a missing page. | V-01 to V-04 |
 | Admin not built | Admin and staff login opens `admin.html`, which does not exist. | A-01 |
 | Vendor notification links | Links to `/v/...` lead to a missing page. | V-01 to V-06 |
@@ -53,13 +52,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | D-01 | Project documentation | COMPLETED | High | `docs/project-continuity` | Merged by PR #14 | [#14](https://github.com/gugan-kirby/Prototype/pull/14) | Checked against the repository and Git history |
 | T-13 | Invoices | COMPLETED | High | `feature/invoices` | `c8b650b` | [#15](https://github.com/gugan-kirby/Prototype/pull/15) | Not tested. Differs 6.3% |
 | T-14 | Payments | COMPLETED | High | `feature/payments` | `21f45df` | [#16](https://github.com/gugan-kirby/Prototype/pull/16) | Not tested. Differs 7.8% |
-| T-15 | Vendor Dashboard | COMPLETED | High | `feature/vendor-dashboard` | Merged by this task's PR | See Git history | Not tested. Differs 6.1% |
+| T-15 | Vendor Dashboard | COMPLETED | High | `feature/vendor-dashboard` | `58ab4cc` | [#17](https://github.com/gugan-kirby/Prototype/pull/17) | Not tested. Differs 6.1% |
+| T-16 | Profile | COMPLETED | High | `feature/profile` | Merged by this task's PR | See Git history | Not tested. Differs 7.5% |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| T-16 | Profile | NOT STARTED | High |
 | V-01 | Vendor enquiries | NOT STARTED | High |
 | V-02 | Submit quote | NOT STARTED | High |
 | V-03 | Manage quotes | NOT STARTED | Medium |
@@ -144,6 +143,12 @@ Summary panel, status tabs and invoice cards with Pay Now. Total Paid counts the
 ### T-15 Vendor Dashboard
 
 Banner, four stat cards, enquiry requests, orders overview and revenue chart, with a vendor tab bar and menu. All figures are calculated from seed data, using a second sample customer. New vendors see an awaiting-verification notice. The reference's "Active Orders" is shown as "Orders Received", because 4 of the 12 are completed. Links to `/v/enquiries`, `/v/quotes` and `/v/orders` wait for V-01 to V-04.
+
+### T-16 Profile
+
+Profile card, photo upload, six menu rows, Log Out and app version. Each row opens a working page: Company Details, Account Settings, Payment Methods, Notifications, Privacy & Security and Help & Support. The brief's My Addresses, My Documents, About Us and Terms & Conditions sit below the reference height. Saved addresses feed the delivery dropdown. Vendors share this page, with their own tag and tab bar.
+
+The reference shows an unread dot on the bell, but other customer references do not, so the sample customer starts with none. The dot appears whenever there are unread notifications.
 
 ## Change history
 

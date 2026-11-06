@@ -4,7 +4,12 @@ import { writeFileSync } from 'node:fs';
 const PASSWORD = 'Demo@123';
 
 const users = [
-  { id: 'u-gugan', role: 'customer', name: 'Gugan Tennyson', email: 'gugan@jobwork.com', mobile: '9876543210', password: PASSWORD, status: 'active', wallet: 0 },
+  { id: 'u-gugan', role: 'customer', name: 'Gugan Tennyson', email: 'gugan@jobwork.com', mobile: '9876543210', password: PASSWORD, status: 'active', wallet: 0,
+    avatar: 'assets/img/avatar-gugan.jpg',
+    company: { name: 'Tennyson Engineering', gstin: '33ABCDE1234F1Z5', address: 'Plot 12, Ambattur Industrial Estate, Chennai' },
+    paymentMethods: [{ id: 'pm-1', label: 'UPI', detail: 'gugan@upi' }],
+    prefs: { quotes: true, orders: true, payments: true },
+    documents: [] },
   { id: 'u-precision', role: 'vendor', name: 'Precision Metals', email: 'vendor@jobwork.com', mobile: '9840012345', password: PASSWORD, status: 'active' },
   { id: 'u-nila', role: 'customer', name: 'Nila Engineering', email: 'nila@jobwork.com', mobile: '9840077777', password: PASSWORD, status: 'active', wallet: 0 },
   { id: 'u-admin', role: 'admin', name: 'Asha Raman', email: 'admin@jobwork.com', mobile: '9840098400', password: PASSWORD, status: 'active' },
@@ -157,11 +162,12 @@ const notifications = [
 ];
 
 const db = {
-  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, enquiry: 1012, quote: 6, order: 1008, invoice: 6, message: 1, payment: 4 }, options },
+  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, support: 0, method: 1, enquiry: 1012, quote: 6, order: 1008, invoice: 6, message: 1, payment: 4 }, options },
   users,
   vendors,
   categories,
   addresses,
+  supportRequests: [],
   enquiries,
   quotes,
   orders,

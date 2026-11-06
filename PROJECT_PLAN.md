@@ -130,7 +130,7 @@ The references disagree with each other in places. The seed resolves this as fol
 |---|---|---|
 | 0 | Foundation | Completed |
 | 1 | Authentication, enquiries, quotes and orders (T-01 to T-12) | Completed |
-| 2 | Finish the reference images (T-13 to T-16) | In progress |
-| 3 | Vendor portal | Upcoming |
+| 2 | Finish the reference images (T-13 to T-16) | Completed |
+| 3 | Vendor portal | Upcoming, next |
 | 4 | Admin and staff portal | Upcoming |
 | 5 | Wrap-up | Upcoming |
