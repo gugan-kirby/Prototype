@@ -1,0 +1,101 @@
+.phone[data-screen="vendor-home"] { --tabbar-h: 83px; }
+.phone[data-screen="vendor-home"] .statusbar { height: 39px; padding-top: 0; }
+
+.app-head-vendor { height: 72px; padding: 0 14px 4px 18px; }
+.app-head-vendor .app-word { margin-left: 25px; font-size: 25px; }
+.app-head-vendor .head-bell { margin-right: 22px; }
+.head-store { flex: none; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--tab-on); border-radius: 50%; color: var(--navy); }
+.head-store svg { width: 20px; height: 20px; }
+
+.vd { padding: 0 9px 10px 10px; }
+.vd-banner { height: 104px; padding: 14px 18px; background: url("../assets/img/vendor-banner.jpg") center / 100% 100%; border-radius: 17px; }
+.vd-kicker { color: #1b1d4a; font-size: 12.800px; font-weight: 500; line-height: 17px; }
+.vd-banner h1 { display: flex; align-items: center; gap: 7px; margin-top: 8px; color: #06072e; font-size: 20px; font-weight: 800; letter-spacing: -0.200px; line-height: 26px; white-space: nowrap; }
+.vd-banner h1 img { width: 24px; height: 23px; mix-blend-mode: multiply; }
+.vd-sub { margin-top: 7px; color: #55586f; font-size: 12.300px; font-weight: 500; line-height: 16px; }
+.vd-pending { margin-top: 8px; padding: 9px 12px; background: var(--warn-bg); border-radius: 10px; color: var(--warn); font-size: 13px; font-weight: 600; line-height: 18px; }
+
+.vd-stats { display: grid; grid-template-columns: 98.500px 94.500px 94.500px 1fr; gap: 6.500px; margin-top: 13px; }
+.vd-stat { display: flex; flex-direction: column; align-items: flex-start; height: 91px; padding: 8px 0 0 15px; border: 1px solid; border-radius: 14px; text-align: left; }
+.vd-stat strong { margin-top: 7px; color: #070a2e; font-size: 17px; font-weight: 800; line-height: 21px; white-space: nowrap; }
+.vd-stat > span:last-child { color: #33364f; font-size: 11.800px; font-weight: 500; line-height: 16px; white-space: nowrap; }
+.vd-stat-tile { display: flex; align-items: center; justify-content: center; width: 30px; height: 28px; border-radius: 8px; }
+.vd-stat-tile svg { width: 19px; height: 19px; }
+.vd-stat-blue { background: #f6f9fe; border-color: #e4ecfb; }
+.vd-stat-blue .vd-stat-tile { background: #dbe8fd; color: #1379fb; }
+.vd-stat-violet { background: #f9f8fe; border-color: #ece9fb; }
+.vd-stat-violet .vd-stat-tile { background: #e8e4fb; color: #3f2fa0; }
+.vd-stat-green { background: #f3fcf6; border-color: #dff5e5; }
+.vd-stat-green .vd-stat-tile { background: #d9f3df; color: #06871e; }
+.vd-stat-orange { padding-left: 13px; background: #fffbf5; border-color: #fdeeda; }
+.vd-stat-orange .vd-stat-tile { background: #fde3bd; color: #b4660a; }
+
+.vd-card { margin-top: 14px; padding: 0 13px; background: #fff; border: 1px solid var(--line); border-radius: 16px; }
+.vd-card header { display: flex; align-items: center; justify-content: space-between; height: 41px; border-bottom: 1px solid var(--line-soft); }
+.vd-card h2 { display: flex; align-items: center; gap: 10px; color: #070a2e; font-size: 15px; font-weight: 800; }
+.vd-card h2 svg { width: 19px; height: 19px; }
+.vd-card header button { display: flex; align-items: center; gap: 4px; color: var(--blue-bright); font-size: 12px; font-weight: 600; }
+.vd-card header button svg { width: 15px; height: 15px; }
+.vd-empty { padding: 16px 0; color: var(--muted); font-size: 14px; }
+
+.vd-row { display: flex; align-items: center; height: 54px; border-bottom: 1px solid var(--line-soft); }
+.vd-row:last-child { border: 0; }
+.vd-row .tile { width: 43px; height: 39px; border-radius: 10px; }
+.vd-row .tile svg { width: 24px; height: 24px; }
+.vd-row-text { flex: 1; min-width: 0; margin-left: 14px; }
+.vd-row-text strong { display: block; color: #070a2e; font-size: 14px; font-weight: 800; line-height: 19px; }
+.vd-row-text span { color: #55586f; font-size: 11.300px; font-weight: 500; line-height: 16px; white-space: nowrap; }
+.vd-row-text i { margin: 0 8px; font-style: normal; }
+.vd-row time { flex: none; margin-right: 13px; color: #55586f; font-size: 11px; font-weight: 500; }
+.vd-quote { flex: none; width: 85px; height: 24px; background: #fff; border: 1.200px solid var(--blue-bright); border-radius: 7px; color: var(--blue-bright); font-size: 11.500px; font-weight: 700; }
+.vd-quote.on { background: var(--blue-bright); color: #fff; }
+
+.vd-orders { display: flex; align-items: center; height: 121px; }
+.vd-donut { position: relative; flex: none; width: 104px; height: 104px; margin-left: 20px; }
+.vd-donut svg { display: block; width: 100%; height: 100%; }
+.vd-donut p { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #070a2e; font-size: 12px; font-weight: 500; line-height: 15px; }
+.vd-donut strong { font-size: 18px; font-weight: 800; line-height: 20px; }
+.vd-orders ul { flex: 1; margin: 0 7px 0 40px; padding: 0; list-style: none; }
+.vd-orders li { display: flex; align-items: center; gap: 9px; height: 30px; border-bottom: 1px solid var(--line-soft); color: #33364f; font-size: 12.300px; font-weight: 500; }
+.vd-orders li:last-child { border: 0; }
+.vd-orders i { width: 12.500px; height: 12.500px; border-radius: 50%; }
+.vd-orders b { margin-left: auto; font-weight: 600; }
+
+.vd-revenue { position: relative; height: 86px; margin-top: 12px; padding: 11px 16px; background: #fff; border: 1px solid var(--line); border-radius: 16px; }
+.vd-revenue h2 { display: flex; align-items: center; gap: 10px; color: #070a2e; font-size: 15px; font-weight: 800; }
+.vd-revenue h2 svg { width: 20px; height: 20px; }
+.vd-revenue small { margin-left: -5px; color: #55586f; font-size: 12.300px; font-weight: 500; }
+.vd-revenue-row { display: flex; align-items: center; gap: 15px; margin-top: 9px; }
+.vd-revenue-row strong { color: #070a2e; font-size: 22px; font-weight: 800; }
+.vd-growth { display: flex; align-items: center; gap: 4px; height: 21px; padding: 0 7px; background: #e0fae3; border-radius: 11px; color: var(--ok); font-size: 10.800px; font-weight: 700; }
+.vd-growth svg { width: 13px; height: 13px; }
+.vd-spark { position: absolute; right: 14px; bottom: 13px; width: 160px; height: 52px; }
+.vd-spark svg { display: block; width: 100%; height: 100%; }
+
+.tabbar-vendor { padding-top: 12px; }
+.tabbar-vendor .tab { height: 54px; }
+
+.phone[data-screen="vendor-home"] .statusbar { padding-top: 5px; }
+.app-head-vendor { height: 70.500px; }
+.app-head-vendor .head-btn svg { width: 25px; height: 25px; }
+.app-head-vendor .app-word { margin-left: 16px; font-size: 22.500px; letter-spacing: -0.500px; }
+.vd-banner h1 { margin-top: 7px; font-size: 20.600px; }
+.vd-banner h1 img { mix-blend-mode: normal; }
+.vd-sub { margin-top: 2px; font-size: 11.500px; }
+.vd-stat strong { line-height: 19px; }
+.vd-stat > span:last-child { font-size: 10.800px; line-height: 14px; }
+.vd-stat-orange strong { font-size: 15px; }
+.vd-card h2, .vd-revenue h2 { font-size: 14.300px; }
+.vd-card header button { font-size: 10.900px; }
+.vd-row { padding-right: 0; margin-right: -2px; }
+.vd-row-text strong { font-size: 13.200px; line-height: 17px; }
+.vd-row-text span { font-size: 10.300px; line-height: 15px; }
+.vd-row time { margin-right: 11px; font-size: 10.200px; }
+.vd-quote { font-size: 10.800px; }
+.vd-donut { width: 111px; height: 111px; margin-left: 16px; }
+.vd-orders ul { margin: 0 17px 0 33px; }
+.vd-orders li { font-size: 11.800px; }
+.vd-spark { right: 12px; }
+.tabbar-vendor { padding: 8px 0 0 5px; }
+.tabbar-vendor .tab { gap: 3px; height: 46px; font-size: 11.800px; }
+.tabbar-vendor .tab svg { width: 24px; height: 24px; }

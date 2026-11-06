@@ -5,13 +5,14 @@ import { sheet } from '../core/ui.js';
 import { currentUser, endSession, session } from '../services/auth.js';
 import { unreadCount } from '../services/notifications.js';
 
-export function appHeader() {
-  return html`<header class="app-head">
+export function appHeader({ extra = '' } = {}) {
+  return html`<header class="app-head ${extra && 'app-head-vendor'}">
     <button class="head-btn" data-menu aria-label="Open menu">${icon('menu')}</button>
     <span class="app-word">JobWork</span>
     <button class="head-btn head-bell" data-go="/notifications" aria-label="Notifications">
       ${icon('bell')}${unreadCount() > 0 && html`<i class="bell-dot"></i>`}
     </button>
+    ${extra}
   </header>`;
 }
 
@@ -23,7 +24,21 @@ const CUSTOMER_TABS = [
   { id: 'profile', label: 'Profile', path: '/profile', glyph: 'profile', solid: 'profileFill' },
 ];
 
+const VENDOR_TABS = [
+  { id: 'dashboard', label: 'Dashboard', path: '/v/home', glyph: 'home', solid: 'homeFill' },
+  { id: 'enquiries', label: 'Enquiries', path: '/v/enquiries', glyph: 'mail', solid: 'mail' },
+  { id: 'quotes', label: 'Quotes', path: '/v/quotes', glyph: 'fileText', solid: 'fileText' },
+  { id: 'orders', label: 'Orders', path: '/v/orders', glyph: 'box', solid: 'box' },
+  { id: 'profile', label: 'Profile', path: '/profile', glyph: 'profile', solid: 'profileFill' },
+];
+
 export function renderTabs(screen) {
+  if (screen.vendorTabs) {
+    return String(html`<nav class="tabbar tabbar-vendor" aria-label="Main">
+      ${VENDOR_TABS.map((tab) => html`<button class="tab ${screen.vendorTabs === tab.id ? 'on' : ''}" data-go="${tab.path}" ${screen.vendorTabs === tab.id ? 'aria-current="page"' : ''}>
+        ${icon(screen.vendorTabs === tab.id ? tab.solid : tab.glyph)}<span>${tab.label}</span></button>`)}
+    </nav>`);
+  }
   if (!screen.tabs) return '';
   const tabs = CUSTOMER_TABS.with(4, screen.lastTab ?? CUSTOMER_TABS[4]);
   return String(html`<nav class="tabbar" aria-label="Main">
@@ -48,6 +63,10 @@ export function requireMember(path) {
   });
 }
 
+const VENDOR_MENU = [
+  ['Dashboard', '/v/home'], ['Enquiries', '/v/enquiries'], ['Quotes', '/v/quotes'], ['Orders', '/v/orders'], ['Profile', '/profile'],
+];
+
 const CUSTOMER_MENU = [
   ['Home', '/home'], ['New Enquiry', '/enquiry/new'], ['My Enquiries', '/enquiries'], ['RFQ / Quotes', '/quotes'],
   ['Orders', '/orders'], ['Invoices', '/invoices'], ['Payments', '/payments'], ['Profile', '/profile'],
@@ -59,7 +78,7 @@ function openMenu() {
   node.className = 'drawer-backdrop';
   node.innerHTML = html`<aside class="drawer" aria-label="Menu">
     <div class="drawer-head"><strong>${user?.name ?? 'Guest'}</strong><span>${user?.email ?? 'Browsing as guest'}</span></div>
-    <nav>${CUSTOMER_MENU.map(([label, path]) => html`<button data-path="${path}">${label}</button>`)}</nav>
+    <nav>${(session()?.role === 'vendor' ? VENDOR_MENU : CUSTOMER_MENU).map(([label, path]) => html`<button data-path="${path}">${label}</button>`)}</nav>
     <button class="drawer-out" id="drawer-out">${icon('logout')}${user ? 'Log Out' : 'Login'}</button>
   </aside>`;
   const close = () => node.remove();

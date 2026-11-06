@@ -11,17 +11,17 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-06
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** T-14 Payments, branch `feature/payments`.
+- **Last feature merged:** T-15 Vendor Dashboard, branch `feature/vendor-dashboard`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start T-15 Vendor Dashboard on `feature/vendor-dashboard`. Analyse `Image /Modern JobWork Vendor Dashboard.png` first.
+- **Next action:** start T-16 Profile on `feature/profile`. Analyse `Image /JobWork Profile Settings Screen.png` first.
 
 ## Known issues
 
 | Issue | Effect | Resolved by |
 |---|---|---|
 | Unbuilt pages | Profile tab shows "That page does not exist". | T-16 |
-| Vendor area not built | Vendor login and registration land on a missing page. | T-15 |
+| Vendor pages not built | Dashboard links to vendor enquiries, quotes and orders lead to a missing page. | V-01 to V-04 |
 | Admin not built | Admin and staff login opens `admin.html`, which does not exist. | A-01 |
 | Vendor notification links | Links to `/v/...` lead to a missing page. | V-01 to V-06 |
 | Saved data can go stale | A browser that saved data before a seed change keeps the old copy, and can fail with "Unknown collection". Clearing site data fixes it. | F-01 |
@@ -52,13 +52,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | T-12 | Order Tracking | COMPLETED | High | `feature/order-tracking` | `d025398` | [#13](https://github.com/gugan-kirby/Prototype/pull/13) | Not tested. Differs 7.0% |
 | D-01 | Project documentation | COMPLETED | High | `docs/project-continuity` | Merged by PR #14 | [#14](https://github.com/gugan-kirby/Prototype/pull/14) | Checked against the repository and Git history |
 | T-13 | Invoices | COMPLETED | High | `feature/invoices` | `c8b650b` | [#15](https://github.com/gugan-kirby/Prototype/pull/15) | Not tested. Differs 6.3% |
-| T-14 | Payments | COMPLETED | High | `feature/payments` | Merged by this task's PR | See Git history | Not tested. Differs 7.8% |
+| T-14 | Payments | COMPLETED | High | `feature/payments` | `21f45df` | [#16](https://github.com/gugan-kirby/Prototype/pull/16) | Not tested. Differs 7.8% |
+| T-15 | Vendor Dashboard | COMPLETED | High | `feature/vendor-dashboard` | Merged by this task's PR | See Git history | Not tested. Differs 6.1% |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| T-15 | Vendor Dashboard | NOT STARTED | High |
 | T-16 | Profile | NOT STARTED | High |
 | V-01 | Vendor enquiries | NOT STARTED | High |
 | V-02 | Submit quote | NOT STARTED | High |
@@ -140,6 +140,10 @@ Six sample invoices with search and status tabs. Shows 4 cards as in the referen
 ### T-14 Payments
 
 Summary panel, status tabs and invoice cards with Pay Now. Total Paid counts the current month, which matches the reference exactly. Wallet Balance, Add Money and Recent Transactions come from the brief, so they sit below the reference height. Invoices can be paid from the wallet when the balance covers them. No refund records exist yet, so the Refunds tab is empty.
+
+### T-15 Vendor Dashboard
+
+Banner, four stat cards, enquiry requests, orders overview and revenue chart, with a vendor tab bar and menu. All figures are calculated from seed data, using a second sample customer. New vendors see an awaiting-verification notice. The reference's "Active Orders" is shown as "Orders Received", because 4 of the 12 are completed. Links to `/v/enquiries`, `/v/quotes` and `/v/orders` wait for V-01 to V-04.
 
 ## Change history
 

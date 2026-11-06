@@ -20,6 +20,7 @@ import invoices from './screens/invoices.js';
 import login from './screens/login.js';
 import register from './screens/register.js';
 import splash from './screens/splash.js';
+import vendorHome from './screens/vendor-home.js';
 import welcome from './screens/welcome.js';
 
 route('/', splash);
@@ -39,6 +40,7 @@ route('/orders/:id/details', orderDetails);
 route('/invoices', invoices);
 route('/invoices/:id', invoiceDetails);
 route('/payments', payments);
+route('/v/home', vendorHome);
 route('/enquiry/new', enquiryDetails);
 route('/enquiry/new/requirements', enquiryRequirements);
 route('/enquiry/new/review', enquiryReview);
