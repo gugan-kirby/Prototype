@@ -8,7 +8,8 @@
       "enquiry": 1012,
       "quote": 6,
       "order": 1008,
-      "invoice": 6
+      "invoice": 6,
+      "message": 1
     },
     "options": {
       "materials": [
@@ -92,7 +93,8 @@
       "rating": 4.8,
       "reviews": 128,
       "verified": true,
-      "tint": "green"
+      "tint": "green",
+      "phone": "9840012345"
     },
     {
       "id": "v-tamil",
@@ -104,7 +106,8 @@
       "rating": 4.6,
       "reviews": 96,
       "verified": true,
-      "tint": "violet"
+      "tint": "violet",
+      "phone": "9840012346"
     },
     {
       "id": "v-star",
@@ -116,7 +119,8 @@
       "rating": 4.5,
       "reviews": 64,
       "verified": true,
-      "tint": "orange"
+      "tint": "orange",
+      "phone": "9840012347"
     }
   ],
   "categories": [
@@ -508,6 +512,16 @@
   ],
   "orders": [],
   "invoices": [],
+  "messages": [
+    {
+      "id": "m-1",
+      "customerId": "u-gugan",
+      "vendorId": "v-precision",
+      "from": "vendor",
+      "text": "Thanks for the enquiry. We can start as soon as the order is confirmed.",
+      "date": "2025-03-13"
+    }
+  ],
   "notifications": [
     {
       "id": "n-1",

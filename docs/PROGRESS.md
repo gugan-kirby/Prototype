@@ -14,7 +14,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 07 | Review Enquiry | Done | Done | Done | 4.5% |
 | 08 | Enquiries | Done | Done | Done | 4.6% |
 | 09 | Quotes Received | Done | Done | Not run | 7.3% |
-| 10 | Quote Details | Pending | Pending | Pending | |
+| 10 | Quote Details | Done | Done | Not run | 7.2% |
 | 11 | My Orders | Pending | Pending | Pending | |
 | 12 | Order Tracking | Pending | Pending | Pending | |
 | 13 | Invoices | Pending | Pending | Pending | |
@@ -107,3 +107,13 @@ comes from blur around text in the references, which sharp text cannot reproduce
 - **Interactions:** quotes sorted cheapest first. Accepting creates the order and
   invoice, closes the enquiry, declines other quotes and notifies vendors.
 - **Tests:** not run. Automated testing stopped from this feature onwards, as requested.
+
+### 10 Quote Details
+
+- **Components:** vendor panel, summary panel, enquiry table, specifications,
+  attachment, Quote Terms section below the reference height, and message thread.
+- **Interactions:** call the vendor, chat with the vendor, download the quote as a PDF,
+  download the attachment, accept the quote.
+- **Tests:** not run, as requested.
+- **Changes from reference:** Unit Price, GST, Total, Payment Terms, Validity and Notes
+  come from the brief, so they sit below the reference height.

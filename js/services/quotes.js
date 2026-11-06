@@ -18,6 +18,16 @@ export const enquiryWithQuotes = (id) => request(() => {
   };
 });
 
+export const quoteDetails = (id) => request(() => {
+  const quote = store.find('quotes', id);
+  if (!quote) throw new ApiError('This quote could not be found.');
+  const enquiry = ownEnquiry(quote.enquiryId);
+  return {
+    quote: withVendor(quote),
+    enquiry: { ...enquiry, categoryName: store.find('categories', enquiry.category)?.name },
+  };
+});
+
 export const enquiriesWithQuotes = () => request(() => {
   const userId = session()?.userId;
   const quotes = store.all('quotes');
