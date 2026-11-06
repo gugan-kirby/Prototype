@@ -9,7 +9,8 @@
       "quote": 6,
       "order": 1008,
       "invoice": 6,
-      "message": 1
+      "message": 1,
+      "payment": 4
     },
     "options": {
       "materials": [
@@ -802,7 +803,104 @@
       ]
     }
   ],
-  "invoices": [],
+  "invoices": [
+    {
+      "id": "INV-2025-006",
+      "orderId": "ORD-1008",
+      "customerId": "u-gugan",
+      "amount": 12500,
+      "date": "2025-03-15",
+      "dueDate": "2025-03-18",
+      "status": "Unpaid"
+    },
+    {
+      "id": "INV-2025-005",
+      "orderId": "ORD-1007",
+      "customerId": "u-gugan",
+      "amount": 8400,
+      "date": "2025-03-12",
+      "dueDate": "2025-03-15",
+      "status": "Paid"
+    },
+    {
+      "id": "INV-2025-004",
+      "orderId": "ORD-1006",
+      "customerId": "u-gugan",
+      "amount": 14000,
+      "date": "2025-03-10",
+      "dueDate": "2025-03-20",
+      "status": "Unpaid"
+    },
+    {
+      "id": "INV-2025-003",
+      "orderId": "ORD-1005",
+      "customerId": "u-gugan",
+      "amount": 9200,
+      "date": "2025-03-06",
+      "dueDate": "2025-03-09",
+      "status": "Paid"
+    },
+    {
+      "id": "INV-2025-002",
+      "orderId": "ORD-1004",
+      "customerId": "u-gugan",
+      "amount": 6300,
+      "date": "2025-02-20",
+      "dueDate": "2025-02-23",
+      "status": "Paid"
+    },
+    {
+      "id": "INV-2025-001",
+      "orderId": "ORD-1002",
+      "customerId": "u-gugan",
+      "amount": 4100,
+      "date": "2025-02-12",
+      "dueDate": "2025-02-15",
+      "status": "Paid"
+    }
+  ],
+  "payments": [
+    {
+      "id": "P-1",
+      "invoiceId": "INV-2025-005",
+      "customerId": "u-gugan",
+      "amount": 8400,
+      "method": "UPI",
+      "type": "Payment",
+      "status": "Success",
+      "date": "2025-03-12"
+    },
+    {
+      "id": "P-2",
+      "invoiceId": "INV-2025-003",
+      "customerId": "u-gugan",
+      "amount": 9200,
+      "method": "UPI",
+      "type": "Payment",
+      "status": "Success",
+      "date": "2025-03-06"
+    },
+    {
+      "id": "P-3",
+      "invoiceId": "INV-2025-002",
+      "customerId": "u-gugan",
+      "amount": 6300,
+      "method": "UPI",
+      "type": "Payment",
+      "status": "Success",
+      "date": "2025-02-20"
+    },
+    {
+      "id": "P-4",
+      "invoiceId": "INV-2025-001",
+      "customerId": "u-gugan",
+      "amount": 4100,
+      "method": "UPI",
+      "type": "Payment",
+      "status": "Success",
+      "date": "2025-02-12"
+    }
+  ],
   "messages": [
     {
       "id": "m-1",

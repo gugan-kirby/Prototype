@@ -66,3 +66,34 @@
 .order-card .card-go { top: 44px; }
 .order-card:has(.progress-row) .card-go { top: 50px; }
 .order-card .progress-row { margin: 0 -14px 0 0; }
+
+.phone[data-screen="invoices"] .list-title { margin-top: 11.500px; font-size: 29.400px; }
+.phone[data-screen="invoices"] .list-sub { margin-top: 3px; font-size: 14.800px; }
+.phone[data-screen="invoices"] .list-tools { margin-top: 18px; }
+.phone[data-screen="invoices"] .tabs button:first-child { flex-basis: 90px; }
+.phone[data-screen="invoices"] .tabs { margin-top: 15.500px; height: 47px; }
+.phone[data-screen="invoices"] .cards { gap: 12.500px; margin-top: 17px; }
+
+.inv-card { position: relative; background: #fff; border: 1.500px solid var(--line-soft); border-radius: 18px; overflow: hidden; }
+.inv-main { position: relative; display: flex; align-items: flex-start; min-height: 77px; padding: 12px 44px 3px 15px; }
+.inv-main > .tile { width: 51px; height: 50px; }
+.inv-main .card-body { gap: 0; margin-left: 15px; }
+.inv-main .card-title { font-size: 15.300px; line-height: 21px; }
+.inv-main .card-meta { line-height: 19px; }
+.inv-main .date-line { line-height: 19px; }
+.inv-main .card-go { top: 42px; right: 9px; }
+.inv-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+.inv-right .badge { position: static; height: 25px; font-size: 12.200px; }
+.inv-right > strong { color: var(--blue-bright); font-size: 18.500px; font-weight: 800; line-height: 24px; white-space: nowrap; }
+.inv-due { display: flex; align-items: center; gap: 8px; height: 36.500px; margin: 6px 9px 9.500px 10px; padding: 0 4px 0 11px; background: #fdf4f4; border-radius: 9px; color: #9f1d2c; font-size: 12px; font-weight: 600; }
+.inv-due svg { flex: none; width: 17px; height: 17px; }
+.inv-due span { flex: 1; min-width: 0; white-space: nowrap; }
+.inv-due button { flex: none; width: 118px; height: 29px; background: var(--blue-pure); border-radius: 8px; color: #fff; font-size: 14.500px; font-weight: 700; }
+.tile-green svg circle { stroke: none; }
+
+.pay-methods { display: flex; flex-direction: column; gap: 8px; }
+.pay-method { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1.500px solid var(--line); border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; }
+.pay-method:has(input:checked) { border-color: var(--blue); background: var(--panel); }
+.invoice-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 3px 0 5px; }
+.invoice-actions .btn { height: 48px; font-size: 16px; }
+.invoice-actions .btn svg { width: 20px; height: 20px; }

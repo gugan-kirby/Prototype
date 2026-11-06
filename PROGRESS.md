@@ -11,22 +11,22 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-06
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** T-12 Order Tracking, commit `d025398`, PR #13.
+- **Last feature merged:** T-13 Invoices, branch `feature/invoices`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start T-13 Invoices on `feature/invoices`. Analyse `Image /JobWork Invoice Management Dashboard.png` first.
+- **Next action:** start T-14 Payments on `feature/payments`. Analyse `Image /JobWork Payments Dashboard.png` first.
 
 ## Known issues
 
 | Issue | Effect | Resolved by |
 |---|---|---|
-| Unbuilt pages | Profile tab, Invoices and Payments show "That page does not exist". | T-13, T-14, T-16 |
+| Unbuilt pages | Profile tab and Payments show "That page does not exist". | T-14, T-16 |
 | Vendor area not built | Vendor login and registration land on a missing page. | T-15 |
 | Admin not built | Admin and staff login opens `admin.html`, which does not exist. | A-01 |
 | Vendor notification links | Links to `/v/...` lead to a missing page. | V-01 to V-06 |
 | Saved data can go stale | A browser that saved data before a seed change keeps the old copy, and can fail with "Unknown collection". Clearing site data fixes it. | F-01 |
 | Automated tests out of date | Last full run was 75 passed, at T-08. They were not run for T-09 onwards, and may no longer pass. | Decision 1 in `PROJECT_PLAN.md` |
-| Later behaviour unconfirmed | Interactions added in T-10 to T-12 have not been exercised, including chat, PDF download and vendor filter. Only their reference views were rendered. | F-02 |
+| Later behaviour unconfirmed | Interactions added from T-10 onwards have not been exercised, including chat, PDF download, Pay Now and vendor filter. Only their reference views were rendered. | F-02 |
 | T-09 fix not rechecked | The final test run for T-09 found the Enquiry Details tab did not hide the quotes list. It was fixed in CSS, but the fix was not rerun. | F-02 |
 
 ## Tasks
@@ -51,12 +51,12 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | T-11 | My Orders | COMPLETED | High | `feature/my-orders` | `07d3344` | [#12](https://github.com/gugan-kirby/Prototype/pull/12) | Not tested. Differs 6.2% |
 | T-12 | Order Tracking | COMPLETED | High | `feature/order-tracking` | `d025398` | [#13](https://github.com/gugan-kirby/Prototype/pull/13) | Not tested. Differs 7.0% |
 | D-01 | Project documentation | COMPLETED | High | `docs/project-continuity` | Merged by PR #14 | [#14](https://github.com/gugan-kirby/Prototype/pull/14) | Checked against the repository and Git history |
+| T-13 | Invoices | COMPLETED | High | `feature/invoices` | Merged by this task's PR | See Git history | Not tested. Differs 6.3% |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| T-13 | Invoices | NOT STARTED | High |
 | T-14 | Payments | NOT STARTED | High |
 | T-15 | Vendor Dashboard | NOT STARTED | High |
 | T-16 | Profile | NOT STARTED | High |
@@ -132,6 +132,10 @@ The tracker keeps the reference's four steps. The brief's six stages are stored 
 ### D-01 Project documentation
 
 Adds `PROJECT_PLAN.md`, moves progress tracking to `PROGRESS.md`, and expands `CLAUDE.md`. Brings in the workflow rules from the unmerged `docs/git-workflow-rules` branch.
+
+### T-13 Invoices
+
+Six sample invoices with search and status tabs. Shows 4 cards as in the reference. Pay Now opens a simulated payment sheet that marks the invoice paid and records the payment. Overdue is worked out from the due date. Invoice Details has a PDF download.
 
 ## Change history
 
