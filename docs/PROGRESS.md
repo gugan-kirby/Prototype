@@ -6,7 +6,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | Screen | Name | UI | Functionality | Testing | Differs |
 |---|---|---|---|---|---|
 | 01 | Splash | Done | Done | Done | 4.9% |
-| 02 | Welcome / Login | Pending | Pending | Pending | |
+| 02 | Welcome / Login | Done | Done | Done | 2.7% |
 | 03 | Registration | Pending | Pending | Pending | |
 | 04 | Customer Home | Pending | Pending | Pending | |
 | 05 | New Enquiry – Details | Pending | Pending | Pending | |
@@ -31,3 +31,13 @@ comes from blur around text in the references, which sharp text cannot reproduce
 - **Interactions:** Get Started opens Welcome. Login / Register opens Login.
 - **Tests:** content, both links, and layout from 320 to 430 px wide.
 - **Remaining:** none.
+
+### 02 Welcome / Login
+
+- **Components:** heading, wordmark, illustration, Login and Register buttons, guest
+  link, three trust badges. Login form with password toggle and reset sheet.
+- **Interactions:** login by email or mobile, role-based redirect, guest session,
+  validation, failed-request handling, demo account shortcuts.
+- **Tests:** content, links, guest, validation, wrong password, retry after failure,
+  password reset, and escaping of input.
+- **Remaining:** Login has no reference image, so it follows the Register design.
