@@ -46,3 +46,67 @@
 .detail-rows > div:last-child { border: 0; }
 .detail-rows dt { flex: none; color: #55586f; font-size: 15px; font-weight: 500; }
 .detail-rows dd { margin: 0; color: #15173a; font-size: 15px; font-weight: 500; text-align: right; overflow-wrap: anywhere; }
+
+.qd { padding: 0 7px 26px 10px; }
+.qd-vendor { display: flex; align-items: center; gap: 16.500px; height: 115px; margin-top: 8px; padding: 0 14px 0 17px; background: var(--panel); border-radius: 18px; }
+.qd-tile { flex: none; margin-top: -6px; display: flex; align-items: center; justify-content: center; width: 65.500px; height: 65px; background: #dbe6fc; border-radius: 14px; color: #1167f2; }
+.qd-tile svg { width: 40px; height: 40px; stroke-width: 1.900; }
+.qd-who { flex: 1; min-width: 0; }
+.qd-who h2 { color: #070a2e; font-size: 17.500px; font-weight: 800; line-height: 24px; }
+.qd-who p { display: flex; align-items: center; gap: 8px; color: #55586f; font-size: 13.200px; font-weight: 500; line-height: 22.500px; }
+.qd-who svg { flex: none; width: 17px; height: 17px; }
+.qd-who .qd-verified { color: #1167f2; font-weight: 600; }
+.qd-rate svg { color: #f5a623; }
+.qd-contact { display: flex; gap: 9px; margin-bottom: 18px; }
+.qd-contact a { display: flex; align-items: center; justify-content: center; width: 35.500px; height: 35px; background: #fff; border: 1.500px solid var(--line); border-radius: 11px; color: #1b1d3a; }
+.qd-contact svg { width: 21px; height: 21px; stroke-width: 1.800; }
+
+.qd-title { margin: 16px 0 6.500px 6px; color: #070a2e; font-size: 16.500px; font-weight: 800; line-height: 22px; }
+.qd-summary { margin: 0 0 0 3px; padding: 16px 12px 15px; background: var(--panel); border-radius: 18px; }
+.qd-figures { display: grid; grid-template-columns: 188px 1fr; }
+.qd-amount { padding-left: 10px; border-right: 1px solid #dfe3f0; }
+.qd-amount span { display: block; color: #55586f; font-size: 13.500px; font-weight: 500; line-height: 18px; }
+.qd-amount strong { display: block; margin-top: 4px; color: var(--blue-bright); font-size: 26px; font-weight: 800; line-height: 32px; }
+.qd-facts { display: flex; flex-direction: column; gap: 7px; padding-left: 24px; }
+.qd-facts p { display: flex; align-items: center; gap: 8px; color: #55586f; font-size: 13px; font-weight: 500; line-height: 20px; white-space: nowrap; }
+.qd-facts b { color: #15173a; font-weight: 600; }
+.qd-facts svg { width: 17px; height: 17px; }
+.qd-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 10.500px; }
+.qd-actions .btn { height: 38px; border-radius: 10px; font-size: 13.600px; gap: 8px; }
+.qd-actions .btn-outline { border-width: 1.500px; }
+.qd-actions .btn svg { width: 20px; height: 20px; }
+.qd-actions .quote-result { height: 38px; }
+
+.qd-table { margin: 0 3px 0 5px; padding: 5px 13px 5px 16px; background: #fff; border: 1.500px solid var(--line-soft); border-radius: 16px; }
+.qd-table > div { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 36px; border-bottom: 1px solid var(--line-soft); }
+.qd-table > div:last-child { border: 0; }
+.qd-table dt { flex: none; color: #55586f; font-size: 14px; font-weight: 500; }
+.qd-table dd { margin: 0; color: #15173a; font-size: 14.600px; font-weight: 500; text-align: right; }
+
+.qd-spec { display: flex; align-items: center; gap: 14px; min-height: 53px; margin: 0 3px 0 5px; padding: 8px 16px; background: #fff; border: 1.500px solid var(--line-soft); border-radius: 16px; }
+.qd-spec svg { flex: none; width: 28px; height: 28px; color: var(--blue-bright); }
+.qd-spec p { color: #15173a; font-size: 13.700px; font-weight: 500; line-height: 19px; }
+
+.qd-file { display: flex; align-items: center; gap: 16px; height: 69px; margin: 0 3px 0 5px; padding: 0 16px; background: #fff; border: 1.500px solid var(--line-soft); border-radius: 16px; }
+.qd-file img { flex: none; width: 33px; height: 38px; }
+.qd-file div { flex: 1; min-width: 0; }
+.qd-file strong { display: block; overflow: hidden; color: #15173a; font-size: 15.400px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.qd-file span { color: #6f7289; font-size: 12.500px; font-weight: 500; }
+.qd-file button { flex: none; display: flex; align-items: center; justify-content: center; width: 40px; height: 37px; background: var(--tile-blue); border-radius: 10px; color: var(--blue); }
+.qd-file button svg { width: 22px; height: 22px; }
+
+.qd-terms-title { margin-top: 74px; }
+
+.phone[data-screen="chat"] .screen { display: flex; flex-direction: column; overflow: hidden; }
+.chat { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.chat-log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 12px 16px; }
+.bubble { align-self: flex-start; max-width: 78%; padding: 10px 13px; background: var(--panel); border-radius: 14px 14px 14px 4px; }
+.bubble.mine { align-self: flex-end; background: var(--blue); border-radius: 14px 14px 4px 14px; color: #fff; }
+.bubble p { font-size: 15px; font-weight: 500; line-height: 20px; overflow-wrap: anywhere; }
+.bubble small { display: block; margin-top: 3px; color: var(--hint); font-size: 11.500px; }
+.bubble.mine small { color: #cdd5ff; }
+.chat-bar { display: flex; gap: 10px; padding: 10px 14px 18px; border-top: 1px solid var(--line-soft); }
+.chat-bar input { flex: 1; min-width: 0; height: 46px; padding: 0 14px; border: 1.500px solid var(--line); border-radius: 12px; outline: 0; font-size: 16px; }
+.chat-bar input:focus { border-color: var(--blue); }
+.chat-send { flex: none; display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; background: var(--blue); border-radius: 12px; color: #fff; }
+.chat-send svg { width: 22px; height: 22px; }

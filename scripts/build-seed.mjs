@@ -11,9 +11,9 @@ const users = [
 ];
 
 const vendors = [
-  { id: 'v-precision', userId: 'u-precision', name: 'Precision Metals', city: 'Chennai', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.8, reviews: 128, verified: true, tint: 'green' },
-  { id: 'v-tamil', userId: null, name: 'Tamil CNC Works', city: 'Coimbatore', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.6, reviews: 96, verified: true, tint: 'violet' },
-  { id: 'v-star', userId: null, name: 'Star Fabrication', city: 'Hosur', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.5, reviews: 64, verified: true, tint: 'orange' },
+  { id: 'v-precision', userId: 'u-precision', name: 'Precision Metals', city: 'Chennai', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.8, reviews: 128, verified: true, tint: 'green', phone: '9840012345' },
+  { id: 'v-tamil', userId: null, name: 'Tamil CNC Works', city: 'Coimbatore', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.6, reviews: 96, verified: true, tint: 'violet', phone: '9840012346' },
+  { id: 'v-star', userId: null, name: 'Star Fabrication', city: 'Hosur', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.5, reviews: 64, verified: true, tint: 'orange', phone: '9840012347' },
 ];
 
 const categories = [
@@ -75,13 +75,17 @@ const quotes = [
   quote('Q-6', 'ENQ-1005', 'v-tamil', 22500, 9, { date: '2025-03-01', minQty: 100 }),
 ];
 
+const messages = [
+  { id: 'm-1', customerId: 'u-gugan', vendorId: 'v-precision', from: 'vendor', text: 'Thanks for the enquiry. We can start as soon as the order is confirmed.', date: '2025-03-13' },
+];
+
 const notifications = [
   { id: 'n-1', userId: 'u-gugan', title: 'New quote received', body: 'Precision Metals quoted for Bracket Support.', date: '2025-03-14', read: true, link: '/enquiries/ENQ-1012' },
   { id: 'n-2', userId: 'u-gugan', title: 'Order in production', body: 'ORD-1008 Bracket Support is now in production.', date: '2025-03-13', read: true, link: '/orders/ORD-1008' },
 ];
 
 const db = {
-  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, enquiry: 1012, quote: 6, order: 1008, invoice: 6 }, options },
+  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, enquiry: 1012, quote: 6, order: 1008, invoice: 6, message: 1 }, options },
   users,
   vendors,
   categories,
@@ -90,6 +94,7 @@ const db = {
   quotes,
   orders: [],
   invoices: [],
+  messages,
   notifications,
 };
 
