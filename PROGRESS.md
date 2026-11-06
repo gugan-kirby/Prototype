@@ -11,10 +11,10 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** A-01 Admin shell and login, branch `feature/admin-shell`.
+- **Last feature merged:** A-02 Vendor verification, branch `feature/vendor-verification`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start A-02 Vendor verification on `feature/vendor-verification`.
+- **Next action:** start A-03 User management on `feature/user-management`.
 
 ## Known issues
 
@@ -57,13 +57,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | V-04 | Vendor orders | COMPLETED | High | `feature/vendor-orders` | `3a0741d` | [#22](https://github.com/gugan-kirby/Prototype/pull/22) | Not tested. Render reviewed by eye |
 | V-05 | Update production status | COMPLETED | High | `feature/production-status` | `2d4eaae` | [#23](https://github.com/gugan-kirby/Prototype/pull/23) | Not tested. Render reviewed by eye |
 | V-06 | Vendor messages | COMPLETED | Medium | `feature/vendor-messages` | `c76621d` | [#24](https://github.com/gugan-kirby/Prototype/pull/24) | Not tested. Render reviewed by eye |
-| A-01 | Admin shell and login | COMPLETED | Medium | `feature/admin-shell` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| A-01 | Admin shell and login | COMPLETED | Medium | `feature/admin-shell` | `4feb74f` | [#25](https://github.com/gugan-kirby/Prototype/pull/25) | Not tested. Render reviewed by eye |
+| A-02 | Vendor verification | COMPLETED | Medium | `feature/vendor-verification` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| A-02 | Vendor verification | NOT STARTED | Medium |
 | A-03 | User management | NOT STARTED | Medium |
 | A-04 | Record views | NOT STARTED | Medium |
 | F-01 | Refresh saved data when the seed changes | NOT STARTED | High |
@@ -174,6 +174,10 @@ Vendors see their customer threads under Messages in the side menu, and can repl
 ### A-01 Admin shell and login
 
 Desktop console in `admin.html` with a sidebar, role check and overview figures. Admin and staff log in from the normal login page. It reuses the router, store and tokens.
+
+### A-02 Vendor verification
+
+Lists vendors with their verification status. Admins can verify a vendor or remove verification, and the vendor is notified. Staff see the list without actions.
 
 ## Change history
 
