@@ -26,6 +26,7 @@ import vendorEnquiries from './screens/vendor-enquiries.js';
 import vendorEnquiry from './screens/vendor-enquiry.js';
 import vendorHome from './screens/vendor-home.js';
 import vendorQuoteForm from './screens/vendor-quote-form.js';
+import vendorQuotes from './screens/vendor-quotes.js';
 import welcome from './screens/welcome.js';
 
 route('/', splash);
@@ -49,6 +50,7 @@ route('/v/home', vendorHome);
 route('/v/enquiries', vendorEnquiries);
 route('/v/enquiries/:id', vendorEnquiry);
 route('/v/enquiries/:id/quote', vendorQuoteForm);
+route('/v/quotes', vendorQuotes);
 route('/profile', profile);
 route('/profile/:section', profileSection);
 route('/enquiry/new', enquiryDetails);
