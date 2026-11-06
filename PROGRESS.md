@@ -10,8 +10,8 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 
 **Updated:** 2026-11-07
 
-- **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** F-01 Refresh saved data when the seed changes, branch `fix/stale-saved-data`.
+- **Branch:** `main`, with a clean working tree. Merged branches are kept.
+- **Last feature merged:** F-01 Refresh saved data when the seed changes, commit `f3ecc5d`, PR #29.
 - **Built:** all 16 reference images, the vendor portal and the admin and staff console.
 - **In progress:** nothing.
 - **Blocked:** F-02, because a walkthrough counts as testing, which the user stopped.
@@ -46,7 +46,7 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | T-10 | Quote Details | COMPLETED | High | `feature/quote-details` | `20e5e0f` | [#11](https://github.com/gugan-kirby/Prototype/pull/11) | Not tested. Differs 7.2% |
 | T-11 | My Orders | COMPLETED | High | `feature/my-orders` | `07d3344` | [#12](https://github.com/gugan-kirby/Prototype/pull/12) | Not tested. Differs 6.2% |
 | T-12 | Order Tracking | COMPLETED | High | `feature/order-tracking` | `d025398` | [#13](https://github.com/gugan-kirby/Prototype/pull/13) | Not tested. Differs 7.0% |
-| D-01 | Project documentation | COMPLETED | High | `docs/project-continuity` | Merged by PR #14 | [#14](https://github.com/gugan-kirby/Prototype/pull/14) | Checked against the repository and Git history |
+| D-01 | Project documentation | COMPLETED | High | `docs/project-continuity` | `392f051` | [#14](https://github.com/gugan-kirby/Prototype/pull/14) | Checked against the repository and Git history |
 | T-13 | Invoices | COMPLETED | High | `feature/invoices` | `c8b650b` | [#15](https://github.com/gugan-kirby/Prototype/pull/15) | Not tested. Differs 6.3% |
 | T-14 | Payments | COMPLETED | High | `feature/payments` | `21f45df` | [#16](https://github.com/gugan-kirby/Prototype/pull/16) | Not tested. Differs 7.8% |
 | T-15 | Vendor Dashboard | COMPLETED | High | `feature/vendor-dashboard` | `58ab4cc` | [#17](https://github.com/gugan-kirby/Prototype/pull/17) | Not tested. Differs 6.1% |
@@ -61,7 +61,7 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | A-02 | Vendor verification | COMPLETED | Medium | `feature/vendor-verification` | `d44a51f` | [#26](https://github.com/gugan-kirby/Prototype/pull/26) | Not tested. Render reviewed by eye |
 | A-03 | User management | COMPLETED | Medium | `feature/user-management` | `2c6a16e` | [#27](https://github.com/gugan-kirby/Prototype/pull/27) | Not tested. Render reviewed by eye |
 | A-04 | Record views | COMPLETED | Medium | `feature/record-views` | `f405aaa` | [#28](https://github.com/gugan-kirby/Prototype/pull/28) | Not tested. Render reviewed by eye |
-| F-01 | Refresh saved data when the seed changes | COMPLETED | High | `fix/stale-saved-data` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| F-01 | Refresh saved data when the seed changes | COMPLETED | High | `fix/stale-saved-data` | `f3ecc5d` | [#29](https://github.com/gugan-kirby/Prototype/pull/29) | Not tested. Render reviewed by eye |
 
 ### Not finished
 
@@ -202,4 +202,5 @@ The seed now carries a version worked out from its content. When it changes, a b
 | 2026-11-06 | Word "screen" removed from unpushed commits and branches | User decision |
 | 2026-11-06 | Rebase merges used instead of squash | Squash changes the author name, from PR #2 onwards |
 | 2026-11-06 | Total Paid scoped to the current month | Matches the reference's figure and count, which replaced a pending decision |
+| 2026-11-07 | Branches are kept after merging, and deleted branches were restored at their merged commits | User decision, replacing the earlier cleanup step |
 | 2026-11-06 | Automated test writing and running stopped, from T-09 onwards | User decision |
