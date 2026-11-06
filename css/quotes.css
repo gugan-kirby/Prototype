@@ -1,0 +1,48 @@
+.quotes-page { padding: 0 7px 24px 10.500px; }
+
+.quote-summary { position: relative; display: flex; align-items: center; gap: 15px; height: 91px; margin-top: 9px; padding: 0 15px; background: var(--panel); border-radius: 18px; }
+.quote-summary .tile { width: 56px; height: 57px; }
+.quote-summary .tile svg { width: 34px; height: 34px; }
+.quote-summary h2 { color: #070a2e; font-size: 18.500px; font-weight: 800; line-height: 22px; }
+.quote-summary p { margin: 2px 0 4px; color: #55586f; font-size: 13.500px; font-weight: 500; line-height: 19px; }
+.quote-count { position: absolute; top: 25px; right: 16px; padding: 4px 12px; background: #d9e8fd; border-radius: 13px; color: var(--info); font-size: 13.500px; font-weight: 700; }
+
+.underline-tabs { display: grid; grid-template-columns: 1fr 1fr; margin: 15px 2px 0 3px; border-bottom: 1.500px solid var(--line); }
+.underline-tabs button { height: 41.500px; margin-bottom: -1.500px; padding-bottom: 5px; border-bottom: 3px solid transparent; color: #6f7289; font-size: 16.500px; font-weight: 600; }
+.underline-tabs button.on { border-bottom-color: var(--blue-bright); color: var(--blue-bright); font-weight: 700; }
+
+.quote-list { display: flex; flex-direction: column; gap: 15.500px; margin-top: 22px; }
+.quote-card { padding: 13px 16px 15px; background: #fff; border: 1.500px solid var(--line-soft); border-radius: 18px; }
+.quote-top { position: relative; display: flex; align-items: flex-start; gap: 16px; }
+.quote-top .tile { width: 53px; height: 50px; color: #0f1240; }
+.quote-who { min-width: 0; margin-top: -1px; }
+.quote-who h3 { color: #070a2e; font-size: 16.600px; font-weight: 800; line-height: 24px; }
+.quote-who p { display: flex; align-items: center; gap: 10px; color: #55586f; font-size: 12.100px; font-weight: 500; line-height: 22px; }
+.quote-who p span { display: flex; align-items: center; gap: 5px; }
+.quote-who p i { width: 1px; height: 13px; background: var(--line); }
+.quote-who svg { width: 16px; height: 16px; }
+.quote-rate svg { color: #f5a623; }
+.verified { position: absolute; top: 3px; right: 0; display: flex; align-items: center; gap: 5px; height: 28px; padding: 0 8px; background: var(--ok-bg); border-radius: 14px; color: var(--ok); font-size: 12px; font-weight: 600; }
+.verified svg { width: 18px; height: 18px; }
+
+.quote-figures { display: grid; grid-template-columns: 130px 130px 1fr; margin: 12px 0 0; }
+.quote-figures > div { padding-left: 11px; border-left: 1px solid var(--line); }
+.quote-figures > div:first-child { padding-left: 9px; border: 0; }
+.quote-figures > div + div { padding-left: 31px; }
+.quote-figures dt { color: #55586f; font-size: 12.600px; white-space: nowrap; font-weight: 500; line-height: 18px; }
+.quote-figures dd { display: flex; align-items: center; gap: 6px; margin: 2px 0 0; color: #15173a; font-size: 13.300px; font-weight: 600; line-height: 26px; white-space: nowrap; }
+.quote-figures dd svg { width: 18px; height: 18px; }
+.quote-figures dd.quote-amount { color: var(--blue-bright); font-size: 18.500px; font-weight: 800; }
+
+.quote-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 13px; }
+.quote-actions .btn { height: 34px; border-radius: 9px; font-size: 14px; }
+.quote-actions .btn-outline { border-width: 1.500px; }
+.quote-result { display: flex; align-items: center; justify-content: center; height: 34px; border-radius: 9px; font-size: 14.500px; font-weight: 700; }
+.quote-accepted { background: var(--ok-bg); color: var(--ok); }
+.quote-declined { background: var(--idle-bg); color: var(--idle); }
+
+.detail-rows { margin: 16px 4px 0; padding: 4px 16px; background: #fff; border: 1.500px solid var(--line-soft); border-radius: 16px; }
+.detail-rows > div { display: flex; justify-content: space-between; gap: 18px; padding: 11px 0; border-bottom: 1px solid var(--line-soft); }
+.detail-rows > div:last-child { border: 0; }
+.detail-rows dt { flex: none; color: #55586f; font-size: 15px; font-weight: 500; }
+.detail-rows dd { margin: 0; color: #15173a; font-size: 15px; font-weight: 500; text-align: right; overflow-wrap: anywhere; }

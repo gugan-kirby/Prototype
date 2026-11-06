@@ -61,18 +61,35 @@ const enquiries = [
   enquiry('ENQ-1001', 'Drive Coupling', 'turning', 'Lathe Turning', 'SS304', '2025-02-10', 'Closed', { quantity: 30 }),
 ];
 
+const quote = (id, enquiryId, vendorId, amount, leadDays, extra = {}) => ({
+  id, enquiryId, vendorId, amount, leadDays, minQty: 50, gstPercent: 18, paymentTerms: '50% advance, 50% on delivery',
+  validUntil: '2025-03-29', notes: 'Price includes material and finishing.', date: '2025-03-13', status: 'Submitted', ...extra,
+});
+
+const quotes = [
+  quote('Q-1', 'ENQ-1012', 'v-precision', 12500, 5),
+  quote('Q-2', 'ENQ-1012', 'v-tamil', 13200, 6),
+  quote('Q-3', 'ENQ-1012', 'v-star', 14000, 7),
+  quote('Q-4', 'ENQ-1009', 'v-precision', 9800, 6, { date: '2025-03-08' }),
+  quote('Q-5', 'ENQ-1009', 'v-star', 10400, 8, { date: '2025-03-09' }),
+  quote('Q-6', 'ENQ-1005', 'v-tamil', 22500, 9, { date: '2025-03-01', minQty: 100 }),
+];
+
 const notifications = [
   { id: 'n-1', userId: 'u-gugan', title: 'New quote received', body: 'Precision Metals quoted for Bracket Support.', date: '2025-03-14', read: true, link: '/enquiries/ENQ-1012' },
   { id: 'n-2', userId: 'u-gugan', title: 'Order in production', body: 'ORD-1008 Bracket Support is now in production.', date: '2025-03-13', read: true, link: '/orders/ORD-1008' },
 ];
 
 const db = {
-  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, enquiry: 1012 }, options },
+  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, enquiry: 1012, quote: 6, order: 1008, invoice: 6 }, options },
   users,
   vendors,
   categories,
   addresses,
   enquiries,
+  quotes,
+  orders: [],
+  invoices: [],
   notifications,
 };
 

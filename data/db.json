@@ -5,7 +5,10 @@
       "user": 100,
       "notification": 100,
       "address": 10,
-      "enquiry": 1012
+      "enquiry": 1012,
+      "quote": 6,
+      "order": 1008,
+      "invoice": 6
     },
     "options": {
       "materials": [
@@ -417,6 +420,94 @@
       "status": "Closed"
     }
   ],
+  "quotes": [
+    {
+      "id": "Q-1",
+      "enquiryId": "ENQ-1012",
+      "vendorId": "v-precision",
+      "amount": 12500,
+      "leadDays": 5,
+      "minQty": 50,
+      "gstPercent": 18,
+      "paymentTerms": "50% advance, 50% on delivery",
+      "validUntil": "2025-03-29",
+      "notes": "Price includes material and finishing.",
+      "date": "2025-03-13",
+      "status": "Submitted"
+    },
+    {
+      "id": "Q-2",
+      "enquiryId": "ENQ-1012",
+      "vendorId": "v-tamil",
+      "amount": 13200,
+      "leadDays": 6,
+      "minQty": 50,
+      "gstPercent": 18,
+      "paymentTerms": "50% advance, 50% on delivery",
+      "validUntil": "2025-03-29",
+      "notes": "Price includes material and finishing.",
+      "date": "2025-03-13",
+      "status": "Submitted"
+    },
+    {
+      "id": "Q-3",
+      "enquiryId": "ENQ-1012",
+      "vendorId": "v-star",
+      "amount": 14000,
+      "leadDays": 7,
+      "minQty": 50,
+      "gstPercent": 18,
+      "paymentTerms": "50% advance, 50% on delivery",
+      "validUntil": "2025-03-29",
+      "notes": "Price includes material and finishing.",
+      "date": "2025-03-13",
+      "status": "Submitted"
+    },
+    {
+      "id": "Q-4",
+      "enquiryId": "ENQ-1009",
+      "vendorId": "v-precision",
+      "amount": 9800,
+      "leadDays": 6,
+      "minQty": 50,
+      "gstPercent": 18,
+      "paymentTerms": "50% advance, 50% on delivery",
+      "validUntil": "2025-03-29",
+      "notes": "Price includes material and finishing.",
+      "date": "2025-03-08",
+      "status": "Submitted"
+    },
+    {
+      "id": "Q-5",
+      "enquiryId": "ENQ-1009",
+      "vendorId": "v-star",
+      "amount": 10400,
+      "leadDays": 8,
+      "minQty": 50,
+      "gstPercent": 18,
+      "paymentTerms": "50% advance, 50% on delivery",
+      "validUntil": "2025-03-29",
+      "notes": "Price includes material and finishing.",
+      "date": "2025-03-09",
+      "status": "Submitted"
+    },
+    {
+      "id": "Q-6",
+      "enquiryId": "ENQ-1005",
+      "vendorId": "v-tamil",
+      "amount": 22500,
+      "leadDays": 9,
+      "minQty": 100,
+      "gstPercent": 18,
+      "paymentTerms": "50% advance, 50% on delivery",
+      "validUntil": "2025-03-29",
+      "notes": "Price includes material and finishing.",
+      "date": "2025-03-01",
+      "status": "Submitted"
+    }
+  ],
+  "orders": [],
+  "invoices": [],
   "notifications": [
     {
       "id": "n-1",
