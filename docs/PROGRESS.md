@@ -11,7 +11,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 04 | Customer Home | Done | Done | Done | 5.4% |
 | 05 | New Enquiry – Details | Done | Done | Done | 3.4% |
 | 06 | New Enquiry – Requirements | Done | Done | Done | 4.0% |
-| 07 | Review Enquiry | Pending | Pending | Pending | |
+| 07 | Review Enquiry | Done | Done | Done | 4.5% |
 | 08 | Enquiries | Pending | Pending | Pending | |
 | 09 | Quotes Received | Pending | Pending | Pending | |
 | 10 | Quote Details | Pending | Pending | Pending | |
@@ -78,3 +78,14 @@ comes from blur around text in the references, which sharp text cannot reproduce
 - **Tests:** all file types, rejected files, a 10MB file read back from storage,
   replace, remove, validation and draft handling.
 - **Remaining:** none.
+
+### 07 Review Enquiry
+
+- **Components:** progress bar on step 3, details summary, file row, specifications,
+  Back and Submit Enquiry buttons, confirmation sheet.
+- **Interactions:** submit creates the enquiry and notifies verified vendors. The
+  drawing can be downloaded. A failed submit keeps the draft for retry.
+- **Tests:** summary, draft guard, submit, vendor notification, double tap, retry,
+  download, escaping.
+- **Changes from reference:** tolerance is added to the specifications line so it can
+  be checked before submitting. The comparison leaves it out to match the image.

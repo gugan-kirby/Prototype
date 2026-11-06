@@ -43,11 +43,12 @@ const notifications = [
 ];
 
 const db = {
-  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10 }, options },
+  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, enquiry: 1012 }, options },
   users,
   vendors,
   categories,
   addresses,
+  enquiries: [],
   notifications,
 };
 

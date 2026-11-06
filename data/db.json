@@ -4,7 +4,8 @@
     "counters": {
       "user": 100,
       "notification": 100,
-      "address": 10
+      "address": 10,
+      "enquiry": 1012
     },
     "options": {
       "materials": [
@@ -203,6 +204,7 @@
       "isDefault": false
     }
   ],
+  "enquiries": [],
   "notifications": [
     {
       "id": "n-1",
