@@ -1,6 +1,7 @@
 import { ApiError, request, store } from '../core/api.js';
 import { session } from './auth.js';
 import { notify } from './notifications.js';
+import { STAGES } from './orders.js';
 
 export function currentVendor() {
   const userId = session()?.userId;
@@ -92,4 +93,18 @@ export const vendorOrder = (id) => request(() => {
   const order = store.find('orders', id);
   if (!order || order.vendorId !== currentVendor().id) throw new ApiError('This order could not be found.');
   return orderView(order);
+});
+
+export const advanceOrder = (id) => request(() => {
+  const order = store.find('orders', id);
+  if (!order || order.vendorId !== currentVendor().id) throw new ApiError('This order could not be found.');
+  if (order.status !== 'In Progress') throw new ApiError('This order can no longer be updated.');
+  const stage = order.stage + 1;
+  const updated = store.update('orders', id, {
+    stage,
+    status: stage === STAGES.length - 1 ? 'Completed' : 'In Progress',
+    history: [...order.history, { stage, date: store.meta().today }],
+  });
+  notify(order.customerId, STAGES[stage], `${order.id} ${order.partName}: ${STAGES[stage]}.`, `/orders/${order.id}`);
+  return updated;
 });

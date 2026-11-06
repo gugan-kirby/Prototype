@@ -11,10 +11,10 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** V-04 Vendor orders, branch `feature/vendor-orders`.
+- **Last feature merged:** V-05 Update production status, branch `feature/production-status`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start V-05 Update production status on `feature/production-status`.
+- **Next action:** start V-06 Vendor messages on `feature/vendor-messages`.
 
 ## Known issues
 
@@ -56,13 +56,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | V-01 | Vendor enquiries | COMPLETED | High | `feature/vendor-enquiries` | `a3ecf15` | [#19](https://github.com/gugan-kirby/Prototype/pull/19) | Not tested. Render reviewed by eye |
 | V-02 | Submit quote | COMPLETED | High | `feature/submit-quote` | `e5196e5` | [#20](https://github.com/gugan-kirby/Prototype/pull/20) | Not tested. Render reviewed by eye |
 | V-03 | Manage quotes | COMPLETED | Medium | `feature/manage-quotes` | `3be97ea` | [#21](https://github.com/gugan-kirby/Prototype/pull/21) | Not tested. Render reviewed by eye |
-| V-04 | Vendor orders | COMPLETED | High | `feature/vendor-orders` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| V-04 | Vendor orders | COMPLETED | High | `feature/vendor-orders` | `3a0741d` | [#22](https://github.com/gugan-kirby/Prototype/pull/22) | Not tested. Render reviewed by eye |
+| V-05 | Update production status | COMPLETED | High | `feature/production-status` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| V-05 | Update production status | NOT STARTED | High |
 | V-06 | Vendor messages | NOT STARTED | Medium |
 | A-01 | Admin shell and login | NOT STARTED | Medium |
 | A-02 | Vendor verification | NOT STARTED | Medium |
@@ -164,6 +164,10 @@ Lists the vendor's quotes with search and status tabs. Each card opens the enqui
 ### V-04 Vendor orders
 
 Lists orders received with search, status tabs and progress. The detail page shows the order summary and all six production stages.
+
+### V-05 Update production status
+
+The vendor moves an order through the six stages, one at a time, with a confirmation. Each step notifies the customer and updates their tracker. Reaching Delivered completes the order.
 
 ## Change history
 

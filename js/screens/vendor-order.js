@@ -1,8 +1,9 @@
 import { formatDate, rupees } from '../core/format.js';
 import { html } from '../core/html.js';
 import { icon } from '../core/icons.js';
+import { busy, sheet, toast } from '../core/ui.js';
 import { STAGES } from '../services/orders.js';
-import { vendorOrder } from '../services/vendors.js';
+import { advanceOrder, vendorOrder } from '../services/vendors.js';
 import { vendorArea } from './guards.js';
 
 export default {
@@ -27,6 +28,32 @@ export default {
             return html`<li class="${done ? 'done' : ''}"><span>${done ? icon('check') : ''}</span><strong>${stage}</strong><time>${entry && done ? formatDate(entry.date) : 'Pending'}</time></li>`;
           })}
         </ol>
+        ${order.status === 'In Progress' && html`<div class="invoice-actions"><button class="btn btn-primary" id="advance">Mark as ${STAGES[order.stage + 1]}</button></div>`}
       </section>`;
+  },
+  mount(root, order, ctx) {
+    root.querySelector('#advance')?.addEventListener('click', () => {
+      const next = STAGES[order.stage + 1];
+      sheet({
+        title: 'Update Status',
+        body: html`<p class="sheet-note">Mark ${order.id} as ${next}? The customer will be notified, and this cannot be undone.</p>
+          <button class="btn btn-primary" id="advance-confirm">Mark as ${next}</button>
+          <button class="btn btn-outline" id="advance-cancel">Cancel</button>`,
+        mount(node, close) {
+          node.querySelector('#advance-cancel').onclick = close;
+          node.querySelector('#advance-confirm').onclick = (event) => busy(event.currentTarget, async () => {
+            try {
+              await advanceOrder(order.id);
+              close();
+              toast(`Marked as ${next}.`, 'ok');
+              ctx.refresh();
+            } catch (error) {
+              close();
+              toast(error.message, 'bad');
+            }
+          });
+        },
+      });
+    });
   },
 };
