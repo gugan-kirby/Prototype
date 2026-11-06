@@ -71,3 +71,14 @@ export const submitEnquiry = (draft) => request(() => {
   sessionStorage.removeItem(DRAFT_KEY);
   return enquiry;
 });
+
+export const myEnquiries = () => request(() => {
+  const userId = session()?.userId;
+  const categories = store.all('categories');
+  return {
+    categories,
+    enquiries: store.where('enquiries', (item) => item.customerId === userId)
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .map((item) => ({ ...item, categoryName: categories.find((category) => category.id === item.category)?.name ?? item.category })),
+  };
+});

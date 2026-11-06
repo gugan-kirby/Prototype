@@ -7,7 +7,9 @@ def test_content_matches_the_reference(page, base):
     open_splash(page, base)
     assert page.inner_text(".splash-word") == "JobWork"
     assert page.inner_text(".splash-tag").split("\n") == ["Find Trusted Machines.", "Get Quality Work Done."]
-    assert page.evaluate("document.querySelector('.splash-logo').naturalWidth") > 0
+    logo = page.locator(".splash-logo")
+    logo.evaluate("el => el.complete || new Promise(done => { el.onload = el.onerror = done; })")
+    assert logo.evaluate("el => el.naturalWidth") > 0
 
 
 def test_get_started_opens_welcome(page, base):

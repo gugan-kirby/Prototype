@@ -12,7 +12,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 05 | New Enquiry – Details | Done | Done | Done | 3.4% |
 | 06 | New Enquiry – Requirements | Done | Done | Done | 4.0% |
 | 07 | Review Enquiry | Done | Done | Done | 4.5% |
-| 08 | Enquiries | Pending | Pending | Pending | |
+| 08 | Enquiries | Done | Done | Done | 4.6% |
 | 09 | Quotes Received | Pending | Pending | Pending | |
 | 10 | Quote Details | Pending | Pending | Pending | |
 | 11 | My Orders | Pending | Pending | Pending | |
@@ -89,3 +89,13 @@ comes from blur around text in the references, which sharp text cannot reproduce
   download, escaping.
 - **Changes from reference:** tolerance is added to the specifications line so it can
   be checked before submitting. The comparison leaves it out to match the image.
+
+### 08 Enquiries
+
+- **Components:** app header, title, search, filter button, status tabs, enquiry cards,
+  status badges, tab bar. The list layout is reusable.
+- **Interactions:** search, status tabs, category filter, sort, and cards that open the
+  enquiry. Shows 4 cards first, as in the reference, and loads more on scroll.
+- **Tests:** reference content, paging, tabs, search across all pages, filter, sort,
+  empty results, new enquiry at the top.
+- **Changes from reference:** tabs follow the image, not the brief's Pending and Ordered.

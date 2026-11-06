@@ -13,7 +13,9 @@ def test_content_matches_the_reference(page, base):
     open_welcome(page, base)
     assert page.inner_text(".welcome-word") == "JobWork"
     assert page.locator(".welcome-badges li").all_inner_texts() == ["Secure", "Reliable", "Fast"]
-    assert page.evaluate("document.querySelector('.welcome-art').naturalWidth") > 0
+    art = page.locator(".welcome-art")
+    art.evaluate("el => el.complete || new Promise(done => { el.onload = el.onerror = done; })")
+    assert art.evaluate("el => el.naturalWidth") > 0
 
 
 def test_login_and_register_links(page, base):

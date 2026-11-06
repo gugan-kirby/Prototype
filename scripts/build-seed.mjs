@@ -37,6 +37,30 @@ const addresses = [
   { id: 'a-3', userId: 'u-gugan', label: 'Plant 2', line: 'SIPCOT Phase 1', city: 'Hosur', state: 'Tamil Nadu', isDefault: false },
 ];
 
+const enquiry = (id, partName, category, subcategory, material, date, status, extra = {}) => ({
+  id, customerId: 'u-gugan', partName, category, subcategory, material, quantity: 100, unit: 'Nos',
+  location: 'Chennai, Tamil Nadu', drawing: null, specifications: '', finish: 'As Machined', tolerance: '±0.1mm', date, status, ...extra,
+});
+
+const bracketDrawing = { id: 'seed-bracket', name: 'Bracket Drawing.pdf', size: 2516582 };
+
+const enquiries = [
+  enquiry('ENQ-1012', 'Bracket Support', 'cnc', 'CNC Milling', 'Aluminium', '2025-03-12', 'Quoted', {
+    drawing: bracketDrawing, specifications: 'No sharp edges', finish: 'Anodized', materialGrade: 'Aluminium (6061)',
+  }),
+  enquiry('ENQ-1011', 'Base Plate', 'vmc', '3-Axis VMC', 'Mild Steel', '2025-03-10', 'In Progress', { quantity: 50 }),
+  enquiry('ENQ-1010', 'Shaft Collar', 'turning', 'Lathe Turning', 'SS304', '2025-03-08', 'Closed', { quantity: 200 }),
+  enquiry('ENQ-1009', 'L Bracket', 'cnc', 'CNC Milling', 'Aluminium', '2025-03-06', 'Quoted', { art: 'lbracket' }),
+  enquiry('ENQ-1008', 'Flange Ring', 'cnc', 'CNC Turning', 'SS316', '2025-03-04', 'In Progress', { quantity: 40 }),
+  enquiry('ENQ-1007', 'Gear Housing', 'vmc', '4-Axis VMC', 'Cast Iron', '2025-03-03', 'In Progress', { quantity: 25 }),
+  enquiry('ENQ-1006', 'Mounting Frame', 'welding', 'MIG Welding', 'Mild Steel', '2025-03-01', 'In Progress', { quantity: 10 }),
+  enquiry('ENQ-1005', 'Spacer Bush', 'turning', 'Lathe Turning', 'Brass', '2025-02-27', 'Quoted', { quantity: 500 }),
+  enquiry('ENQ-1004', 'Bracket Support', 'cnc', 'CNC Milling', 'Aluminium', '2025-02-24', 'Closed'),
+  enquiry('ENQ-1003', 'Base Plate', 'vmc', '3-Axis VMC', 'Mild Steel', '2025-02-20', 'Closed', { quantity: 50 }),
+  enquiry('ENQ-1002', 'L Bracket', 'cnc', 'CNC Milling', 'Aluminium', '2025-02-16', 'Closed', { art: 'lbracket' }),
+  enquiry('ENQ-1001', 'Drive Coupling', 'turning', 'Lathe Turning', 'SS304', '2025-02-10', 'Closed', { quantity: 30 }),
+];
+
 const notifications = [
   { id: 'n-1', userId: 'u-gugan', title: 'New quote received', body: 'Precision Metals quoted for Bracket Support.', date: '2025-03-14', read: true, link: '/enquiries/ENQ-1012' },
   { id: 'n-2', userId: 'u-gugan', title: 'Order in production', body: 'ORD-1008 Bracket Support is now in production.', date: '2025-03-13', read: true, link: '/orders/ORD-1008' },
@@ -48,7 +72,7 @@ const db = {
   vendors,
   categories,
   addresses,
-  enquiries: [],
+  enquiries,
   notifications,
 };
 

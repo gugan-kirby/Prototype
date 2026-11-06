@@ -1,4 +1,4 @@
-.app-head { display: flex; align-items: center; height: 64px; padding: 0 21px; background: #fff; }
+.app-head { display: flex; align-items: center; height: 64px; padding: 0 21px 3px; background: #fff; }
 .head-btn { position: relative; display: flex; align-items: center; justify-content: center; width: 26px; height: 40px; color: var(--navy); }
 .head-btn svg { width: 29px; height: 29px; flex: none; stroke-width: 2.300; }
 .app-word { margin-left: 27px; color: var(--navy); font-size: 27px; font-weight: 700; letter-spacing: -0.700px; }

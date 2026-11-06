@@ -1,0 +1,47 @@
+.list-page { padding: 0 8px 20px; }
+.list-title { margin: 12.500px 0 0 13px; color: var(--navy); font-size: 29.500px; font-weight: 800; letter-spacing: -0.300px; line-height: 36px; }
+.list-sub { margin: 5px 0 0 13px; color: #55586f; font-size: 16.100px; font-weight: 500; line-height: 22px; }
+
+.list-tools { display: flex; gap: 14.500px; margin: 21.500px 10px 0 13px; }
+.search { flex: 1; display: flex; align-items: center; gap: 12px; height: 49px; padding: 0 15px; background: #fff; border: 1.500px solid var(--line); border-radius: 15px; }
+.search:focus-within { border-color: var(--blue); }
+.search svg { flex: none; width: 24px; height: 24px; color: #4e516b; }
+.search input { flex: 1; min-width: 0; height: 100%; background: none; border: 0; outline: 0; font-size: 15.900px; font-weight: 500; }
+.search input::placeholder { color: #6f7289; opacity: 1; }
+.search input::-webkit-search-cancel-button { display: none; }
+.filter-btn { flex: none; display: flex; align-items: center; justify-content: center; width: 47px; height: 49px; background: #fff; border: 1.500px solid var(--line); border-radius: 15px; color: #33364f; }
+.filter-btn svg { width: 25px; height: 25px; stroke-width: 1.800; }
+
+.tabs { display: flex; height: 48px; margin: 18px 6px 0 7px; border: 1.500px solid var(--line-soft); border-radius: 14px; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs button { flex: 1 0 auto; padding: 0 6px; border-bottom: 3px solid transparent; color: #55586f; font-size: 13.100px; font-weight: 600; white-space: nowrap; }
+.tabs button:first-child { flex: 0 0 91px; }
+.tabs button.on { background: var(--tab-on); border-bottom-color: var(--blue-bright); border-radius: 14px 14px 6px 6px; color: var(--blue-bright); font-weight: 700; }
+
+.cards { display: flex; flex-direction: column; gap: 12.500px; margin: 17px 0 0 1.500px; }
+.card { position: relative; display: flex; align-items: center; min-height: 93.500px; padding: 12px 40px 12px 16px; background: #fff; border: 1.500px solid var(--line-soft); border-radius: 18px; }
+.card:active { background: var(--panel-soft); }
+.tile { flex: none; display: flex; align-items: center; justify-content: center; width: 52.500px; height: 52px; border-radius: 13px; }
+.tile svg { width: 31px; height: 31px; stroke-width: 1.800; }
+.card > .tile { margin-top: -13px; }
+.tile-blue { background: var(--tile-blue); color: #1167f2; }
+.tile-violet { background: var(--tile-violet); color: #6a3fe0; }
+.tile-orange { background: var(--tile-orange); color: #ef6a12; }
+.tile-green { background: var(--tile-green); color: #0f9648; }
+.card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; margin-left: 15px; }
+.card-title { color: #070a2e; font-size: 16px; font-weight: 800; letter-spacing: -0.200px; line-height: 22px; }
+.card-meta { overflow: hidden; color: #55586f; font-size: 13.100px; font-weight: 500; line-height: 19px; text-overflow: ellipsis; white-space: nowrap; }
+.date-line { display: flex; align-items: center; gap: 8px; color: #55586f; font-size: 12.800px; font-weight: 500; line-height: 21px; }
+.date-line svg { width: 17px; height: 17px; stroke-width: 1.900; }
+.card-go { position: absolute; top: 50%; right: 17.500px; margin-top: -11px; color: #55586f; }
+.card-go svg { display: block; width: 22px; height: 22px; stroke-width: 2.200; }
+
+.badge { position: absolute; top: 11px; right: 42px; display: inline-flex; align-items: center; gap: 5px; height: 25.500px; padding: 0 11px; border-radius: 13px; font-size: 13.200px; font-weight: 600; white-space: nowrap; }
+.badge-quoted, .badge-completed, .badge-paid { background: var(--ok-bg); color: var(--ok); }
+.badge-in-progress { background: var(--info-bg); color: var(--info); }
+.badge-closed { background: var(--idle-bg); color: var(--idle); }
+.badge-cancelled, .badge-unpaid, .badge-overdue { background: var(--bad-bg); color: var(--bad); }
+.badge-pending { background: var(--warn-bg); color: var(--warn); }
+
+.cards.has-more { padding-bottom: 90px; }
+.list-empty { min-height: 180px; }
