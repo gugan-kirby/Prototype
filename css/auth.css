@@ -83,6 +83,8 @@
 .welcome-badges li { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 60px; color: #41445f; font-size: 17.500px; font-weight: 500; }
 .welcome-badges svg { width: 36px; height: 36px; color: #0a1fd8; stroke-width: 1.900; }
 
+.phone[data-screen="register"] .statusbar { padding-left: 36px; }
+
 .register .page-head { margin-bottom: 0; }
 
 .role-switch {

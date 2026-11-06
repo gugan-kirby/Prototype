@@ -1,4 +1,3 @@
-.phone[data-screen="home"] .statusbar { padding-left: 29px; }
 .phone[data-screen="home"] .screen { background: linear-gradient(#fff 280px, var(--page) 310px); }
 
 .home { padding: 17px 21px 24px; }

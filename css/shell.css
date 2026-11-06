@@ -5,9 +5,9 @@
 .head-bell { margin-left: auto; }
 .bell-dot { position: absolute; top: 4px; right: -2px; width: 10px; height: 10px; background: #ef2233; border: 1.500px solid #fff; border-radius: 50%; }
 
-.center-head { position: relative; display: flex; align-items: center; justify-content: center; height: 63px; background: #fff; }
-.center-head .icon-btn { position: absolute; left: 10px; }
-.center-head h1 { color: var(--navy); font-size: 23px; font-weight: 800; letter-spacing: -0.200px; }
+.center-head { position: relative; display: flex; align-items: center; justify-content: center; height: 50px; background: #fff; }
+.center-head .icon-btn { position: absolute; top: 7px; left: 10px; }
+.center-head h1 { color: var(--navy); font-size: 21.500px; font-weight: 800; letter-spacing: -0.200px; }
 
 .tabbar {
   position: relative;

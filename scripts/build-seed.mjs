@@ -24,16 +24,30 @@ const categories = [
   { id: 'laser', name: 'Laser Cutting', image: null, top: false, subcategories: ['Fibre Laser', 'CO2 Laser', 'Tube Laser'] },
 ];
 
+const options = {
+  materials: ['Aluminium', 'Aluminium (6061)', 'Mild Steel', 'SS304', 'SS316', 'Brass', 'Copper', 'Cast Iron'],
+  units: ['Nos', 'Kg', 'Sets', 'Meters'],
+  finishes: ['As Machined', 'Anodized', 'Powder Coated', 'Zinc Plated', 'Polished'],
+  tolerances: ['±0.5mm', '±0.2mm', '±0.1mm', '±0.05mm', '±0.01mm'],
+};
+
+const addresses = [
+  { id: 'a-1', userId: 'u-gugan', label: 'Factory', line: 'Plot 12, Ambattur Industrial Estate', city: 'Chennai', state: 'Tamil Nadu', isDefault: true },
+  { id: 'a-2', userId: 'u-gugan', label: 'Warehouse', line: 'SIDCO Industrial Park', city: 'Coimbatore', state: 'Tamil Nadu', isDefault: false },
+  { id: 'a-3', userId: 'u-gugan', label: 'Plant 2', line: 'SIPCOT Phase 1', city: 'Hosur', state: 'Tamil Nadu', isDefault: false },
+];
+
 const notifications = [
   { id: 'n-1', userId: 'u-gugan', title: 'New quote received', body: 'Precision Metals quoted for Bracket Support.', date: '2025-03-14', read: true, link: '/enquiries/ENQ-1012' },
   { id: 'n-2', userId: 'u-gugan', title: 'Order in production', body: 'ORD-1008 Bracket Support is now in production.', date: '2025-03-13', read: true, link: '/orders/ORD-1008' },
 ];
 
 const db = {
-  meta: { today: '2025-03-15', counters: { user: 100, notification: 100 } },
+  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10 }, options },
   users,
   vendors,
   categories,
+  addresses,
   notifications,
 };
 

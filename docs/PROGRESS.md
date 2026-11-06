@@ -9,7 +9,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 02 | Welcome / Login | Done | Done | Done | 2.7% |
 | 03 | Registration | Done | Done | Done | 2.6% |
 | 04 | Customer Home | Done | Done | Done | 5.4% |
-| 05 | New Enquiry – Details | Pending | Pending | Pending | |
+| 05 | New Enquiry – Details | Done | Done | Done | 3.4% |
 | 06 | New Enquiry – Requirements | Pending | Pending | Pending | |
 | 07 | Review Enquiry | Pending | Pending | Pending | |
 | 08 | Enquiries | Pending | Pending | Pending | |
@@ -59,3 +59,12 @@ comes from blur around text in the references, which sharp text cannot reproduce
   Signed-out visitors go to Welcome. Failed loads offer a retry.
 - **Tests:** content, all navigation, menu, guest prompt, session guard, retry.
 - **Changes from reference:** "CNC Maching Machining" is corrected to "CNC Machining".
+
+### 05 New Enquiry – Details
+
+- **Components:** three-step progress bar, name field, four dropdowns, quantity with
+  unit, Next button.
+- **Interactions:** required-field and quantity validation, sub categories that follow
+  the category, category preselected from Home, draft saved between steps.
+- **Tests:** labels, validation, dependent dropdown, draft restore, guards, escaping.
+- **Remaining:** none.
