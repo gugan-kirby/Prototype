@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 30 306 286">
+  <defs>
+    <mask id="ring" maskUnits="userSpaceOnUse" x="0" y="0" width="340" height="340">
+      <rect width="340" height="340" fill="#fff"/>
+      <circle cx="172" cy="172" r="77"/>
+      <path d="M200 154 L408 362 L84 352 L172 172Z"/>
+    </mask>
+    <mask id="jaw" maskUnits="userSpaceOnUse" x="0" y="0" width="340" height="340">
+      <rect width="340" height="340" fill="#fff"/>
+      <path d="M169.400 159.600 L106 96 L79 123 L142.600 186.400Z"/>
+      <circle cx="156" cy="173" r="19"/>
+    </mask>
+  </defs>
+  <path d="M140.6 62.4 L148.0 36.1 L196.0 36.1 L203.4 62.4 L227.3 72.3 L251.2 59.0 L285.0 92.8 L271.7 116.7 L281.6 140.6 L307.9 148.0 L307.9 196.0 L281.6 203.4 L271.7 227.3 L285.0 251.2 L251.2 285.0 L227.3 271.7 L203.4 281.6 L196.0 307.9 L148.0 307.9 L140.6 281.6 L116.7 271.7 L92.8 285.0 L59.0 251.2 L72.3 227.3 L62.4 203.4 L36.1 196.0 L36.1 148.0 L62.4 140.6 L72.3 116.7 L59.0 92.8 L92.8 59.0 L116.7 72.3Z" fill="#f6f6fb" stroke="#f6f6fb" stroke-width="22" stroke-linejoin="round" mask="url(#ring)"/>
+  <g fill="#f6f6fb" stroke="#f6f6fb" mask="url(#jaw)">
+    <circle cx="163" cy="180" r="44" stroke="none"/>
+    <path d="M174 188 L254 272" fill="none" stroke-width="50" stroke-linecap="round"/>
+  </g>
+</svg>
