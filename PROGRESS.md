@@ -11,16 +11,15 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** V-06 Vendor messages, branch `feature/vendor-messages`.
+- **Last feature merged:** A-01 Admin shell and login, branch `feature/admin-shell`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start A-01 Admin shell and login on `feature/admin-shell`.
+- **Next action:** start A-02 Vendor verification on `feature/vendor-verification`.
 
 ## Known issues
 
 | Issue | Effect | Resolved by |
 |---|---|---|
-| Admin not built | Admin and staff login opens `admin.html`, which does not exist. | A-01 |
 | Saved data can go stale | A browser that saved data before a seed change keeps the old copy, and can fail with "Unknown collection". Clearing site data fixes it. | F-01 |
 | Automated tests out of date | Last full run was 75 passed, at T-08. They were not run for T-09 onwards, and may no longer pass. | Decision 1 in `PROJECT_PLAN.md` |
 | Later behaviour unconfirmed | Interactions added from T-10 onwards have not been exercised, including chat, PDF download, Pay Now and vendor filter. Only their reference views were rendered. | F-02 |
@@ -57,13 +56,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | V-03 | Manage quotes | COMPLETED | Medium | `feature/manage-quotes` | `3be97ea` | [#21](https://github.com/gugan-kirby/Prototype/pull/21) | Not tested. Render reviewed by eye |
 | V-04 | Vendor orders | COMPLETED | High | `feature/vendor-orders` | `3a0741d` | [#22](https://github.com/gugan-kirby/Prototype/pull/22) | Not tested. Render reviewed by eye |
 | V-05 | Update production status | COMPLETED | High | `feature/production-status` | `2d4eaae` | [#23](https://github.com/gugan-kirby/Prototype/pull/23) | Not tested. Render reviewed by eye |
-| V-06 | Vendor messages | COMPLETED | Medium | `feature/vendor-messages` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| V-06 | Vendor messages | COMPLETED | Medium | `feature/vendor-messages` | `c76621d` | [#24](https://github.com/gugan-kirby/Prototype/pull/24) | Not tested. Render reviewed by eye |
+| A-01 | Admin shell and login | COMPLETED | Medium | `feature/admin-shell` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| A-01 | Admin shell and login | NOT STARTED | Medium |
 | A-02 | Vendor verification | NOT STARTED | Medium |
 | A-03 | User management | NOT STARTED | Medium |
 | A-04 | Record views | NOT STARTED | Medium |
@@ -171,6 +170,10 @@ The vendor moves an order through the six stages, one at a time, with a confirma
 ### V-06 Vendor messages
 
 Vendors see their customer threads under Messages in the side menu, and can reply. Replies notify the customer. Order Details links to the thread.
+
+### A-01 Admin shell and login
+
+Desktop console in `admin.html` with a sidebar, role check and overview figures. Admin and staff log in from the normal login page. It reuses the router, store and tokens.
 
 ## Change history
 

@@ -123,6 +123,8 @@ The references disagree with each other in places. The seed resolves this as fol
 | 3 | Commit `1e5835d` on `main` says "screens", and `c1efbc6` has the author name "Gugan". Fixing either needs a force-push to public history. Should they be fixed? | Leave them as they are. |
 | 4 | Does the ban on the word "screen" extend to code, such as the `js/screens/` folder? | No. It covers commit messages, branch names and PR text. |
 | 5 | Local branch `docs/git-workflow-rules` is now fully covered by `CLAUDE.md`. Can it be deleted? | Keep it. |
+| 6 | Should staff be able to verify vendors and suspend users? | No. Staff can view everything, and only admins can make those changes. |
+| 7 | F-02 is a walkthrough of both workflows. Does the stop on testing cover it? | Yes, so it stays not started. |
 
 ## Milestones
 
