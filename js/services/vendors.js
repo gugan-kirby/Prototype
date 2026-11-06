@@ -1,5 +1,6 @@
 import { ApiError, request, store } from '../core/api.js';
 import { session } from './auth.js';
+import { notify } from './notifications.js';
 
 export function currentVendor() {
   const userId = session()?.userId;
@@ -56,4 +57,18 @@ export const vendorEnquiry = (id) => request(() => {
     customerName: customer?.company?.name ?? customer?.name,
     quote: store.where('quotes', (quote) => quote.enquiryId === id && quote.vendorId === vendor.id)[0] ?? null,
   };
+});
+
+export const submitQuote = (enquiryId, values) => request(() => {
+  const vendor = currentVendor();
+  if (!vendor.verified) throw new ApiError('You can quote once your account is verified.');
+  const enquiry = store.find('enquiries', enquiryId);
+  if (!enquiry || enquiry.status === 'Closed') throw new ApiError('This enquiry is no longer open.');
+  if (store.where('quotes', (quote) => quote.enquiryId === enquiryId && quote.vendorId === vendor.id).length) throw new ApiError('You have already quoted for this enquiry.');
+  const quote = store.insert('quotes', {
+    id: `Q-${store.nextNumber('quote') + 100}`, enquiryId, vendorId: vendor.id, date: store.meta().today, status: 'Submitted', ...values,
+  });
+  store.update('enquiries', enquiryId, { status: 'Quoted' });
+  notify(enquiry.customerId, 'New quote received', `${vendor.name} quoted for ${enquiry.partName}.`, `/enquiries/${enquiryId}`);
+  return quote;
 });
