@@ -529,18 +529,25 @@
       "history": [
         {
           "stage": 0,
-          "date": "2025-03-15"
+          "date": "2025-03-15",
+          "time": "10:24 AM"
         },
         {
           "stage": 1,
-          "date": "2025-03-15"
+          "date": "2025-03-15",
+          "time": "05:40 PM"
         },
         {
           "stage": 2,
-          "date": "2025-03-15"
+          "date": "2025-03-16",
+          "time": "02:15 PM"
         }
       ],
-      "art": "factory"
+      "art": "factory",
+      "delivery": {
+        "dispatch": "2025-03-18",
+        "arrive": "2025-03-19"
+      }
     },
     {
       "id": "ORD-1007",

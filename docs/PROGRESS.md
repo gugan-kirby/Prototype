@@ -16,7 +16,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 09 | Quotes Received | Done | Done | Not run | 7.3% |
 | 10 | Quote Details | Done | Done | Not run | 7.2% |
 | 11 | My Orders | Done | Done | Not run | 6.2% |
-| 12 | Order Tracking | Pending | Pending | Pending | |
+| 12 | Order Tracking | Done | Done | Not run | 7.0% |
 | 13 | Invoices | Pending | Pending | Pending | |
 | 14 | Payments | Pending | Pending | Pending | |
 | 15 | Vendor Dashboard | Pending | Pending | Pending | |
@@ -125,3 +125,13 @@ comes from blur around text in the references, which sharp text cannot reproduce
 - **Interactions:** search by part, order number, vendor or category. Filter by vendor,
   sort, and open an order.
 - **Tests:** not run, as requested.
+
+### 12 Order Tracking
+
+- **Components:** order panel, four-step tracker, current status with progress,
+  production timeline, Contact Vendor and Order Details buttons, Order Details page.
+- **Interactions:** the tracker and progress follow the order's production stage.
+  Contact Vendor opens the message thread.
+- **Tests:** not run, as requested.
+- **Changes from reference:** the tracker keeps the image's four steps. The brief's six
+  stages are listed on Order Details and drive the tracker.

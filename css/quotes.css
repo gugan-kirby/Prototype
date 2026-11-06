@@ -110,3 +110,71 @@
 .chat-bar input:focus { border-color: var(--blue); }
 .chat-send { flex: none; display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; background: var(--blue); border-radius: 12px; color: #fff; }
 .chat-send svg { width: 22px; height: 22px; }
+
+.phone[data-screen="order-tracking"] .center-head { height: 41px; }
+.track { padding: 0 9px 24px 9.500px; }
+.track-head { position: relative; display: flex; align-items: center; gap: 16.500px; height: 119px; margin-top: 9px; padding: 0 16px; background: var(--panel); border-radius: 18px; }
+.track-tile { position: relative; top: -8.500px; flex: none; display: flex; align-items: center; justify-content: center; width: 63px; height: 63px; background: #e6edfc; border-radius: 14px; color: #1167f2; }
+.track-tile svg { width: 40px; height: 40px; stroke-width: 1.900; }
+.track-head h2 { color: #070a2e; font-size: 17.200px; font-weight: 800; line-height: 22px; }
+.track-no { color: #55586f; font-size: 13.600px; font-weight: 500; line-height: 22px; }
+.track-meta { display: flex; align-items: center; gap: 13px; color: #55586f; font-size: 13px; font-weight: 500; line-height: 25px; white-space: nowrap; }
+.track-meta span { display: flex; align-items: center; gap: 8px; }
+.track-meta i { width: 1px; height: 14px; background: #d9dce8; }
+.track-meta svg { width: 17px; height: 17px; }
+.track-state { position: absolute; top: 17px; right: 15px; display: flex; align-items: center; gap: 5px; height: 25px; padding: 0 9px; background: var(--ok-bg); border-radius: 13px; color: var(--ok); font-size: 12.400px; font-weight: 600; }
+.track-state svg { width: 16px; height: 16px; }
+
+.track-title { margin: 19px 0 16px 4px; color: #070a2e; font-size: 16.800px; font-weight: 800; line-height: 22px; }
+
+.tracker { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 -17px 0 -12.500px; padding: 0; list-style: none; }
+.tracker::before { content: ""; position: absolute; top: 19px; right: 12.500%; left: 12.500%; height: 2px; background: #e0e2ec; }
+.tracker li { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.tracker li.done::after { content: ""; position: absolute; top: 18px; left: 50%; width: 100%; height: 2.500px; background: var(--blue-bright); }
+.tracker b { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; width: 38.500px; height: 38.500px; background: #fff; border: 1.500px solid #c9ccd9; border-radius: 50%; color: #33364f; }
+.tracker b svg { width: 19px; height: 19px; }
+.tracker .done b { border-color: var(--blue-bright); color: var(--blue-bright); }
+.tracker .now b { background: var(--blue-bright); border-color: var(--blue-bright); color: #fff; }
+.tracker strong { margin-top: 7px; color: #15173a; font-size: 12.700px; font-weight: 700; line-height: 15.500px; min-height: 31px; }
+.tracker .now strong { color: var(--blue-bright); }
+.tracker small { margin-top: 5px; color: #55586f; font-size: 11.600px; font-weight: 500; }
+
+.track-status { margin: 21px 0 0; padding: 15px 17px 16px; background: var(--panel-soft); border: 1.500px solid var(--line-soft); border-radius: 16px; }
+.track-status-top { display: flex; align-items: center; gap: 14px; }
+.track-status-tile { flex: none; display: flex; align-items: center; justify-content: center; width: 43px; height: 40px; background: #e6edfc; border-radius: 9px; color: #1167f2; }
+.track-status-tile svg { width: 27px; height: 27px; }
+.track-status-top div { flex: 1; min-width: 0; }
+.track-status-top strong { display: block; color: #070a2e; font-size: 15.500px; font-weight: 800; line-height: 20px; }
+.track-status-top p { color: #55586f; font-size: 13.500px; font-weight: 500; line-height: 20px; }
+.track-status-top em { padding: 5px 11px; background: #e4ecfd; border-radius: 13px; color: var(--blue-bright); font-size: 18px; font-style: normal; font-weight: 800; }
+.track-status .progress { display: block; height: 10.500px; margin-top: 12px; border-radius: 6px; }
+.track-status .progress i { border-radius: 6px; }
+
+.timeline { margin: -4.500px 0 0; padding: 0; border-top: 1px solid var(--line-soft); border-radius: 16px; list-style: none; }
+.track-title:has(+ .timeline) { margin-top: 17px; }
+.timeline li { position: relative; display: flex; align-items: flex-start; gap: 15px; min-height: 58px; padding: 11px 13px 7px; border-radius: 14px; }
+.timeline li.now { background: var(--panel); }
+.timeline li::before { content: ""; position: absolute; top: 34px; bottom: -14px; left: 37px; width: 2px; background: #dfe3f0; }
+.timeline li:last-child::before { display: none; }
+.timeline-dot { position: relative; z-index: 1; flex: none; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--idle-bg); border-radius: 50%; color: #4e516b; }
+.timeline-dot svg { width: 20px; height: 20px; }
+.timeline .done .timeline-dot { background: var(--ok-bg); color: var(--ok); }
+.timeline .now .timeline-dot { background: #dfe8fc; color: var(--blue-bright); }
+.timeline li div { flex: 1; min-width: 0; }
+.timeline strong { display: block; color: #15173a; font-size: 13.800px; font-weight: 800; line-height: 19px; }
+.timeline p { color: #55586f; font-size: 11.700px; font-weight: 500; line-height: 18px; }
+.timeline time { flex: none; color: #55586f; font-size: 11.100px; font-weight: 500; line-height: 19px; }
+
+.track-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 39px 0 0; }
+.track-actions .btn { height: 46px; border-radius: 10px; font-size: 13.500px; gap: 10px; }
+.track-actions .btn-outline { border-width: 1.500px; }
+.track-actions .btn svg { width: 23px; height: 23px; }
+
+.stages { margin: 0 3px 0 5px; padding: 6px 16px; background: #fff; border: 1.500px solid var(--line-soft); border-radius: 16px; list-style: none; }
+.stages li { display: flex; align-items: center; gap: 12px; min-height: 44px; border-bottom: 1px solid var(--line-soft); }
+.stages li:last-child { border: 0; }
+.stages li > span { flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--idle-bg); border-radius: 50%; color: var(--ok); }
+.stages li.done > span { background: var(--ok-bg); }
+.stages svg { width: 15px; height: 15px; stroke-width: 2.800; }
+.stages strong { flex: 1; color: #15173a; font-size: 15px; font-weight: 600; }
+.stages time { color: #6f7289; font-size: 13px; font-weight: 500; }
