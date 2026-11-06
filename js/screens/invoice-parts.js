@@ -21,7 +21,7 @@ export function openPayment(invoice, onPaid) {
     title: 'Pay Invoice',
     body: html`<p class="sheet-note">${invoice.id} for ${invoice.order?.partName}: <strong>${rupees(invoice.amount)}</strong></p>
       <div class="pay-methods" role="radiogroup" aria-label="Payment method">
-        ${METHODS.map((method, index) => html`<label class="pay-method"><input type="radio" name="method" value="${method}" ${index === 0 ? 'checked' : ''}><span>${method}</span></label>`)}
+        ${[...METHODS, ...(invoice.wallet >= invoice.amount ? ['Wallet'] : [])].map((method, index) => html`<label class="pay-method"><input type="radio" name="method" value="${method}" ${index === 0 ? 'checked' : ''}><span>${method}</span></label>`)}
       </div>
       <p class="sheet-note">This is a demo, so no real payment is taken.</p>
       <button class="btn btn-primary" id="pay-confirm">Pay ${rupees(invoice.amount)}</button>

@@ -11,16 +11,16 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-06
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** T-13 Invoices, branch `feature/invoices`.
+- **Last feature merged:** T-14 Payments, branch `feature/payments`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start T-14 Payments on `feature/payments`. Analyse `Image /JobWork Payments Dashboard.png` first.
+- **Next action:** start T-15 Vendor Dashboard on `feature/vendor-dashboard`. Analyse `Image /Modern JobWork Vendor Dashboard.png` first.
 
 ## Known issues
 
 | Issue | Effect | Resolved by |
 |---|---|---|
-| Unbuilt pages | Profile tab and Payments show "That page does not exist". | T-14, T-16 |
+| Unbuilt pages | Profile tab shows "That page does not exist". | T-16 |
 | Vendor area not built | Vendor login and registration land on a missing page. | T-15 |
 | Admin not built | Admin and staff login opens `admin.html`, which does not exist. | A-01 |
 | Vendor notification links | Links to `/v/...` lead to a missing page. | V-01 to V-06 |
@@ -51,13 +51,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | T-11 | My Orders | COMPLETED | High | `feature/my-orders` | `07d3344` | [#12](https://github.com/gugan-kirby/Prototype/pull/12) | Not tested. Differs 6.2% |
 | T-12 | Order Tracking | COMPLETED | High | `feature/order-tracking` | `d025398` | [#13](https://github.com/gugan-kirby/Prototype/pull/13) | Not tested. Differs 7.0% |
 | D-01 | Project documentation | COMPLETED | High | `docs/project-continuity` | Merged by PR #14 | [#14](https://github.com/gugan-kirby/Prototype/pull/14) | Checked against the repository and Git history |
-| T-13 | Invoices | COMPLETED | High | `feature/invoices` | Merged by this task's PR | See Git history | Not tested. Differs 6.3% |
+| T-13 | Invoices | COMPLETED | High | `feature/invoices` | `c8b650b` | [#15](https://github.com/gugan-kirby/Prototype/pull/15) | Not tested. Differs 6.3% |
+| T-14 | Payments | COMPLETED | High | `feature/payments` | Merged by this task's PR | See Git history | Not tested. Differs 7.8% |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| T-14 | Payments | NOT STARTED | High |
 | T-15 | Vendor Dashboard | NOT STARTED | High |
 | T-16 | Profile | NOT STARTED | High |
 | V-01 | Vendor enquiries | NOT STARTED | High |
@@ -137,6 +137,10 @@ Adds `PROJECT_PLAN.md`, moves progress tracking to `PROGRESS.md`, and expands `C
 
 Six sample invoices with search and status tabs. Shows 4 cards as in the reference. Pay Now opens a simulated payment sheet that marks the invoice paid and records the payment. Overdue is worked out from the due date. Invoice Details has a PDF download.
 
+### T-14 Payments
+
+Summary panel, status tabs and invoice cards with Pay Now. Total Paid counts the current month, which matches the reference exactly. Wallet Balance, Add Money and Recent Transactions come from the brief, so they sit below the reference height. Invoices can be paid from the wallet when the balance covers them. No refund records exist yet, so the Refunds tab is empty.
+
 ## Change history
 
 | Date | Change | Reason |
@@ -147,4 +151,5 @@ Six sample invoices with search and status tabs. Shows 4 cards as in the referen
 | 2026-11-06 | Full branch, PR, merge and cleanup workflow automated | User decision |
 | 2026-11-06 | Word "screen" removed from unpushed commits and branches | User decision |
 | 2026-11-06 | Rebase merges used instead of squash | Squash changes the author name, from PR #2 onwards |
+| 2026-11-06 | Total Paid scoped to the current month | Matches the reference's figure and count, which replaced a pending decision |
 | 2026-11-06 | Automated test writing and running stopped, from T-09 onwards | User decision |
