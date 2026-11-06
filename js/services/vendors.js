@@ -35,3 +35,25 @@ export const vendorDashboard = () => request(() => {
     revenue,
   };
 });
+
+export const vendorEnquiries = () => request(() => {
+  const vendor = currentVendor();
+  const quotes = store.where('quotes', (quote) => quote.vendorId === vendor.id);
+  const categories = store.all('categories');
+  const seen = store.where('enquiries', (item) => quotes.some((quote) => quote.enquiryId === item.id))
+    .map((item) => ({ ...item, processName: item.process ?? categories.find((category) => category.id === item.category)?.name, quoted: true }));
+  return [...openEnquiriesFor(vendor.id), ...seen];
+});
+
+export const vendorEnquiry = (id) => request(() => {
+  const vendor = currentVendor();
+  const enquiry = store.find('enquiries', id);
+  if (!enquiry) throw new ApiError('This enquiry could not be found.');
+  const customer = store.find('users', enquiry.customerId);
+  return {
+    vendor,
+    enquiry: { ...enquiry, categoryName: store.find('categories', enquiry.category)?.name },
+    customerName: customer?.company?.name ?? customer?.name,
+    quote: store.where('quotes', (quote) => quote.enquiryId === id && quote.vendorId === vendor.id)[0] ?? null,
+  };
+});

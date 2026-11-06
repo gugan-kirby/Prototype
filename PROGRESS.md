@@ -11,10 +11,10 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** T-16 Profile, branch `feature/profile`.
+- **Last feature merged:** V-01 Vendor enquiries, branch `feature/vendor-enquiries`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start V-01 Vendor enquiries on `feature/vendor-enquiries`.
+- **Next action:** start V-02 Submit quote on `feature/submit-quote`.
 
 ## Known issues
 
@@ -53,13 +53,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | T-13 | Invoices | COMPLETED | High | `feature/invoices` | `c8b650b` | [#15](https://github.com/gugan-kirby/Prototype/pull/15) | Not tested. Differs 6.3% |
 | T-14 | Payments | COMPLETED | High | `feature/payments` | `21f45df` | [#16](https://github.com/gugan-kirby/Prototype/pull/16) | Not tested. Differs 7.8% |
 | T-15 | Vendor Dashboard | COMPLETED | High | `feature/vendor-dashboard` | `58ab4cc` | [#17](https://github.com/gugan-kirby/Prototype/pull/17) | Not tested. Differs 6.1% |
-| T-16 | Profile | COMPLETED | High | `feature/profile` | Merged by this task's PR | See Git history | Not tested. Differs 7.5% |
+| T-16 | Profile | COMPLETED | High | `feature/profile` | `34c3985` | [#18](https://github.com/gugan-kirby/Prototype/pull/18) | Not tested. Differs 7.5% |
+| V-01 | Vendor enquiries | COMPLETED | High | `feature/vendor-enquiries` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| V-01 | Vendor enquiries | NOT STARTED | High |
 | V-02 | Submit quote | NOT STARTED | High |
 | V-03 | Manage quotes | NOT STARTED | Medium |
 | V-04 | Vendor orders | NOT STARTED | High |
@@ -149,6 +149,10 @@ Banner, four stat cards, enquiry requests, orders overview and revenue chart, wi
 Profile card, photo upload, six menu rows, Log Out and app version. Each row opens a working page: Company Details, Account Settings, Payment Methods, Notifications, Privacy & Security and Help & Support. The brief's My Addresses, My Documents, About Us and Terms & Conditions sit below the reference height. Saved addresses feed the delivery dropdown. Vendors share this page, with their own tag and tab bar.
 
 The reference shows an unread dot on the bell, but other customer references do not, so the sample customer starts with none. The dot appears whenever there are unread notifications.
+
+### V-01 Vendor enquiries
+
+Lists open enquiries and those already quoted, with search and tabs. The detail page shows requirements, specifications and drawing download. Unverified vendors see a notice instead of the quote button.
 
 ## Change history
 
