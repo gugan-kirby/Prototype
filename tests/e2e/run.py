@@ -49,6 +49,7 @@ def main():
             for name in sorted(n for n in dir(module) if n.startswith("test_")):
                 context = browser.new_context(viewport={"width": 426, "height": 923})
                 page = context.new_page()
+                page.set_default_timeout(4000)
                 errors = []
                 page.on("pageerror", lambda e: errors.append(str(e)))
                 page.on("console", lambda m: errors.append(m.text) if m.type == "error" else None)
