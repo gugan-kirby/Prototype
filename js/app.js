@@ -22,6 +22,8 @@ import invoices from './screens/invoices.js';
 import login from './screens/login.js';
 import register from './screens/register.js';
 import splash from './screens/splash.js';
+import vendorEnquiries from './screens/vendor-enquiries.js';
+import vendorEnquiry from './screens/vendor-enquiry.js';
 import vendorHome from './screens/vendor-home.js';
 import welcome from './screens/welcome.js';
 
@@ -43,6 +45,8 @@ route('/invoices', invoices);
 route('/invoices/:id', invoiceDetails);
 route('/payments', payments);
 route('/v/home', vendorHome);
+route('/v/enquiries', vendorEnquiries);
+route('/v/enquiries/:id', vendorEnquiry);
 route('/profile', profile);
 route('/profile/:section', profileSection);
 route('/enquiry/new', enquiryDetails);
