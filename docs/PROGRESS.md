@@ -13,7 +13,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 06 | New Enquiry – Requirements | Done | Done | Done | 4.0% |
 | 07 | Review Enquiry | Done | Done | Done | 4.5% |
 | 08 | Enquiries | Done | Done | Done | 4.6% |
-| 09 | Quotes Received | Pending | Pending | Pending | |
+| 09 | Quotes Received | Done | Done | Not run | 7.3% |
 | 10 | Quote Details | Pending | Pending | Pending | |
 | 11 | My Orders | Pending | Pending | Pending | |
 | 12 | Order Tracking | Pending | Pending | Pending | |
@@ -99,3 +99,11 @@ comes from blur around text in the references, which sharp text cannot reproduce
 - **Tests:** reference content, paging, tabs, search across all pages, filter, sort,
   empty results, new enquiry at the top.
 - **Changes from reference:** tabs follow the image, not the brief's Pending and Ordered.
+
+### 09 Quotes Received
+
+- **Components:** enquiry summary, quote count, Quotes and Enquiry Details tabs, vendor
+  quote cards, confirmation sheet, RFQ / Quotes list.
+- **Interactions:** quotes sorted cheapest first. Accepting creates the order and
+  invoice, closes the enquiry, declines other quotes and notifies vendors.
+- **Tests:** not run. Automated testing stopped from this feature onwards, as requested.
