@@ -11,10 +11,10 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** A-03 User management, branch `feature/user-management`.
+- **Last feature merged:** A-04 Record views, branch `feature/record-views`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start A-04 Record views on `feature/record-views`.
+- **Next action:** start F-01 Refresh saved data on `fix/stale-saved-data`.
 
 ## Known issues
 
@@ -59,13 +59,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | V-06 | Vendor messages | COMPLETED | Medium | `feature/vendor-messages` | `c76621d` | [#24](https://github.com/gugan-kirby/Prototype/pull/24) | Not tested. Render reviewed by eye |
 | A-01 | Admin shell and login | COMPLETED | Medium | `feature/admin-shell` | `4feb74f` | [#25](https://github.com/gugan-kirby/Prototype/pull/25) | Not tested. Render reviewed by eye |
 | A-02 | Vendor verification | COMPLETED | Medium | `feature/vendor-verification` | `d44a51f` | [#26](https://github.com/gugan-kirby/Prototype/pull/26) | Not tested. Render reviewed by eye |
-| A-03 | User management | COMPLETED | Medium | `feature/user-management` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| A-03 | User management | COMPLETED | Medium | `feature/user-management` | `2c6a16e` | [#27](https://github.com/gugan-kirby/Prototype/pull/27) | Not tested. Render reviewed by eye |
+| A-04 | Record views | COMPLETED | Medium | `feature/record-views` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| A-04 | Record views | NOT STARTED | Medium |
 | F-01 | Refresh saved data when the seed changes | NOT STARTED | High |
 | F-02 | Walk through both workflows end to end | NOT STARTED | Medium |
 
@@ -182,6 +182,10 @@ Lists vendors with their verification status. Admins can verify a vendor or remo
 ### A-03 User management
 
 Lists all users without their passwords. Admins can suspend or reactivate accounts, but not their own. Suspended users cannot log in. Staff see the list without actions.
+
+### A-04 Record views
+
+Read-only tables for enquiries, orders, invoices and payments, with search.
 
 ## Change history
 
