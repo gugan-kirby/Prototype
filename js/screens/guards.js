@@ -11,3 +11,9 @@ export function memberArea() {
   if (!active) return '/welcome';
   return active.guest ? '/home' : null;
 }
+
+export function vendorArea() {
+  const active = session();
+  if (!active) return '/welcome';
+  return active.role === 'vendor' ? null : '/home';
+}

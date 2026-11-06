@@ -6,12 +6,13 @@ const PASSWORD = 'Demo@123';
 const users = [
   { id: 'u-gugan', role: 'customer', name: 'Gugan Tennyson', email: 'gugan@jobwork.com', mobile: '9876543210', password: PASSWORD, status: 'active', wallet: 0 },
   { id: 'u-precision', role: 'vendor', name: 'Precision Metals', email: 'vendor@jobwork.com', mobile: '9840012345', password: PASSWORD, status: 'active' },
+  { id: 'u-nila', role: 'customer', name: 'Nila Engineering', email: 'nila@jobwork.com', mobile: '9840077777', password: PASSWORD, status: 'active', wallet: 0 },
   { id: 'u-admin', role: 'admin', name: 'Asha Raman', email: 'admin@jobwork.com', mobile: '9840098400', password: PASSWORD, status: 'active' },
   { id: 'u-staff', role: 'staff', name: 'Karthik Selvam', email: 'staff@jobwork.com', mobile: '9840098401', password: PASSWORD, status: 'active' },
 ];
 
 const vendors = [
-  { id: 'v-precision', userId: 'u-precision', name: 'Precision Metals', city: 'Chennai', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.8, reviews: 128, verified: true, tint: 'green', phone: '9840012345' },
+  { id: 'v-precision', userId: 'u-precision', name: 'Precision Metals', city: 'Chennai', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.8, reviews: 128, verified: true, tint: 'green', phone: '9840012345', growth: 12.4, trend: [4, 9, 25, 22, 28, 46, 41, 39, 55, 86, 82, 74, 100] },
   { id: 'v-tamil', userId: null, name: 'Tamil CNC Works', city: 'Coimbatore', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.6, reviews: 96, verified: true, tint: 'violet', phone: '9840012346' },
   { id: 'v-star', userId: null, name: 'Star Fabrication', city: 'Hosur', state: 'Tamil Nadu', stateCode: 'TN', rating: 4.5, reviews: 64, verified: true, tint: 'orange', phone: '9840012347' },
 ];
@@ -95,7 +96,7 @@ const orders = [
   order('ORD-1005', 'ENQ-1002', 'v-precision', 'L Bracket', 'cnc', 'Aluminium', '2025-03-06', 9200, 'Completed', 5, { art: 'lbracket', tint: 'green' }),
   order('ORD-1004', 'ENQ-1001', 'v-tamil', 'Drive Coupling', 'turning', 'SS304', '2025-02-20', 6300, 'Completed', 5, { quantity: 30 }),
   order('ORD-1003', null, 'v-star', 'Guide Rail', 'cnc', 'Mild Steel', '2025-02-18', 15800, 'In Progress', 3),
-  order('ORD-1002', null, 'v-precision', 'Pump Cover', 'cnc', 'Aluminium', '2025-02-12', 4100, 'Completed', 5),
+  order('ORD-1002', null, 'v-tamil', 'Pump Cover', 'cnc', 'Aluminium', '2025-02-12', 4100, 'Completed', 5),
   order('ORD-1001', null, 'v-star', 'Weld Bracket', 'welding', 'Mild Steel', '2025-02-05', 2900, 'Cancelled', 0),
 ];
 
@@ -118,8 +119,40 @@ const messages = [
   { id: 'm-1', customerId: 'u-gugan', vendorId: 'v-precision', from: 'vendor', text: 'Thanks for the enquiry. We can start as soon as the order is confirmed.', date: '2025-03-13' },
 ];
 
+// Work from a second customer, so the vendor dashboard totals are real data.
+const nila = (id, partName, category, subcategory, material, quantity, date, status, extra = {}) => ({
+  ...enquiry(id, partName, category, subcategory, material, date, status, extra), customerId: 'u-nila', quantity,
+});
+
+enquiries.push(
+  nila('ENQ-2003', 'Bracket Support', 'cnc', 'CNC Milling', 'Aluminium', 100, '2025-03-15', 'In Progress', { minutesAgo: 2 }),
+  nila('ENQ-2002', 'Base Plate', 'laser', 'Fibre Laser', 'Mild Steel', 50, '2025-03-15', 'In Progress', { minutesAgo: 14 }),
+  nila('ENQ-2001', 'Shaft Collar', 'cnc', 'CNC Turning', 'SS304', 200, '2025-03-15', 'In Progress', { minutesAgo: 28, process: 'CNC Turning' }),
+);
+
+const SPARE_PARTS = [['Hinge Plate', 'Mild Steel'], ['Valve Body', 'Brass'], ['Motor Mount', 'Aluminium'], ['Roller Pin', 'SS304']];
+const spare = (index) => SPARE_PARTS[index % SPARE_PARTS.length];
+
+for (let index = 0; index < 16; index += 1) {
+  const [part, material] = spare(index);
+  enquiries.push(nila(`ENQ-21${String(index).padStart(2, '0')}`, part, 'cnc', 'CNC Milling', material, 40 + index * 5, '2025-03-11', 'In Progress'));
+  const quoted = nila(`ENQ-22${String(index).padStart(2, '0')}`, part, 'cnc', 'CNC Milling', material, 60 + index * 5, '2025-03-09', 'Quoted');
+  enquiries.push(quoted);
+  quotes.push(quote(`Q-${10 + index}`, quoted.id, 'v-precision', 7000 + index * 450, 6, { date: '2025-03-10' }));
+}
+
+const VENDOR_ORDERS = [[8000, 2], [9500, 3], [11000, 1], [12500, 2], [7800, 4], [9000, 4], [10500, 4], [12000, 5], [11000, 5], [11500, 5]];
+
+VENDOR_ORDERS.forEach(([amount, stage], index) => {
+  const [part, material] = spare(index);
+  const id = `ORD-09${String(index).padStart(2, '0')}`;
+  const finished = stage === 5;
+  orders.push(order(id, null, 'v-precision', part, 'cnc', material, `2025-03-${String(index + 1).padStart(2, '0')}`, amount, finished ? 'Completed' : 'In Progress', stage, { customerId: 'u-nila' }));
+});
+
 const notifications = [
   { id: 'n-1', userId: 'u-gugan', title: 'New quote received', body: 'Precision Metals quoted for Bracket Support.', date: '2025-03-14', read: true, link: '/enquiries/ENQ-1012' },
+  { id: 'n-3', userId: 'u-precision', title: 'New enquiry', body: 'Bracket Support, 100 Nos', date: '2025-03-15', read: false, link: '/v/enquiries/ENQ-2003' },
   { id: 'n-2', userId: 'u-gugan', title: 'Order in production', body: 'ORD-1008 Bracket Support is now in production.', date: '2025-03-13', read: true, link: '/orders/ORD-1008' },
 ];
 
