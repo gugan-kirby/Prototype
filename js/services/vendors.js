@@ -108,3 +108,31 @@ export const advanceOrder = (id) => request(() => {
   notify(order.customerId, STAGES[stage], `${order.id} ${order.partName}: ${STAGES[stage]}.`, `/orders/${order.id}`);
   return updated;
 });
+
+export const vendorThreads = () => request(() => {
+  const vendor = currentVendor();
+  const messages = store.where('messages', (item) => item.vendorId === vendor.id);
+  return [...new Set(messages.map((item) => item.customerId))].map((customerId) => {
+    const customer = store.find('users', customerId);
+    const thread = messages.filter((item) => item.customerId === customerId);
+    return { customerId, name: customer?.company?.name ?? customer?.name, last: thread.at(-1) };
+  });
+});
+
+export const vendorThread = (customerId) => request(() => {
+  const vendor = currentVendor();
+  const customer = store.find('users', customerId);
+  if (!customer) throw new ApiError('This customer could not be found.');
+  return {
+    name: customer.company?.name ?? customer.name,
+    customerId,
+    messages: store.where('messages', (item) => item.vendorId === vendor.id && item.customerId === customerId),
+  };
+});
+
+export const replyToCustomer = (customerId, text) => request(() => {
+  const vendor = currentVendor();
+  const message = store.insert('messages', { id: `m-${store.nextNumber('message')}`, customerId, vendorId: vendor.id, from: 'vendor', text, date: store.meta().today });
+  notify(customerId, `Message from ${vendor.name}`, text.slice(0, 80), `/chat/${vendor.id}`);
+  return message;
+});
