@@ -11,16 +11,15 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** V-03 Manage quotes, branch `feature/manage-quotes`.
+- **Last feature merged:** V-04 Vendor orders, branch `feature/vendor-orders`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start V-04 Vendor orders on `feature/vendor-orders`.
+- **Next action:** start V-05 Update production status on `feature/production-status`.
 
 ## Known issues
 
 | Issue | Effect | Resolved by |
 |---|---|---|
-| Vendor pages not built | Dashboard links to vendor enquiries, quotes and orders lead to a missing page. | V-01 to V-04 |
 | Admin not built | Admin and staff login opens `admin.html`, which does not exist. | A-01 |
 | Vendor notification links | Links to `/v/...` lead to a missing page. | V-01 to V-06 |
 | Saved data can go stale | A browser that saved data before a seed change keeps the old copy, and can fail with "Unknown collection". Clearing site data fixes it. | F-01 |
@@ -56,13 +55,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | T-16 | Profile | COMPLETED | High | `feature/profile` | `34c3985` | [#18](https://github.com/gugan-kirby/Prototype/pull/18) | Not tested. Differs 7.5% |
 | V-01 | Vendor enquiries | COMPLETED | High | `feature/vendor-enquiries` | `a3ecf15` | [#19](https://github.com/gugan-kirby/Prototype/pull/19) | Not tested. Render reviewed by eye |
 | V-02 | Submit quote | COMPLETED | High | `feature/submit-quote` | `e5196e5` | [#20](https://github.com/gugan-kirby/Prototype/pull/20) | Not tested. Render reviewed by eye |
-| V-03 | Manage quotes | COMPLETED | Medium | `feature/manage-quotes` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| V-03 | Manage quotes | COMPLETED | Medium | `feature/manage-quotes` | `3be97ea` | [#21](https://github.com/gugan-kirby/Prototype/pull/21) | Not tested. Render reviewed by eye |
+| V-04 | Vendor orders | COMPLETED | High | `feature/vendor-orders` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| V-04 | Vendor orders | NOT STARTED | High |
 | V-05 | Update production status | NOT STARTED | High |
 | V-06 | Vendor messages | NOT STARTED | Medium |
 | A-01 | Admin shell and login | NOT STARTED | Medium |
@@ -161,6 +160,10 @@ Quote form with validation. Only verified vendors can quote, and each vendor can
 ### V-03 Manage quotes
 
 Lists the vendor's quotes with search and status tabs. Each card opens the enquiry.
+
+### V-04 Vendor orders
+
+Lists orders received with search, status tabs and progress. The detail page shows the order summary and all six production stages.
 
 ## Change history
 
