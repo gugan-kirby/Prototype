@@ -49,3 +49,15 @@ export const setUserStatus = (id, status) => request(() => {
   if (id === session().userId) throw new ApiError('You cannot suspend your own account.');
   store.update('users', id, { status });
 });
+
+export const listRecords = () => request(() => {
+  staffOnly();
+  const userName = (id) => store.find('users', id)?.name ?? id;
+  const vendorName = (id) => store.find('vendors', id)?.name ?? id;
+  return {
+    enquiries: store.all('enquiries').map((item) => [item.id, item.partName, userName(item.customerId), `${item.quantity} ${item.unit}`, item.date, item.status]),
+    orders: store.all('orders').map((item) => [item.id, item.partName, userName(item.customerId), vendorName(item.vendorId), item.amount, item.status]),
+    invoices: store.all('invoices').map((item) => [item.id, item.orderId, userName(item.customerId), item.amount, item.dueDate, item.status]),
+    payments: store.all('payments').map((item) => [item.id, item.invoiceId ?? item.type, userName(item.customerId), item.amount, item.method, item.date]),
+  };
+});
