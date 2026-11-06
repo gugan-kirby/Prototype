@@ -1,3 +1,5 @@
+.phone[data-screen="splash"] .statusbar svg { height: 15px; }
+
 .phone[data-screen="splash"] .statusbar {
   position: absolute;
   top: 0;
@@ -60,3 +62,23 @@
   font-weight: 700;
   padding: 4px 8px;
 }
+
+.welcome { padding: 70.500px 23.500px 0; background: #fff; }
+.welcome-to { padding-left: 8px; color: #0b0b4b; font-size: 29.500px; font-weight: 800; letter-spacing: -0.2px; line-height: 40px; }
+.welcome-word {
+  margin-top: 2px;
+  padding-left: 7px;
+  color: #0026d4;
+  font-size: 66px;
+  font-weight: 800;
+  letter-spacing: -1.700px;
+  line-height: 76px;
+}
+.welcome-sub { margin-top: 17.500px; padding-left: 8px; color: #171a4c; font-size: 21.300px; font-weight: 500; line-height: 28px; }
+.welcome-art { display: block; width: 395px; height: 200px; margin: 13px 0 0 -3.500px; mix-blend-mode: multiply; }
+.welcome-login { margin-top: 58.500px; }
+.welcome-register { margin-top: 17px; }
+.welcome-guest { display: block; margin: 21px auto 0; color: var(--blue-link); font-size: 19.500px; font-weight: 700; }
+.welcome-badges { display: flex; justify-content: space-between; margin: 51.500px 0 0; padding: 0 28px; list-style: none; }
+.welcome-badges li { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 60px; color: #41445f; font-size: 17.500px; font-weight: 500; }
+.welcome-badges svg { width: 36px; height: 36px; color: #0a1fd8; stroke-width: 1.900; }
