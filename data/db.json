@@ -510,7 +510,291 @@
       "status": "Submitted"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": "ORD-1008",
+      "enquiryId": "ENQ-1004",
+      "quoteId": null,
+      "customerId": "u-gugan",
+      "vendorId": "v-precision",
+      "partName": "Bracket Support",
+      "category": "cnc",
+      "material": "Aluminium",
+      "quantity": 100,
+      "unit": "Nos",
+      "amount": 12500,
+      "date": "2025-03-15",
+      "status": "In Progress",
+      "stage": 2,
+      "history": [
+        {
+          "stage": 0,
+          "date": "2025-03-15"
+        },
+        {
+          "stage": 1,
+          "date": "2025-03-15"
+        },
+        {
+          "stage": 2,
+          "date": "2025-03-15"
+        }
+      ],
+      "art": "factory"
+    },
+    {
+      "id": "ORD-1007",
+      "enquiryId": "ENQ-1003",
+      "quoteId": null,
+      "customerId": "u-gugan",
+      "vendorId": "v-tamil",
+      "partName": "Base Plate",
+      "category": "vmc",
+      "material": "Mild Steel",
+      "quantity": 50,
+      "unit": "Nos",
+      "amount": 8400,
+      "date": "2025-03-12",
+      "status": "Completed",
+      "stage": 5,
+      "history": [
+        {
+          "stage": 0,
+          "date": "2025-03-12"
+        },
+        {
+          "stage": 1,
+          "date": "2025-03-12"
+        },
+        {
+          "stage": 2,
+          "date": "2025-03-12"
+        },
+        {
+          "stage": 3,
+          "date": "2025-03-12"
+        },
+        {
+          "stage": 4,
+          "date": "2025-03-12"
+        },
+        {
+          "stage": 5,
+          "date": "2025-03-12"
+        }
+      ]
+    },
+    {
+      "id": "ORD-1006",
+      "enquiryId": "ENQ-1010",
+      "quoteId": null,
+      "customerId": "u-gugan",
+      "vendorId": "v-star",
+      "partName": "Shaft Collar",
+      "category": "turning",
+      "material": "SS304",
+      "quantity": 200,
+      "unit": "Nos",
+      "amount": 14000,
+      "date": "2025-03-10",
+      "status": "In Progress",
+      "stage": 1,
+      "history": [
+        {
+          "stage": 0,
+          "date": "2025-03-10"
+        },
+        {
+          "stage": 1,
+          "date": "2025-03-10"
+        }
+      ]
+    },
+    {
+      "id": "ORD-1005",
+      "enquiryId": "ENQ-1002",
+      "quoteId": null,
+      "customerId": "u-gugan",
+      "vendorId": "v-precision",
+      "partName": "L Bracket",
+      "category": "cnc",
+      "material": "Aluminium",
+      "quantity": 100,
+      "unit": "Nos",
+      "amount": 9200,
+      "date": "2025-03-06",
+      "status": "Completed",
+      "stage": 5,
+      "history": [
+        {
+          "stage": 0,
+          "date": "2025-03-06"
+        },
+        {
+          "stage": 1,
+          "date": "2025-03-06"
+        },
+        {
+          "stage": 2,
+          "date": "2025-03-06"
+        },
+        {
+          "stage": 3,
+          "date": "2025-03-06"
+        },
+        {
+          "stage": 4,
+          "date": "2025-03-06"
+        },
+        {
+          "stage": 5,
+          "date": "2025-03-06"
+        }
+      ],
+      "art": "lbracket",
+      "tint": "green"
+    },
+    {
+      "id": "ORD-1004",
+      "enquiryId": "ENQ-1001",
+      "quoteId": null,
+      "customerId": "u-gugan",
+      "vendorId": "v-tamil",
+      "partName": "Drive Coupling",
+      "category": "turning",
+      "material": "SS304",
+      "quantity": 30,
+      "unit": "Nos",
+      "amount": 6300,
+      "date": "2025-02-20",
+      "status": "Completed",
+      "stage": 5,
+      "history": [
+        {
+          "stage": 0,
+          "date": "2025-02-20"
+        },
+        {
+          "stage": 1,
+          "date": "2025-02-20"
+        },
+        {
+          "stage": 2,
+          "date": "2025-02-20"
+        },
+        {
+          "stage": 3,
+          "date": "2025-02-20"
+        },
+        {
+          "stage": 4,
+          "date": "2025-02-20"
+        },
+        {
+          "stage": 5,
+          "date": "2025-02-20"
+        }
+      ]
+    },
+    {
+      "id": "ORD-1003",
+      "enquiryId": null,
+      "quoteId": null,
+      "customerId": "u-gugan",
+      "vendorId": "v-star",
+      "partName": "Guide Rail",
+      "category": "cnc",
+      "material": "Mild Steel",
+      "quantity": 100,
+      "unit": "Nos",
+      "amount": 15800,
+      "date": "2025-02-18",
+      "status": "In Progress",
+      "stage": 3,
+      "history": [
+        {
+          "stage": 0,
+          "date": "2025-02-18"
+        },
+        {
+          "stage": 1,
+          "date": "2025-02-18"
+        },
+        {
+          "stage": 2,
+          "date": "2025-02-18"
+        },
+        {
+          "stage": 3,
+          "date": "2025-02-18"
+        }
+      ]
+    },
+    {
+      "id": "ORD-1002",
+      "enquiryId": null,
+      "quoteId": null,
+      "customerId": "u-gugan",
+      "vendorId": "v-precision",
+      "partName": "Pump Cover",
+      "category": "cnc",
+      "material": "Aluminium",
+      "quantity": 100,
+      "unit": "Nos",
+      "amount": 4100,
+      "date": "2025-02-12",
+      "status": "Completed",
+      "stage": 5,
+      "history": [
+        {
+          "stage": 0,
+          "date": "2025-02-12"
+        },
+        {
+          "stage": 1,
+          "date": "2025-02-12"
+        },
+        {
+          "stage": 2,
+          "date": "2025-02-12"
+        },
+        {
+          "stage": 3,
+          "date": "2025-02-12"
+        },
+        {
+          "stage": 4,
+          "date": "2025-02-12"
+        },
+        {
+          "stage": 5,
+          "date": "2025-02-12"
+        }
+      ]
+    },
+    {
+      "id": "ORD-1001",
+      "enquiryId": null,
+      "quoteId": null,
+      "customerId": "u-gugan",
+      "vendorId": "v-star",
+      "partName": "Weld Bracket",
+      "category": "welding",
+      "material": "Mild Steel",
+      "quantity": 100,
+      "unit": "Nos",
+      "amount": 2900,
+      "date": "2025-02-05",
+      "status": "Cancelled",
+      "stage": 0,
+      "history": [
+        {
+          "stage": 0,
+          "date": "2025-02-05"
+        }
+      ]
+    }
+  ],
   "invoices": [],
   "messages": [
     {
