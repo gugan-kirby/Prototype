@@ -25,8 +25,9 @@ const CUSTOMER_TABS = [
 
 export function renderTabs(screen) {
   if (!screen.tabs) return '';
+  const tabs = CUSTOMER_TABS.with(4, screen.lastTab ?? CUSTOMER_TABS[4]);
   return String(html`<nav class="tabbar" aria-label="Main">
-    ${CUSTOMER_TABS.map((tab) => (tab
+    ${tabs.map((tab) => (tab
       ? html`<button class="tab ${screen.tabs === tab.id ? 'on' : ''}" data-go="${tab.path}" ${screen.tabs === tab.id ? 'aria-current="page"' : ''}>
           ${icon(screen.tabs === tab.id ? tab.solid : tab.glyph)}<span>${tab.label}</span></button>`
       : html`<button class="fab" data-gate="/enquiry/new" aria-label="New Enquiry">${icon('plus')}</button>`))}

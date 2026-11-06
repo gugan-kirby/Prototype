@@ -99,6 +99,21 @@ const orders = [
   order('ORD-1001', null, 'v-star', 'Weld Bracket', 'welding', 'Mild Steel', '2025-02-05', 2900, 'Cancelled', 0),
 ];
 
+const invoice = (id, orderId, amount, date, dueDate, status) => ({ id, orderId, customerId: 'u-gugan', amount, date, dueDate, status });
+
+const invoices = [
+  invoice('INV-2025-006', 'ORD-1008', 12500, '2025-03-15', '2025-03-18', 'Unpaid'),
+  invoice('INV-2025-005', 'ORD-1007', 8400, '2025-03-12', '2025-03-15', 'Paid'),
+  invoice('INV-2025-004', 'ORD-1006', 14000, '2025-03-10', '2025-03-20', 'Unpaid'),
+  invoice('INV-2025-003', 'ORD-1005', 9200, '2025-03-06', '2025-03-09', 'Paid'),
+  invoice('INV-2025-002', 'ORD-1004', 6300, '2025-02-20', '2025-02-23', 'Paid'),
+  invoice('INV-2025-001', 'ORD-1002', 4100, '2025-02-12', '2025-02-15', 'Paid'),
+];
+
+const payments = invoices.filter((item) => item.status === 'Paid').map((item, index) => ({
+  id: `P-${index + 1}`, invoiceId: item.id, customerId: item.customerId, amount: item.amount, method: 'UPI', type: 'Payment', status: 'Success', date: item.date,
+}));
+
 const messages = [
   { id: 'm-1', customerId: 'u-gugan', vendorId: 'v-precision', from: 'vendor', text: 'Thanks for the enquiry. We can start as soon as the order is confirmed.', date: '2025-03-13' },
 ];
@@ -109,7 +124,7 @@ const notifications = [
 ];
 
 const db = {
-  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, enquiry: 1012, quote: 6, order: 1008, invoice: 6, message: 1 }, options },
+  meta: { today: '2025-03-15', counters: { user: 100, notification: 100, address: 10, enquiry: 1012, quote: 6, order: 1008, invoice: 6, message: 1, payment: 4 }, options },
   users,
   vendors,
   categories,
@@ -117,7 +132,8 @@ const db = {
   enquiries,
   quotes,
   orders,
-  invoices: [],
+  invoices,
+  payments,
   messages,
   notifications,
 };
