@@ -11,10 +11,10 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree and no feature branches open.
-- **Last feature merged:** V-01 Vendor enquiries, branch `feature/vendor-enquiries`.
+- **Last feature merged:** V-02 Submit quote, branch `feature/submit-quote`.
 - **In progress:** nothing.
 - **Blocked:** nothing.
-- **Next action:** start V-02 Submit quote on `feature/submit-quote`.
+- **Next action:** start V-03 Manage quotes on `feature/manage-quotes`.
 
 ## Known issues
 
@@ -54,13 +54,13 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | T-14 | Payments | COMPLETED | High | `feature/payments` | `21f45df` | [#16](https://github.com/gugan-kirby/Prototype/pull/16) | Not tested. Differs 7.8% |
 | T-15 | Vendor Dashboard | COMPLETED | High | `feature/vendor-dashboard` | `58ab4cc` | [#17](https://github.com/gugan-kirby/Prototype/pull/17) | Not tested. Differs 6.1% |
 | T-16 | Profile | COMPLETED | High | `feature/profile` | `34c3985` | [#18](https://github.com/gugan-kirby/Prototype/pull/18) | Not tested. Differs 7.5% |
-| V-01 | Vendor enquiries | COMPLETED | High | `feature/vendor-enquiries` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
+| V-01 | Vendor enquiries | COMPLETED | High | `feature/vendor-enquiries` | `a3ecf15` | [#19](https://github.com/gugan-kirby/Prototype/pull/19) | Not tested. Render reviewed by eye |
+| V-02 | Submit quote | COMPLETED | High | `feature/submit-quote` | Merged by this task's PR | See Git history | Not tested. Render reviewed by eye |
 
 ### Not started
 
 | ID | Task | Status | Priority |
 |---|---|---|---|
-| V-02 | Submit quote | NOT STARTED | High |
 | V-03 | Manage quotes | NOT STARTED | Medium |
 | V-04 | Vendor orders | NOT STARTED | High |
 | V-05 | Update production status | NOT STARTED | High |
@@ -153,6 +153,10 @@ The reference shows an unread dot on the bell, but other customer references do 
 ### V-01 Vendor enquiries
 
 Lists open enquiries and those already quoted, with search and tabs. The detail page shows requirements, specifications and drawing download. Unverified vendors see a notice instead of the quote button.
+
+### V-02 Submit quote
+
+Quote form with validation. Only verified vendors can quote, and each vendor can quote once per enquiry. Submitting moves the enquiry to Quoted and notifies the customer. GST is fixed at 18%.
 
 ## Change history
 
