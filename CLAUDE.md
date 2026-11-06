@@ -47,6 +47,7 @@ These were decided by the user. Do not reopen them without being asked.
 - **Admin is light oversight:** verify vendors, manage users and view records.
 - **Browser-only data:** `data/db.json` seeds `localStorage`. There is no server-side code.
 - **Reference images win:** where an image and a written brief disagree, the image is the source of truth.
+- **No phone status bar:** the references show one (9:41, signal, battery), but the app must not. Leave it out of every page.
 - **Brief-only items:** they must not change the reference view. Put them on linked pages or below the reference height.
 
 ## Architecture and conventions
@@ -73,6 +74,7 @@ These were decided by the user. Do not reopen them without being asked.
 - Recreate the image exactly. Do not redesign, simplify or reinterpret it, and do not settle for "similar".
 - Render at 426×923 CSS px at 2x so screenshots can be diffed against the 852×1846 references. The splash reference is 776×1800, rendered at 388×900.
 - Seed data must reproduce each reference on first load.
+- Removing the status bar moves pages up, so pixel comparison scores from before 2026-11-07 no longer apply. Compare by eye, or allow for the offset.
 - Compare the result with the reference, then fix visible differences before moving on.
 - Keep pages usable from 320 px wide, with no horizontal scroll.
 
