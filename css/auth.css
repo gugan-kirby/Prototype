@@ -1,0 +1,62 @@
+.phone[data-screen="splash"] .statusbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 59px;
+  padding: 8px 25px 0 36px;
+  background: #111853;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.splash {
+  position: relative;
+  height: 100%;
+  min-height: 620px;
+  background: #15237a url("../assets/img/splash-bg.jpg") center bottom / 100% 93.45% no-repeat;
+  color: #f4f5fb;
+  text-align: center;
+}
+
+.splash > * { position: absolute; left: 50%; transform: translateX(-50%); }
+
+.splash-logo { top: 29.9%; width: 148px; height: auto; }
+
+.splash-word {
+  top: 47.6%;
+  font-size: 49px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1;
+}
+
+.splash-tag {
+  top: 56.2%;
+  width: 100%;
+  font-size: 21.5px;
+  font-weight: 600;
+  line-height: 30px;
+  opacity: 0.92;
+}
+
+.splash-start {
+  bottom: 12%;
+  width: 85.6%;
+  height: 61px;
+  background: #f6f7fc;
+  border-radius: 14px;
+  color: #1a2a8c;
+  font-size: 18.5px;
+  font-weight: 700;
+}
+
+.splash-start:active { background: #e4e8f7; }
+
+.splash-link {
+  bottom: 5.6%;
+  color: #dfe2f2;
+  font-size: 18.5px;
+  font-weight: 700;
+  padding: 4px 8px;
+}

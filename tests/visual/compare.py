@@ -54,7 +54,7 @@ def compare(page, base, screen):
     actual = Image.open(shot).convert("RGB").resize(reference.size)
     diff = ImageChops.difference(reference, actual).convert("L")
     visible = diff.point(lambda v: 255 if v > THRESHOLD else 0)
-    score = sum(1 for v in visible.getdata() if v) / (reference.width * reference.height)
+    score = visible.histogram()[255] / (reference.width * reference.height)
 
     sheet = Image.new("RGB", (reference.width * 3 + 40, reference.height), "white")
     sheet.paste(reference, (0, 0))
