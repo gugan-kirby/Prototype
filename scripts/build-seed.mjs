@@ -75,6 +75,22 @@ const quotes = [
   quote('Q-6', 'ENQ-1005', 'v-tamil', 22500, 9, { date: '2025-03-01', minQty: 100 }),
 ];
 
+const order = (id, enquiryId, vendorId, partName, category, material, date, amount, status, stage, extra = {}) => ({
+  id, enquiryId, quoteId: null, customerId: 'u-gugan', vendorId, partName, category, material, quantity: 100, unit: 'Nos', amount, date, status, stage,
+  history: Array.from({ length: stage + 1 }, (_, index) => ({ stage: index, date })), ...extra,
+});
+
+const orders = [
+  order('ORD-1008', 'ENQ-1004', 'v-precision', 'Bracket Support', 'cnc', 'Aluminium', '2025-03-15', 12500, 'In Progress', 2, { art: 'factory' }),
+  order('ORD-1007', 'ENQ-1003', 'v-tamil', 'Base Plate', 'vmc', 'Mild Steel', '2025-03-12', 8400, 'Completed', 5, { quantity: 50 }),
+  order('ORD-1006', 'ENQ-1010', 'v-star', 'Shaft Collar', 'turning', 'SS304', '2025-03-10', 14000, 'In Progress', 1, { quantity: 200 }),
+  order('ORD-1005', 'ENQ-1002', 'v-precision', 'L Bracket', 'cnc', 'Aluminium', '2025-03-06', 9200, 'Completed', 5, { art: 'lbracket', tint: 'green' }),
+  order('ORD-1004', 'ENQ-1001', 'v-tamil', 'Drive Coupling', 'turning', 'SS304', '2025-02-20', 6300, 'Completed', 5, { quantity: 30 }),
+  order('ORD-1003', null, 'v-star', 'Guide Rail', 'cnc', 'Mild Steel', '2025-02-18', 15800, 'In Progress', 3),
+  order('ORD-1002', null, 'v-precision', 'Pump Cover', 'cnc', 'Aluminium', '2025-02-12', 4100, 'Completed', 5),
+  order('ORD-1001', null, 'v-star', 'Weld Bracket', 'welding', 'Mild Steel', '2025-02-05', 2900, 'Cancelled', 0),
+];
+
 const messages = [
   { id: 'm-1', customerId: 'u-gugan', vendorId: 'v-precision', from: 'vendor', text: 'Thanks for the enquiry. We can start as soon as the order is confirmed.', date: '2025-03-13' },
 ];
@@ -92,7 +108,7 @@ const db = {
   addresses,
   enquiries,
   quotes,
-  orders: [],
+  orders,
   invoices: [],
   messages,
   notifications,

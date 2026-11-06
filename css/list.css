@@ -45,3 +45,24 @@
 
 .cards.has-more { padding-bottom: 90px; }
 .list-empty { min-height: 180px; }
+
+.phone[data-screen="orders"] { --tabbar-h: 112px; }
+.badge svg { width: 18px; height: 18px; }
+.progress-row { display: flex; align-items: center; gap: 19px; margin-top: 4px; }
+.progress { flex: 1; height: 6.500px; overflow: hidden; background: #dddfe8; border-radius: 4px; }
+.progress i { display: block; height: 100%; background: var(--blue-bright); border-radius: 4px; }
+.progress-row b { color: #55586f; font-size: 13.500px; font-weight: 600; }
+
+.phone[data-screen="orders"] .list-title { font-size: 28.700px; }
+.phone[data-screen="orders"] .list-sub { margin-top: 3.500px; font-size: 15.400px; }
+.phone[data-screen="orders"] .tabs button { font-size: 12.700px; }
+.phone[data-screen="orders"] .tabs button:first-child { flex-basis: 84px; }
+.phone[data-screen="orders"] .cards { gap: 11px; margin-top: 16px; }
+.order-card { align-items: flex-start; min-height: 88.500px; padding: 12px 40px 8px 16px; }
+.order-card > .tile { margin-top: 3px; }
+.order-card .card-body { gap: 1.500px; margin-left: 18px; }
+.order-card .badge { top: 12px; right: 38px; font-size: 12.500px; }
+.order-card .badge svg { width: 15px; height: 15px; }
+.order-card .card-go { top: 44px; }
+.order-card:has(.progress-row) .card-go { top: 50px; }
+.order-card .progress-row { margin: 0 -14px 0 0; }

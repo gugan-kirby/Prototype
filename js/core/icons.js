@@ -42,6 +42,7 @@ const ICONS = {
   verifiedSolid: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1167f2" d="M12 1.500l2.800 2 3.400-.3 1.100 3.200 2.700 2.100-1 3.300 1 3.300-2.700 2.100-1.100 3.200-3.400-.3-2.800 2-2.800-2-3.400.3-1.100-3.200-2.700-2.100 1-3.300-1-3.300 2.700-2.100 1.100-3.200 3.400.3z"/><path d="M8 12.300l2.700 2.700 5.300-5.500" fill="none" stroke="#fff" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   document: stroke('<rect x="4" y="3.500" width="16" height="17" rx="2.500"/><path d="M8 8.500h8M8 12.500h8M8 16.500h4.500"/>'),
   send: stroke('<path d="M21 3L10.500 13.500M21 3l-6.500 18-4-7.500L3 9.500z"/>'),
+  okFilled: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.500" fill="#0a7f2e"/><path d="M7.500 12.500l3 3 6-6.500" fill="none" stroke="#fff" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   chevronDown: stroke('<path d="M5 9l7 7 7-7"/>'),
   chevron: stroke('<path d="M9 5l7 7-7 7"/>'),
   shieldLock: stroke('<path d="M12 2.500l8 3v6.500c0 4.700-3.300 8-8 9.500-4.700-1.500-8-4.800-8-9.500V5.500z"/><path d="M9.800 11.500V9.500a2.200 2.200 0 0 1 4.400 0v2"/><rect x="9" y="11.500" width="6" height="4.500" rx=".8" fill="currentColor" stroke-width="1"/>'),

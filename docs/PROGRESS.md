@@ -15,7 +15,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 08 | Enquiries | Done | Done | Done | 4.6% |
 | 09 | Quotes Received | Done | Done | Not run | 7.3% |
 | 10 | Quote Details | Done | Done | Not run | 7.2% |
-| 11 | My Orders | Pending | Pending | Pending | |
+| 11 | My Orders | Done | Done | Not run | 6.2% |
 | 12 | Order Tracking | Pending | Pending | Pending | |
 | 13 | Invoices | Pending | Pending | Pending | |
 | 14 | Payments | Pending | Pending | Pending | |
@@ -117,3 +117,11 @@ comes from blur around text in the references, which sharp text cannot reproduce
 - **Tests:** not run, as requested.
 - **Changes from reference:** Unit Price, GST, Total, Payment Terms, Validity and Notes
   come from the brief, so they sit below the reference height.
+
+### 11 My Orders
+
+- **Components:** title, search, filter, status tabs, order cards with progress bars,
+  taller tab bar as in the reference.
+- **Interactions:** search by part, order number, vendor or category. Filter by vendor,
+  sort, and open an order.
+- **Tests:** not run, as requested.
