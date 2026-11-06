@@ -111,6 +111,7 @@ Automated testing stopped on 2026-11-06 at the user's request. Each task is vali
 The references disagree with each other in places. The seed resolves this as follows:
 
 - Each finished order has its own earlier closed enquiry, so a live enquiry and a finished order for the same part can both exist.
+- Payments shows Total Paid ₹17,600 with Paid (4). The two paid invoices in March total ₹17,600, so Total Paid counts the current month, and the other two paid invoices are from February.
 - The app clock is fixed at 15 Mar 2025, so "Due in 3 Days (18 Mar 2025)" and "Due in 5 Days (20 Mar 2025)" are both correct.
 
 ## Pending decisions
@@ -118,11 +119,10 @@ The references disagree with each other in places. The seed resolves this as fol
 | # | Question | Default until answered |
 |---|---|---|
 | 1 | Should automated testing resume, and when? | Stay stopped. |
-| 2 | Payments shows Total Paid ₹17,600 and Paid (4), but the two paid invoices visible already total ₹17,600. Should the total or the count match the image? | Keep the image's count, and calculate the total from the data, so it will exceed ₹17,600. |
-| 3 | Vendor Dashboard shows 12 "Active Orders", but that includes 4 completed. Should the label change? | Use the brief's "Orders Received", which is accurate and matches the 12 in the chart. |
-| 4 | Commit `1e5835d` on `main` says "screens", and `c1efbc6` has the author name "Gugan". Fixing either needs a force-push to public history. Should they be fixed? | Leave them as they are. |
-| 5 | Does the ban on the word "screen" extend to code, such as the `js/screens/` folder? | No. It covers commit messages, branch names and PR text. |
-| 6 | Local branch `docs/git-workflow-rules` is now fully covered by `CLAUDE.md`. Can it be deleted? | Keep it. |
+| 2 | Vendor Dashboard shows 12 "Active Orders", but that includes 4 completed. Should the label change? | Use the brief's "Orders Received", which is accurate and matches the 12 in the chart. |
+| 3 | Commit `1e5835d` on `main` says "screens", and `c1efbc6` has the author name "Gugan". Fixing either needs a force-push to public history. Should they be fixed? | Leave them as they are. |
+| 4 | Does the ban on the word "screen" extend to code, such as the `js/screens/` folder? | No. It covers commit messages, branch names and PR text. |
+| 5 | Local branch `docs/git-workflow-rules` is now fully covered by `CLAUDE.md`. Can it be deleted? | Keep it. |
 
 ## Milestones
 
@@ -131,6 +131,6 @@ The references disagree with each other in places. The seed resolves this as fol
 | 0 | Foundation | Completed |
 | 1 | Authentication, enquiries, quotes and orders (T-01 to T-12) | Completed |
 | 2 | Finish the reference images (T-13 to T-16) | Upcoming, next |
-| 3 | Vendor portal | Upcoming |
-| 4 | Admin and staff portal | Upcoming |
-| 5 | Wrap-up | Upcoming |
+| 2 | Vendor portal | Upcoming |
+| 3 | Admin and staff portal | Upcoming |
+| 4 | Wrap-up | Upcoming |

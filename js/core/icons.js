@@ -52,6 +52,8 @@ const ICONS = {
   invoiceFill: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.500 2H15l5.500 5.500V20a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M8.500 12h7M8.500 16h4.500" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>',
   invoicePaid: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round" d="M12 21.500H6.500A1.500 1.500 0 0 1 5 20V4a1.500 1.500 0 0 1 1.500-1.500H14l5 5v5M14 2.500v5h5M8.500 12h6M8.500 16h3"/><circle cx="17.500" cy="18" r="4.800" fill="#0a7f2e"/><path d="M15.200 18.200l1.600 1.600 3-3.300" stroke="#fff" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   clock: stroke('<circle cx="12" cy="12" r="9"/><path d="M12 7v5.500l3.500 2"/>'),
+  wallet: stroke('<path d="M4 7.500V18a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-8.500a2 2 0 0 0-2-2H5.500A1.500 1.500 0 0 1 4 6v0a1.500 1.500 0 0 1 1.500-1.500L16.500 3v4.500"/><path d="M21 12h-4a2 2 0 0 0 0 4h4"/>'),
+  card: stroke('<rect x="3" y="5" width="18" height="14" rx="2.500"/><path d="M3 10h18M14 15h3.500"/>'),
   chevronDown: stroke('<path d="M5 9l7 7 7-7"/>'),
   chevron: stroke('<path d="M9 5l7 7-7 7"/>'),
   shieldLock: stroke('<path d="M12 2.500l8 3v6.500c0 4.700-3.300 8-8 9.500-4.700-1.500-8-4.800-8-9.500V5.500z"/><path d="M9.800 11.500V9.500a2.200 2.200 0 0 1 4.400 0v2"/><rect x="9" y="11.500" width="6" height="4.500" rx=".8" fill="currentColor" stroke-width="1"/>'),

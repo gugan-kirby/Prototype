@@ -28,10 +28,10 @@ export function listView(config, items, before = '') {
       <h1 class="list-title">${config.title}</h1>
       <p class="list-sub">${config.subtitle}</p>
       ${raw(before)}
-      <div class="list-tools">
+      ${config.placeholder && html`<div class="list-tools">
         <label class="search">${icon('search')}<input id="search" type="search" placeholder="${config.placeholder}" aria-label="${config.placeholder}"></label>
         <button class="filter-btn" id="filter" aria-label="Filter and sort">${icon('sliders')}</button>
-      </div>
+      </div>`}
       <div class="tabs" role="tablist">
         ${config.tabs.map((tab, index) => html`<button role="tab" class="${index === 0 ? 'on' : ''}" aria-selected="${index === 0}" data-tab="${index}">${tab.label} (${items.filter(tab.test).length})</button>`)}
       </div>
@@ -66,7 +66,7 @@ export function mountList(root, config, items) {
     draw({ keepLimit: true });
   };
 
-  root.querySelector('#search').addEventListener('input', (event) => {
+  root.querySelector('#search')?.addEventListener('input', (event) => {
     state.query = event.target.value;
     draw();
   });
@@ -82,7 +82,8 @@ export function mountList(root, config, items) {
     };
   });
 
-  root.querySelector('#filter').onclick = () => sheet({
+  const filterButton = root.querySelector('#filter');
+  if (filterButton) filterButton.onclick = () => sheet({
     title: 'Filter & Sort',
     body: html`
       <div class="form-row"><label class="form-label" for="sort">Sort by</label>
