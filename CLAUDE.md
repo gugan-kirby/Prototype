@@ -128,7 +128,7 @@ Follow these steps without waiting to be asked:
 8. Open a PR to `main` with a summary, implementation details and validation results.
 9. Check the PR is mergeable, holds no unrelated changes, and meets repository policies.
 10. Merge it, then verify the merge and that `main` matches the branch.
-11. Update local `main`, and delete the branch locally and remotely.
+11. Update local `main`. Keep the branch.
 12. Report the branch, commit hash, PR URL and merge status.
 
 If approval, permissions or required checks are missing, stop at that stage and report what is needed. Never bypass reviews, CI checks, branch protection or repository policies.
@@ -156,5 +156,6 @@ The user prefers squash merging, but on this repo GitHub writes the display name
 
 - Never overwrite or discard existing user changes.
 - Never force-push or rewrite shared history unless explicitly authorized.
+- Never delete branches, locally or remotely. Merged branches stay.
 - Never commit directly to `main`, `master` or shared development branches.
 - Never claim anything was pushed, merged or committed unless the operation succeeded and was verified.
