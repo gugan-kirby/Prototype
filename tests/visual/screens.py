@@ -11,5 +11,6 @@ SCREENS = [
     {"id": "04-home", "ref": "JobWork Precision Dashboard.png", "route": "/home", "session": CUSTOMER},
     {"id": "05-details", "ref": "JobWork New Enquiry Form.png", "route": "/enquiry/new", "session": CUSTOMER},
     {"id": "07-review", "ref": "Mobile Review Enquiry Form UI.png", "route": "/enquiry/new/review", "session": CUSTOMER, "before": REVIEW},
+    {"id": "08-enquiries", "ref": "JobWork Enquiry Dashboard.png", "route": "/enquiries", "session": CUSTOMER},
     {"id": "06-requirements", "ref": "New Enquiry Requirements Form.png", "route": "/enquiry/new/requirements", "session": CUSTOMER, "before": DRAFT},
 ]

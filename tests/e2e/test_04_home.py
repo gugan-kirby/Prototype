@@ -12,6 +12,7 @@ def test_content_matches_the_reference(page, base):
     assert page.locator(".cat span").all_inner_texts() == ["CNC Machining", "VMC", "Turning", "Welding"]
     assert page.locator(".tab span").all_inner_texts() == ["Home", "Enquiries", "Orders", "Profile"]
     for image in page.locator(".home img").all():
+        image.evaluate("el => el.complete || new Promise(done => { el.onload = el.onerror = done; })")
         assert image.evaluate("el => el.naturalWidth") > 0
 
 

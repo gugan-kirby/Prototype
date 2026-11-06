@@ -27,8 +27,11 @@ def serve():
         def log_message(self, *args):
             pass
 
+    class Server(http.server.ThreadingHTTPServer):
+        request_queue_size = 128
+
     handler = functools.partial(Quiet, directory=str(ROOT))
-    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    server = Server(("127.0.0.1", 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     return server.server_address[1]
 

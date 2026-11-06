@@ -71,6 +71,7 @@ export async function render({ keepScroll = false } = {}) {
   try {
     const data = screen.load ? await screen.load(ctx) : {};
     if (run !== token) return;
+    root.onscroll = null;
     root.innerHTML = screen.view(data, ctx);
     root.scrollTop = keepScroll ? scroll : 0;
     screen.mount?.(root, data, ctx);
