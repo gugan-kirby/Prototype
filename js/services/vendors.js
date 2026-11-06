@@ -77,3 +77,19 @@ export const vendorQuotes = () => request(() => {
   const vendor = currentVendor();
   return store.where('quotes', (quote) => quote.vendorId === vendor.id).map((quote) => ({ ...quote, enquiry: store.find('enquiries', quote.enquiryId) }));
 });
+
+const orderView = (order) => {
+  const customer = store.find('users', order.customerId);
+  return { ...order, customerName: customer?.company?.name ?? customer?.name, categoryName: store.find('categories', order.category)?.name };
+};
+
+export const vendorOrders = () => request(() => {
+  const vendor = currentVendor();
+  return store.where('orders', (order) => order.vendorId === vendor.id).map(orderView);
+});
+
+export const vendorOrder = (id) => request(() => {
+  const order = store.find('orders', id);
+  if (!order || order.vendorId !== currentVendor().id) throw new ApiError('This order could not be found.');
+  return orderView(order);
+});
