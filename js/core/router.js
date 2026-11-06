@@ -4,6 +4,7 @@ const routes = [];
 const history = [];
 let current = null;
 let token = 0;
+let chrome = () => '';
 
 export function route(pattern, screen) {
   const names = [];
@@ -25,6 +26,8 @@ function match(path) {
   return null;
 }
 
+export function setChrome(render) { chrome = render; }
+
 export const currentPath = () => location.hash.slice(1) || '/';
 
 export function go(path, { replace = false } = {}) {
@@ -39,19 +42,20 @@ export function back(fallback = '/') {
 
 export async function render({ keepScroll = false } = {}) {
   const root = document.getElementById('screen');
-  const path = currentPath();
+  const [path, search = ''] = currentPath().split('?');
   const found = match(path);
   const run = ++token;
   const scroll = root.scrollTop;
 
   if (!found) {
+    document.getElementById('chrome').innerHTML = '';
     root.innerHTML = html`<div class="state"><p>That page does not exist.</p>
       <button class="link" data-go="/">Go to start</button></div>`;
     return;
   }
 
   const { screen, params } = found;
-  const ctx = { params, refresh: () => render({ keepScroll: true }) };
+  const ctx = { params, query: Object.fromEntries(new URLSearchParams(search)), refresh: () => render({ keepScroll: true }) };
   if (screen.guard) {
     const redirect = screen.guard(ctx);
     if (redirect) { go(redirect, { replace: true }); return; }
@@ -59,6 +63,8 @@ export async function render({ keepScroll = false } = {}) {
 
   document.getElementById('phone').dataset.screen = screen.name;
   document.getElementById('statusbar').classList.toggle('on-dark', Boolean(screen.dark));
+
+  document.getElementById('chrome').innerHTML = chrome(screen);
 
   if (screen.load && !keepScroll) root.innerHTML = '<div class="state"><div class="spinner" role="status" aria-label="Loading"></div></div>';
 

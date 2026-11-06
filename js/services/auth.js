@@ -13,6 +13,11 @@ function startSession(data) {
   return data;
 }
 
+export function currentUser() {
+  const active = session();
+  return active?.userId ? store.find('users', active.userId) : null;
+}
+
 export function endSession() { localStorage.removeItem(SESSION_KEY); }
 
 export const continueAsGuest = () => startSession({ guest: true, role: 'customer' });

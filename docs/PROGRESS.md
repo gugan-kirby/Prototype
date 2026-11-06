@@ -8,7 +8,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 01 | Splash | Done | Done | Done | 4.9% |
 | 02 | Welcome / Login | Done | Done | Done | 2.7% |
 | 03 | Registration | Done | Done | Done | 2.6% |
-| 04 | Customer Home | Pending | Pending | Pending | |
+| 04 | Customer Home | Done | Done | Done | 5.4% |
 | 05 | New Enquiry – Details | Pending | Pending | Pending | |
 | 06 | New Enquiry – Requirements | Pending | Pending | Pending | |
 | 07 | Review Enquiry | Pending | Pending | Pending | |
@@ -50,3 +50,12 @@ comes from blur around text in the references, which sharp text cannot reproduce
   creation, and role-based redirect. New vendors start unverified.
 - **Tests:** required fields, invalid values, duplicates, both roles, logging in again.
 - **Remaining:** none.
+
+### 04 Customer Home
+
+- **Components:** app header, bell, banner, six quick actions, four categories, tab bar
+  with floating button, side menu, notifications list.
+- **Interactions:** every action, tab and category navigates. Guests get a login prompt.
+  Signed-out visitors go to Welcome. Failed loads offer a retry.
+- **Tests:** content, all navigation, menu, guest prompt, session guard, retry.
+- **Changes from reference:** "CNC Maching Machining" is corrected to "CNC Machining".
