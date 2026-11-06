@@ -81,7 +81,15 @@ const order = (id, enquiryId, vendorId, partName, category, material, date, amou
 });
 
 const orders = [
-  order('ORD-1008', 'ENQ-1004', 'v-precision', 'Bracket Support', 'cnc', 'Aluminium', '2025-03-15', 12500, 'In Progress', 2, { art: 'factory' }),
+  order('ORD-1008', 'ENQ-1004', 'v-precision', 'Bracket Support', 'cnc', 'Aluminium', '2025-03-15', 12500, 'In Progress', 2, {
+    art: 'factory',
+    delivery: { dispatch: '2025-03-18', arrive: '2025-03-19' },
+    history: [
+      { stage: 0, date: '2025-03-15', time: '10:24 AM' },
+      { stage: 1, date: '2025-03-15', time: '05:40 PM' },
+      { stage: 2, date: '2025-03-16', time: '02:15 PM' },
+    ],
+  }),
   order('ORD-1007', 'ENQ-1003', 'v-tamil', 'Base Plate', 'vmc', 'Mild Steel', '2025-03-12', 8400, 'Completed', 5, { quantity: 50 }),
   order('ORD-1006', 'ENQ-1010', 'v-star', 'Shaft Collar', 'turning', 'SS304', '2025-03-10', 14000, 'In Progress', 1, { quantity: 200 }),
   order('ORD-1005', 'ENQ-1002', 'v-precision', 'L Bracket', 'cnc', 'Aluminium', '2025-03-06', 9200, 'Completed', 5, { art: 'lbracket', tint: 'green' }),
