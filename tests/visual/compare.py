@@ -40,6 +40,8 @@ def compare(page, base, screen):
     page.evaluate("localStorage.clear()")
     for key, value in screen.get("session", {}).items():
         page.evaluate("([k, v]) => localStorage.setItem(k, v)", [key, value])
+    if screen.get("before"):
+        page.evaluate("d => sessionStorage.setItem('jobwork.enquiryDraft', JSON.stringify(d))", screen["before"])
     page.goto(f"{base}/index.html#{screen['route']}")
     page.reload()
     page.wait_for_selector(screen.get("ready", "#screen > *:not(.state)"))
