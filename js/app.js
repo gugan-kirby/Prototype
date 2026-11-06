@@ -2,6 +2,7 @@ import { connect } from './core/api.js';
 import { route, setChrome, startRouter } from './core/router.js';
 import { renderTabs, startShell } from './screens/shell.js';
 import enquiryDetails from './screens/enquiry-details.js';
+import enquiryRequirements from './screens/enquiry-requirements.js';
 import home from './screens/home.js';
 import notifications from './screens/notifications.js';
 import login from './screens/login.js';
@@ -16,6 +17,7 @@ route('/register', register);
 route('/home', home);
 route('/notifications', notifications);
 route('/enquiry/new', enquiryDetails);
+route('/enquiry/new/requirements', enquiryRequirements);
 
 setChrome(renderTabs);
 

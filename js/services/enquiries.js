@@ -25,3 +25,14 @@ export const enquiryOptions = () => request(() => {
     locations: [...new Set(store.where('addresses', (item) => item.userId === userId).map(locationName))],
   };
 });
+
+export const MAX_DRAWING_BYTES = 10 * 1024 * 1024;
+const DRAWING_TYPES = ['pdf', 'dwg', 'step', 'stp', 'jpg', 'jpeg'];
+
+export function drawingProblem(file) {
+  const extension = file.name.split('.').pop().toLowerCase();
+  if (!DRAWING_TYPES.includes(extension)) return 'Upload a PDF, DWG, STEP or JPG file.';
+  if (file.size > MAX_DRAWING_BYTES) return 'File is larger than 10MB.';
+  if (file.size === 0) return 'This file is empty.';
+  return '';
+}

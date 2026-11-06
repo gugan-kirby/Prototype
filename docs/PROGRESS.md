@@ -10,7 +10,7 @@ comes from blur around text in the references, which sharp text cannot reproduce
 | 03 | Registration | Done | Done | Done | 2.6% |
 | 04 | Customer Home | Done | Done | Done | 5.4% |
 | 05 | New Enquiry – Details | Done | Done | Done | 3.4% |
-| 06 | New Enquiry – Requirements | Pending | Pending | Pending | |
+| 06 | New Enquiry – Requirements | Done | Done | Done | 4.0% |
 | 07 | Review Enquiry | Pending | Pending | Pending | |
 | 08 | Enquiries | Pending | Pending | Pending | |
 | 09 | Quotes Received | Pending | Pending | Pending | |
@@ -67,4 +67,14 @@ comes from blur around text in the references, which sharp text cannot reproduce
 - **Interactions:** required-field and quantity validation, sub categories that follow
   the category, category preselected from Home, draft saved between steps.
 - **Tests:** labels, validation, dependent dropdown, draft restore, guards, escaping.
+- **Remaining:** none.
+
+### 06 New Enquiry – Requirements
+
+- **Components:** upload box, specifications field, surface finish and tolerance
+  dropdowns, Back and Next buttons.
+- **Interactions:** real file upload stored in IndexedDB, type and size limits, replace
+  and remove, draft kept between steps. A drawing or specifications text is required.
+- **Tests:** all file types, rejected files, a 10MB file read back from storage,
+  replace, remove, validation and draft handling.
 - **Remaining:** none.
