@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Figtree";
+  src: url("../assets/fonts/figtree-variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+:root {
+  --blue: #0021db;
+  --blue-bright: #0008e5;
+  --blue-pure: #0001fe;
+  --blue-link: #0a2fe0;
+  --navy: #00003d;
+  --ink: #1b1d3a;
+  --muted: #5d6079;
+  --hint: #7c7f95;
+  --line: #e5e7ed;
+  --line-soft: #eceef3;
+  --page: #f9fafb;
+  --white: #ffffff;
+  --panel: #f0f4fe;
+  --panel-soft: #f7f8fe;
+  --tab-on: #e4e9fe;
+
+  --tile-blue: #e7eefd;
+  --tile-violet: #f0edfd;
+  --tile-orange: #feeddf;
+  --tile-green: #e3f7e7;
+  --tile-yellow: #fff4e2;
+
+  --ok-bg: #e3f7e7;
+  --ok: #0a7f2e;
+  --info-bg: #e5f0fe;
+  --info: #0a6fe0;
+  --idle-bg: #f0f1f3;
+  --idle: #5d6079;
+  --bad-bg: #feeae8;
+  --bad: #9f1d2c;
+  --warn-bg: #fff4e2;
+  --warn: #c56a00;
+
+  --font: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --shadow-card: 0 2px 10px rgba(30, 40, 90, 0.05);
+  --shadow-bar: 0 -2px 16px rgba(30, 40, 90, 0.05);
+}

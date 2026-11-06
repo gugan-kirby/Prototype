@@ -1,2 +1,4 @@
 .DS_Store
 .claude/
+tests/visual/output/
+__pycache__/
