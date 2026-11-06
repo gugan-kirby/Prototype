@@ -96,3 +96,5 @@
 .tabbar-vendor { padding: 8px 0 0 5px; }
 .tabbar-vendor .tab { gap: 3px; height: 46px; font-size: 11.800px; }
 .tabbar-vendor .tab svg { width: 24px; height: 24px; }
+
+.vd-stat-green { padding-left: 11px; }
