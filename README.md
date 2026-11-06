@@ -13,6 +13,12 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000>.
 
+## Documentation
+
+- `PROJECT_PLAN.md`: scope and task order.
+- `PROGRESS.md`: current status and where to resume.
+- `docs/specs/`: the original design.
+
 ## Test
 
 ```sh
