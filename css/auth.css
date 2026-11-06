@@ -1,22 +1,8 @@
-.phone[data-screen="splash"] .statusbar svg { height: 15px; }
-
-.phone[data-screen="splash"] .statusbar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 59px;
-  padding: 8px 25px 0 36px;
-  background: #111853;
-  font-size: 16px;
-  font-weight: 700;
-}
-
 .splash {
   position: relative;
   height: 100%;
   min-height: 620px;
-  background: #15237a url("../assets/img/splash-bg.jpg") center bottom / 100% 93.45% no-repeat;
+  background: #15237a url("../assets/img/splash-bg.jpg") center / cover no-repeat;
   color: #f4f5fb;
   text-align: center;
 }
@@ -82,8 +68,6 @@
 .welcome-badges { display: flex; justify-content: space-between; margin: 51.500px 0 0; padding: 0 28px; list-style: none; }
 .welcome-badges li { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 60px; color: #41445f; font-size: 17.500px; font-weight: 500; }
 .welcome-badges svg { width: 36px; height: 36px; color: #0a1fd8; stroke-width: 1.900; }
-
-.phone[data-screen="register"] .statusbar { padding-left: 36px; }
 
 .register .page-head { margin-bottom: 0; }
 

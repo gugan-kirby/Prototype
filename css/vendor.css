@@ -1,6 +1,4 @@
 .phone[data-screen="vendor-home"] { --tabbar-h: 83px; }
-.phone[data-screen="vendor-home"] .statusbar { height: 39px; padding-top: 0; }
-
 .app-head-vendor { height: 72px; padding: 0 14px 4px 18px; }
 .app-head-vendor .app-word { margin-left: 25px; font-size: 25px; }
 .app-head-vendor .head-bell { margin-right: 22px; }
@@ -75,7 +73,6 @@
 .tabbar-vendor { padding-top: 12px; }
 .tabbar-vendor .tab { height: 54px; }
 
-.phone[data-screen="vendor-home"] .statusbar { padding-top: 5px; }
 .app-head-vendor { height: 70.500px; }
 .app-head-vendor .head-btn svg { width: 25px; height: 25px; }
 .app-head-vendor .app-word { margin-left: 16px; font-size: 22.500px; letter-spacing: -0.500px; }

@@ -62,7 +62,6 @@ export async function render({ keepScroll = false } = {}) {
   }
 
   document.getElementById('phone').dataset.screen = screen.name;
-  document.getElementById('statusbar').classList.toggle('on-dark', Boolean(screen.dark));
 
   document.getElementById('chrome').innerHTML = chrome(screen);
 

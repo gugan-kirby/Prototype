@@ -21,6 +21,7 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 
 | Issue | Effect | Resolved by |
 |---|---|---|
+| Status bar test and scores | `tests/e2e/test_foundation.py` still expects the status bar, so it will fail if run. The Differs figures were measured with the bar in place. | Decision 1 in `PROJECT_PLAN.md` |
 | Automated tests out of date | Last full run was 75 passed, at T-08. They were not run for T-09 onwards, and may no longer pass. | Decision 1 in `PROJECT_PLAN.md` |
 | Later behaviour unconfirmed | Interactions added from T-10 onwards have not been exercised, including chat, PDF download, Pay Now, quote submission, status updates and all admin actions. Only their pages were rendered. | F-02 |
 | T-09 fix not rechecked | The final test run for T-09 found the Enquiry Details tab did not hide the quotes list. It was fixed in CSS, but the fix was not rerun. | F-02 |
@@ -203,4 +204,5 @@ The seed now carries a version worked out from its content. When it changes, a b
 | 2026-11-06 | Rebase merges used instead of squash | Squash changes the author name, from PR #2 onwards |
 | 2026-11-06 | Total Paid scoped to the current month | Matches the reference's figure and count, which replaced a pending decision |
 | 2026-11-07 | Branches are kept after merging, and deleted branches were restored at their merged commits | User decision, replacing the earlier cleanup step |
+| 2026-11-07 | Phone status bar removed from every page | User decision. It only copied the reference images |
 | 2026-11-06 | Automated test writing and running stopped, from T-09 onwards | User decision |
