@@ -4,8 +4,18 @@ const SESSION_KEY = 'jobwork.session';
 
 export const homeFor = (role) => ({ customer: '/home', vendor: '/v/home' }[role] ?? '/');
 
-export function session() {
+function savedSession() {
   try { return JSON.parse(localStorage.getItem(SESSION_KEY)); } catch { return null; }
+}
+
+// Suspending an account also ends any session it already has open.
+export function session() {
+  const active = savedSession();
+  if (active?.userId && store?.find('users', active.userId)?.status === 'suspended') {
+    endSession();
+    return null;
+  }
+  return active;
 }
 
 function startSession(data) {
