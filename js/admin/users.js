@@ -1,5 +1,5 @@
 import { html } from '../core/html.js';
-import { toast } from '../core/ui.js';
+import { busy, toast } from '../core/ui.js';
 import { canManage, listUsers, setUserStatus } from '../services/admin.js';
 import { session } from '../services/auth.js';
 
@@ -24,14 +24,16 @@ export default {
     </table>`,
   mount(root, _, ctx) {
     root.querySelectorAll('[data-status]').forEach((button) => {
-      button.onclick = async () => {
+      button.onclick = () => busy(button, async () => {
+        const { id, status } = button.dataset;
         try {
-          await setUserStatus(button.dataset.id, button.dataset.status);
+          await setUserStatus(id, status);
+          toast(status === 'suspended' ? 'Account suspended.' : 'Account reactivated.', 'ok');
           ctx.refresh();
         } catch (error) {
           toast(error.message, 'bad');
         }
-      };
+      });
     });
   },
 };

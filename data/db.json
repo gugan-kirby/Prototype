@@ -46,7 +46,7 @@
         "±0.01mm"
       ]
     },
-    "seedVersion": "ba4c8a1eb607"
+    "seedVersion": "e169d5514ea2"
   },
   "users": [
     {
@@ -96,6 +96,15 @@
       "password": "Demo@123",
       "status": "active",
       "wallet": 0
+    },
+    {
+      "id": "u-kovai",
+      "role": "vendor",
+      "name": "Kovai Laser Cutting",
+      "email": "kovai@jobwork.com",
+      "mobile": "9840012348",
+      "password": "Demo@123",
+      "status": "active"
     },
     {
       "id": "u-admin",
@@ -171,6 +180,19 @@
       "verified": true,
       "tint": "orange",
       "phone": "9840012347"
+    },
+    {
+      "id": "v-kovai",
+      "userId": "u-kovai",
+      "name": "Kovai Laser Cutting",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "stateCode": "TN",
+      "rating": 0,
+      "reviews": 0,
+      "verified": false,
+      "tint": "blue",
+      "phone": "9840012348"
     }
   ],
   "categories": [

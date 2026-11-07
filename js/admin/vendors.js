@@ -1,5 +1,5 @@
 import { html } from '../core/html.js';
-import { toast } from '../core/ui.js';
+import { busy, toast } from '../core/ui.js';
 import { canManage, listVendors, setVendorVerified } from '../services/admin.js';
 
 export default {
@@ -15,19 +15,21 @@ export default {
         <td>${vendor.city ? `${vendor.city}, ${vendor.state}` : 'Not provided'}</td>
         <td>${vendor.reviews ? `${vendor.rating} (${vendor.reviews})` : 'New'}</td>
         <td><span class="admin-pill ${vendor.verified ? 'good' : 'warn'}">${vendor.verified ? 'Verified' : 'Awaiting'}</span></td>
-        ${canManage() && html`<td><button class="admin-act ${vendor.verified ? 'quiet' : ''}" data-id="${vendor.id}" data-verify="${!vendor.verified}">${vendor.verified ? 'Remove Verification' : 'Verify'}</button></td>`}
+        ${canManage() && html`<td><button class="admin-act ${vendor.verified ? 'quiet' : ''}" data-id="${vendor.id}" data-verify="${vendor.verified ? 'remove' : 'verify'}">${vendor.verified ? 'Remove Verification' : 'Verify'}</button></td>`}
       </tr>`)}</tbody>
     </table>`,
   mount(root, _, ctx) {
     root.querySelectorAll('[data-verify]').forEach((button) => {
-      button.onclick = async () => {
+      button.onclick = () => busy(button, async () => {
+        const verify = button.dataset.verify === 'verify';
         try {
-          await setVendorVerified(button.dataset.id, button.dataset.verify === 'true');
+          await setVendorVerified(button.dataset.id, verify);
+          toast(verify ? 'Vendor verified.' : 'Verification removed.', 'ok');
           ctx.refresh();
         } catch (error) {
           toast(error.message, 'bad');
         }
-      };
+      });
     });
   },
 };
