@@ -44,7 +44,8 @@ Never mark unfinished work as completed to make a report look clean.
 These were decided by the user. Do not reopen them without being asked.
 
 - **Direct marketplace:** customers deal directly with vendors. The "JobWork as middleman" model was rejected, so do not add masking, quote approval or internal costing.
-- **Admin is light oversight:** verify vendors, manage users and view records.
+- **Admin and staff act on records:** both can close enquiries, cancel unpaid orders, mark invoices as paid and notify customers or vendors. This replaced light oversight on 2026-11-07. Masking, quote approval and internal costing stay out.
+- **Staff permissions:** staff can verify vendors and act on records. Only admins can suspend accounts.
 - **Browser-only data:** `data/db.json` seeds `localStorage`. There is no server-side code.
 - **Reference images win:** where an image and a written brief disagree, the image is the source of truth.
 - **No phone status bar:** the references show one (9:41, signal, battery), but the app must not. Leave it out of every page.
