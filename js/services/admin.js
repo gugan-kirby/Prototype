@@ -1,8 +1,9 @@
 import { ApiError, request, store } from '../core/api.js';
 import { session } from './auth.js';
+import { invoiceStatus, isPayable } from './invoices.js';
 import { notify } from './notifications.js';
 
-const staffOnly = () => {
+export const staffOnly = () => {
   const role = session()?.role;
   if (role !== 'admin' && role !== 'staff') throw new ApiError('You do not have access to this page.');
 };
@@ -18,7 +19,7 @@ export const overview = () => request(() => {
     awaiting: vendors.filter((vendor) => !vendor.verified).length,
     enquiries: store.where('enquiries', (item) => item.status !== 'Closed').length,
     orders: store.where('orders', (order) => order.status === 'In Progress').length,
-    unpaid: store.where('invoices', (invoice) => invoice.status !== 'Paid').length,
+    unpaid: store.where('invoices', isPayable).length,
   };
 });
 
@@ -57,7 +58,7 @@ export const listRecords = () => request(() => {
   return {
     enquiries: store.all('enquiries').map((item) => [item.id, item.partName, userName(item.customerId), `${item.quantity} ${item.unit}`, item.date, item.status]),
     orders: store.all('orders').map((item) => [item.id, item.partName, userName(item.customerId), vendorName(item.vendorId), item.amount, item.status]),
-    invoices: store.all('invoices').map((item) => [item.id, item.orderId, userName(item.customerId), item.amount, item.dueDate, item.status]),
+    invoices: store.all('invoices').map((item) => [item.id, item.orderId, userName(item.customerId), item.amount, item.dueDate, invoiceStatus(item)]),
     payments: store.all('payments').map((item) => [item.id, item.invoiceId ?? item.type, userName(item.customerId), item.amount, item.method, item.date]),
   };
 });

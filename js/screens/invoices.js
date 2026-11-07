@@ -1,7 +1,7 @@
 import { formatDate, rupees } from '../core/format.js';
 import { html } from '../core/html.js';
 import { icon } from '../core/icons.js';
-import { myInvoices } from '../services/invoices.js';
+import { isPayable, myInvoices } from '../services/invoices.js';
 import { memberArea } from './guards.js';
 import { dateLine, listView, mountList, tile } from './list-page.js';
 import { dueNote, INVOICES_TAB, openPayment } from './invoice-parts.js';
@@ -21,7 +21,7 @@ export const invoiceCard = (invoice, label) => {
       <div class="inv-right">${invoiceStatus(invoice.status, label?.(invoice) ?? invoice.status)}<strong>${rupees(invoice.amount)}</strong></div>
       <span class="card-go">${icon('chevron')}</span>
     </a>
-    ${!paid && html`<div class="inv-due">${icon('clock')}<span>${dueNote(invoice)}</span><button data-pay="${invoice.id}">Pay Now</button></div>`}
+    ${isPayable(invoice) && html`<div class="inv-due">${icon('clock')}<span>${dueNote(invoice)}</span><button data-pay="${invoice.id}">Pay Now</button></div>`}
   </article>`;
 };
 
