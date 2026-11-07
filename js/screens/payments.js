@@ -2,14 +2,14 @@ import { formatDate, rupees } from '../core/format.js';
 import { html } from '../core/html.js';
 import { icon } from '../core/icons.js';
 import { busy, setFieldError, sheet, toast } from '../core/ui.js';
-import { addMoney, paymentsOverview } from '../services/invoices.js';
+import { addMoney, isPayable, paymentsOverview } from '../services/invoices.js';
 import { memberArea } from './guards.js';
 import { bindPay, invoiceCard } from './invoices.js';
 import { listView, mountList } from './list-page.js';
 
 const PAYMENTS_TAB = { id: 'payments', label: 'Payments', path: '/payments', glyph: 'card', solid: 'card' };
 
-const statusLabel = (invoice) => (invoice.status === 'Paid' ? 'Paid' : 'Pending');
+const statusLabel = (invoice) => (isPayable(invoice) ? 'Pending' : invoice.status);
 
 const config = {
   title: 'Payments',
@@ -18,7 +18,7 @@ const config = {
   tabs: [
     { label: 'All', test: () => true },
     { label: 'Paid', test: (invoice) => invoice.status === 'Paid' },
-    { label: 'Pending', test: (invoice) => invoice.status !== 'Paid' },
+    { label: 'Pending', test: isPayable },
     { label: 'Refunds', test: (invoice) => invoice.status === 'Refunded' },
   ],
   card: (invoice) => invoiceCard(invoice, statusLabel),

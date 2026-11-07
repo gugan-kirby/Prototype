@@ -2,7 +2,7 @@ import { saveBlob } from '../core/files.js';
 import { formatDate, rupees } from '../core/format.js';
 import { html } from '../core/html.js';
 import { icon } from '../core/icons.js';
-import { invoiceById } from '../services/invoices.js';
+import { invoiceById, isPayable } from '../services/invoices.js';
 import { memberArea } from './guards.js';
 import { invoicePdf, openPayment } from './invoice-parts.js';
 
@@ -22,7 +22,7 @@ export default {
         <dl class="qd-table">${rows.map(([label, value]) => html`<div><dt>${label}</dt><dd>${value}</dd></div>`)}</dl>
         <div class="invoice-actions">
           <button class="btn btn-outline" id="pdf">${icon('download')}Download PDF</button>
-          ${invoice.status !== 'Paid' && html`<button class="btn btn-primary" id="pay">Pay Now</button>`}
+          ${isPayable(invoice) && html`<button class="btn btn-primary" id="pay">Pay Now</button>`}
         </div>
       </section>`;
   },

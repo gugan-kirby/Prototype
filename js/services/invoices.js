@@ -2,12 +2,15 @@ import { ApiError, request, store } from '../core/api.js';
 import { session } from './auth.js';
 import { notify } from './notifications.js';
 
+export const invoiceStatus = (invoice) => (invoice.status === 'Unpaid' && invoice.dueDate < store.meta().today ? 'Overdue' : invoice.status);
+
+export const isPayable = (invoice) => invoice.status === 'Unpaid' || invoice.status === 'Overdue';
+
 const decorate = (invoice) => {
   const order = store.find('orders', invoice.orderId);
-  const overdue = invoice.status === 'Unpaid' && invoice.dueDate < store.meta().today;
   return {
     ...invoice,
-    status: overdue ? 'Overdue' : invoice.status,
+    status: invoiceStatus(invoice),
     order,
     vendor: order && store.find('vendors', order.vendorId),
     today: store.meta().today,
@@ -26,24 +29,29 @@ export const invoiceById = (id) => request(() => {
   return decorate(invoice);
 });
 
-export const payInvoice = (id, method) => request(() => {
-  const invoice = store.find('invoices', id);
-  if (!invoice || invoice.customerId !== session()?.userId) throw new ApiError('This invoice could not be found.');
-  if (invoice.status === 'Paid') throw new ApiError('This invoice is already paid.');
-  if (method === 'Wallet') {
-    const user = store.find('users', invoice.customerId);
-    if ((user.wallet ?? 0) < invoice.amount) throw new ApiError('Your wallet balance is too low.');
-    store.update('users', user.id, { wallet: user.wallet - invoice.amount });
-  }
+export function settleInvoice(invoice, method) {
   const today = store.meta().today;
-  store.update('invoices', id, { status: 'Paid', paidOn: today });
+  store.update('invoices', invoice.id, { status: 'Paid', paidOn: today });
   const payment = store.insert('payments', {
-    id: `P-${store.nextNumber('payment')}`, invoiceId: id, customerId: invoice.customerId, amount: invoice.amount, method, type: 'Payment', status: 'Success', date: today,
+    id: `P-${store.nextNumber('payment')}`, invoiceId: invoice.id, customerId: invoice.customerId, amount: invoice.amount, method, type: 'Payment', status: 'Success', date: today,
   });
   const order = store.find('orders', invoice.orderId);
   const vendor = order && store.find('vendors', order.vendorId);
   if (vendor?.userId) notify(vendor.userId, 'Payment received', `${invoice.id} for ${order.partName} has been paid.`, `/v/orders/${order.id}`);
   return payment;
+}
+
+export const payInvoice = (id, method) => request(() => {
+  const invoice = store.find('invoices', id);
+  if (!invoice || invoice.customerId !== session()?.userId) throw new ApiError('This invoice could not be found.');
+  if (invoice.status === 'Paid') throw new ApiError('This invoice is already paid.');
+  if (!isPayable(invoice)) throw new ApiError('This invoice has been cancelled.');
+  if (method === 'Wallet') {
+    const user = store.find('users', invoice.customerId);
+    if ((user.wallet ?? 0) < invoice.amount) throw new ApiError('Your wallet balance is too low.');
+    store.update('users', user.id, { wallet: user.wallet - invoice.amount });
+  }
+  return settleInvoice(invoice, method);
 });
 
 export const paymentsOverview = () => request(() => {
@@ -56,7 +64,7 @@ export const paymentsOverview = () => request(() => {
     transactions,
     wallet: store.find('users', userId)?.wallet ?? 0,
     paidThisMonth: transactions.filter((item) => item.type === 'Payment' && item.date.startsWith(month)).reduce((sum, item) => sum + item.amount, 0),
-    pending: invoices.filter((invoice) => invoice.status !== 'Paid').reduce((sum, invoice) => sum + invoice.amount, 0),
+    pending: invoices.filter(isPayable).reduce((sum, invoice) => sum + invoice.amount, 0),
   };
 });
 

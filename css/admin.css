@@ -32,9 +32,37 @@
 .admin .toast { position: fixed; right: 24px; bottom: 24px; left: auto; }
 .admin .state { min-height: 200px; }
 
+.admin-stat { display: block; }
+.admin-stat:hover { border-color: var(--blue-bright); }
+.admin-link { color: var(--blue-bright); font-weight: 600; }
+.admin-link:hover { text-decoration: underline; }
+.admin-back { display: inline-block; margin-bottom: 10px; font-size: 14px; }
+.admin-title .admin-pill { vertical-align: middle; }
+.admin-subtitle { margin: 18px 0 10px; color: var(--navy); font-size: 17px; font-weight: 800; }
+.admin-detail { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 18px; align-items: start; }
+.admin-detail > div { min-width: 0; overflow-x: auto; }
+.admin-fields { margin: 0; padding: 6px 18px; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.admin-fields div { display: flex; justify-content: space-between; gap: 18px; padding: 10px 0; border-top: 1px solid var(--line-soft); font-size: 14px; }
+.admin-fields div:first-child { border-top: 0; }
+.admin-fields dt { color: var(--muted); font-weight: 500; }
+.admin-fields dd { color: var(--ink); font-weight: 600; text-align: right; overflow-wrap: anywhere; }
+.admin-panel { display: flex; flex-direction: column; gap: 10px; padding: 0 18px 18px; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.admin-panel .admin-note { margin: 12px 0 0; }
+.admin-panel form { display: flex; flex-direction: column; gap: 10px; }
+.admin-panel select, .admin-panel textarea { width: 100%; padding: 9px 12px; border: 1.500px solid var(--line); border-radius: 10px; outline: 0; background: #fff; color: var(--ink); font-size: 14.500px; }
+.admin-panel textarea { resize: vertical; }
+.admin-panel select:focus, .admin-panel textarea:focus { border-color: var(--blue); }
+.admin-panel textarea.invalid { border-color: var(--bad); }
+.admin-panel .error { margin: 0; color: var(--bad); font-size: 13px; }
+.admin-panel .admin-act { padding: 10px 12px; font-size: 14px; }
+.admin .sheet-backdrop { position: fixed; align-items: center; justify-content: center; padding: 16px; }
+.admin .sheet { width: 100%; max-width: 440px; padding-top: 22px; border-radius: 18px; }
+.admin .sheet-grip { display: none; }
+
 @media (max-width: 760px) {
-  .admin { grid-template-columns: 1fr; }
+  .admin { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
   .admin-side { padding: 14px; }
   #admin-nav { flex-direction: row; flex-wrap: wrap; margin-bottom: 8px; }
   .admin-main { padding: 18px 14px; overflow-x: auto; }
+  .admin-detail { grid-template-columns: minmax(0, 1fr); }
 }
