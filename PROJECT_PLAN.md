@@ -91,7 +91,10 @@ No reference images exist, so this reuses the design tokens in a desktop layout.
 | A-01 | Admin shell and login | T-02 | Medium | `admin.html`, session guard, and layout for admin and staff. |
 | A-02 | Vendor verification | A-01 | Medium | Approve or suspend vendors. |
 | A-03 | User management | A-01 | Medium | List and suspend users. |
-| A-04 | Record views | A-01 | Medium | Read-only enquiries, orders, invoices and payments. |
+| A-04 | Record views | A-01 | Medium | Enquiries, orders, invoices and payments, with search. |
+| A-05 | Admin fixes | A-02, A-03 | High | Working Verify button, and suspending ends open sessions. |
+| A-06 | Staff verification | A-02 | Medium | Staff can verify vendors. Suspending stays with admins. |
+| A-07 | Record actions | A-04 | High | Record details, close enquiry, cancel order, mark as paid and notifications. |
 
 ### Milestone 5: wrap-up
 
@@ -123,8 +126,8 @@ The references disagree with each other in places. The seed resolves this as fol
 | 3 | Commit `1e5835d` on `main` says "screens", and `c1efbc6` has the author name "Gugan". Fixing either needs a force-push to public history. Should they be fixed? | Leave them as they are. |
 | 4 | Does the ban on the word "screen" extend to code, such as the `js/screens/` folder? | No. It covers commit messages, branch names and PR text. |
 | 5 | Local branch `docs/git-workflow-rules` is now fully covered by `CLAUDE.md`. Can it be deleted? | Keep it. |
-| 6 | Should staff be able to verify vendors and suspend users? | No. Staff can view everything, and only admins can make those changes. |
-| 7 | F-02 is a walkthrough of both workflows. Does the stop on testing cover it? | Yes, so it stays not started. |
+| 6 | F-02 is a walkthrough of both workflows. Does the stop on testing cover it? | Yes, so it stays not started. |
+| 7 | How should a paid order be cancelled? Refunds do not exist yet. | A paid order cannot be cancelled. |
 
 ## Milestones
 

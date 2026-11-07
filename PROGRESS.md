@@ -11,8 +11,8 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 **Updated:** 2026-11-07
 
 - **Branch:** `main`, with a clean working tree. Merged branches are kept.
-- **Last feature merged:** F-01 Refresh saved data when the seed changes, commit `f3ecc5d`, PR #29.
-- **Built:** all 16 reference images, the vendor portal and the admin and staff console.
+- **Last feature merged:** A-07 Record actions, commit `10b483f`, PR #36.
+- **Built:** all 16 reference images, the vendor portal and the admin and staff console, including its actions.
 - **In progress:** nothing.
 - **Blocked:** F-02, because a walkthrough counts as testing, which the user stopped.
 - **Next action:** waiting on the user. Answer the pending decisions in `PROJECT_PLAN.md`, starting with decision 1, which unblocks F-02.
@@ -23,12 +23,12 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 |---|---|---|
 | Status bar test and scores | `tests/e2e/test_foundation.py` still expects the status bar, so it will fail if run. The Differs figures were measured with the bar in place. | Decision 1 in `PROJECT_PLAN.md` |
 | Automated tests out of date | Last full run was 75 passed, at T-08. They were not run for T-09 onwards, and may no longer pass. | Decision 1 in `PROJECT_PLAN.md` |
-| Later behaviour unconfirmed | Interactions added from T-10 onwards have not been exercised, including chat, PDF download, Pay Now, quote submission, status updates and all admin actions. Only their pages were rendered. | F-02 |
+| Later behaviour unconfirmed | Interactions added from T-10 onwards have not been exercised, including chat, PDF download, Pay Now, quote submission and status updates. Only their pages were rendered. Admin console actions were checked by hand on 2026-11-07. | F-02 |
 | T-09 fix not rechecked | The final test run for T-09 found the Enquiry Details tab did not hide the quotes list. It was fixed in CSS, but the fix was not rerun. | F-02 |
 
 ## Tasks
 
-"Differs" is the share of pixels that visibly differ from the reference, measured on 2026-11-06. Much of it comes from blur around text in the references. All rows were last updated on 2026-11-06.
+"Differs" is the share of pixels that visibly differ from the reference, measured on 2026-11-06. Much of it comes from blur around text in the references. Rows up to F-01 were last updated on 2026-11-06.
 
 ### Completed
 
@@ -63,6 +63,10 @@ Actual status only. Scope and order are in `PROJECT_PLAN.md`.
 | A-03 | User management | COMPLETED | Medium | `feature/user-management` | `2c6a16e` | [#27](https://github.com/gugan-kirby/Prototype/pull/27) | Not tested. Render reviewed by eye |
 | A-04 | Record views | COMPLETED | Medium | `feature/record-views` | `f405aaa` | [#28](https://github.com/gugan-kirby/Prototype/pull/28) | Not tested. Render reviewed by eye |
 | F-01 | Refresh saved data when the seed changes | COMPLETED | High | `fix/stale-saved-data` | `f3ecc5d` | [#29](https://github.com/gugan-kirby/Prototype/pull/29) | Not tested. Render reviewed by eye |
+| A-05 | Vendor Verify button | COMPLETED | High | `fix/vendor-verify-button` | `350d29a` | [#33](https://github.com/gugan-kirby/Prototype/pull/33) | Checked by hand in a browser. No automated tests |
+| A-05 | End sessions of suspended accounts | COMPLETED | High | `fix/suspended-sessions` | `47abb53` | [#34](https://github.com/gugan-kirby/Prototype/pull/34) | Checked by hand in a browser. No automated tests |
+| A-06 | Staff verification | COMPLETED | Medium | `improvement/staff-vendor-verification` | `d4e9247` | [#35](https://github.com/gugan-kirby/Prototype/pull/35) | Checked by hand in a browser. No automated tests |
+| A-07 | Record actions | COMPLETED | High | `feature/admin-record-actions` | `10b483f` | [#36](https://github.com/gugan-kirby/Prototype/pull/36) | Checked by hand in a browser. No automated tests |
 
 ### Not finished
 
@@ -186,11 +190,30 @@ Lists all users without their passwords. Admins can suspend or reactivate accoun
 
 ### A-04 Record views
 
-Read-only tables for enquiries, orders, invoices and payments, with search.
+Tables for enquiries, orders, invoices and payments, with search. Read-only when built. A-07 added actions.
 
 ### F-01 Refresh saved data when the seed changes
 
 The seed now carries a version worked out from its content. When it changes, a browser's saved copy is replaced with the new seed. Changes saved in that browser are lost at that point, which is acceptable for a prototype.
+
+### A-05 Admin fixes
+
+The Verify button never worked, because the `html` tag drops boolean values, so every click removed verification. It now uses explicit values. Actions show a message. Kovai Laser Cutting is seeded as a vendor awaiting verification. Suspending now also ends an open session, where before it only blocked new logins.
+
+### A-06 Staff verification
+
+Staff can verify vendors or remove verification. Suspending accounts stays with admins.
+
+### A-07 Record actions
+
+Every record opens a details page at `/records/:type/:id`. Admin and staff can close enquiries, cancel orders, mark invoices as paid and notify the customer or vendor. Actions that cannot be undone ask for confirmation.
+
+- Closing an enquiry declines its open quotes.
+- Cancelling an order also cancels its invoice, through a new Cancelled status. Customers cannot pay it, and it is left out of Pending totals.
+- A paid order cannot be cancelled, because refunds do not exist yet.
+- Dashboard figures link to their pages.
+
+**Validation:** at the user's request, the admin console was checked by hand in a browser on 2026-11-07. The record actions were run as staff, with results checked as the customer and vendor. They were not run as admin, which passes the same check. This did not cover the rest of F-02, and no automated tests were run.
 
 ## Change history
 
@@ -206,3 +229,5 @@ The seed now carries a version worked out from its content. When it changes, a b
 | 2026-11-07 | Branches are kept after merging, and deleted branches were restored at their merged commits | User decision, replacing the earlier cleanup step |
 | 2026-11-07 | Phone status bar removed from every page | User decision. It only copied the reference images |
 | 2026-11-06 | Automated test writing and running stopped, from T-09 onwards | User decision |
+| 2026-11-07 | Admin and staff can act on records, replacing light oversight | User decision |
+| 2026-11-07 | Staff can verify vendors, and only admins can suspend accounts. This resolves the old pending decision 6 | User decision |

@@ -11,7 +11,7 @@ accept a quote and pay. There are three portals: customer, vendor and admin/staf
 | Topic | Decision |
 |---|---|
 | Business model | Direct marketplace. Customers deal directly with vendors. |
-| Admin role | Light oversight: verify vendors, manage users, view records. |
+| Admin role | Verify vendors, manage users, and act on records. Changed from light oversight on 2026-11-07. |
 | Data | `data/db.json` seeds a `localStorage` database. No server-side code. |
 | Source of truth | The reference image. Brief-only items never change the reference view. |
 | Brief-only items | Placed on linked screens or below the reference height. |
