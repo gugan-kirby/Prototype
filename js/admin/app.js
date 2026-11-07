@@ -9,11 +9,12 @@ import vendors from './vendors.js';
 
 const NAV = [['Dashboard', '/'], ['Vendors', '/vendors'], ['Users', '/users'], ['Records', '/records']];
 
+await connect();
+
 const role = session()?.role;
 if (role !== 'admin' && role !== 'staff') {
   location.replace('index.html#/login');
 } else {
-  await connect();
   route('/', dashboard);
   route('/vendors', vendors);
   route('/users', users);
