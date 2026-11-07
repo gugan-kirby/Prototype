@@ -32,7 +32,7 @@ export const listVendors = () => request(() => {
 });
 
 export const setVendorVerified = (id, verified) => request(() => {
-  adminOnly();
+  staffOnly();
   const vendor = store.update('vendors', id, { verified });
   if (vendor.userId) {
     notify(vendor.userId, verified ? 'Account verified' : 'Verification removed', verified ? 'You can now quote for enquiries.' : 'Contact JobWork to restore your verification.', '/v/home');
